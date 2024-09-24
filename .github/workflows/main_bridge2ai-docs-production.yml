@@ -7,7 +7,7 @@ name: Build and deploy Python app to Azure Web App - bridge2ai-docs-production
 on:
   push:
     branches:
-      - dashboard
+      - main
   workflow_dispatch:
 
 jobs:
