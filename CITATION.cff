@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+title: Bridge2AI Voice Docs
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: dataset
+authors:
+  - given-names: Alexandros
+    family-names: Sigaras
+    email: als2076@med.cornell.edu
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0000-0002-7607-559X'
+  - family-names: Zisimopoulos
+    given-names: Pantelis
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0009-0006-2425-0882'
+  - family-names: Tang
+    given-names: Jeff
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0009-0006-0366-5050'
+  - family-names: Bensoussan
+    given-names: Yaël
+    affiliation: University of South Florida
+  - family-names: Ghosh
+    given-names: Satrajit S
+    affiliation: Massachusetts Institute of Technology (MIT)
+    orcid: 'https://orcid.org/0000-0002-5312-6729'
+  - family-names: Rameau
+    given-names: Anaïs
+    orcid: 'https://orcid.org/0000-0003-1543-2634'
+    affiliation: Weill Cornell Medicine (WCM)
+  - family-names: Powell
+    given-names: Maria E
+    affiliation: Vanderbilt University Medical Center
+    orcid: 'https://orcid.org/0000-0002-6643-8991'
+  - family-names: Belisle-Pipon
+    given-names: Jean-Christophe
+    affiliation: Simon Fraser University
+    orcid: 'https://orcid.org/0000-0002-8965-8153'
+  - family-names: Ravitsky
+    given-names: Vardit
+    affiliation: Hastings Center
+    orcid: 'https://orcid.org/0000-0002-7080-8801'
+  - family-names: Johnson
+    given-names: Alistair
+    affiliation: Glowry
+    orcid: 'https://orcid.org/0000-0002-8735-3014'
+  - family-names: Elemento
+    given-names: Olivier
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0000-0002-8061-9617'
+  - family-names: Dorr
+    given-names: David
+    affiliation: Oregon Health & Science University School of Medicine  (OHSU)
+    orcid: 'https://orcid.org/0000-0003-2318-7261'
+  - family-names: Payne
+    given-names: Philip R
+    affiliation: Washington University in St. Louis
+    orcid: 'https://orcid.org/0000-0002-9532-2998'
+  - name: Bridge2AI-Voice
+    website: 'https://b2ai-voice.org/'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.12760724
+repository-code: 'https://github.com/eipm/bridge2ai-docs'
+keywords:
+  - AI
+  - Bridge2AI
+  - Voice
+license: MIT
