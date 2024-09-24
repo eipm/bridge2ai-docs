@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'bridge2ai-docs-production'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d59e36e7d12c4587bdae3028270c6faf }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CC98721538C34FD4B77C65076C1E1505 }}
