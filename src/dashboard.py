@@ -46,7 +46,7 @@ footer {
 </style>
 """
  
-def coming_soom_message(tab_name):
+def coming_soon_message(tab_name):
         # Your Streamlit application code
     st.title('Bridge2AI Voice Dashboard')
     st.write(f"{tab_name} - Coming soon!")
@@ -56,28 +56,28 @@ def coming_soom_message(tab_name):
     st.image(image_path, caption='', use_column_width=True)
 
 def about_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
 
 def healthsheet_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
 
 def study_dashboard_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
     
 def study_metadata_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
 
 def dataset_metadata_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
     
 def dataset_structure_preview_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
 
 def dataset_quality_dashboard_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
     
 def dataset_uses_page(tab_name):
-    coming_soom_message(tab_name)
+    coming_soon_message(tab_name)
 
 def create_tabs(tabs_func):
     tab_names = list(tabs_func.keys())
