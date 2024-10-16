@@ -45,7 +45,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: f1f1f1;
+    background: linear-gradient(90deg, #d3d3d3, #f0f0f0);
+    color: black;
     display: flex;
     height: 30px;
     justify-content: center;
@@ -65,20 +66,22 @@ footer {
     background-color: white;
     border: 2px solid #d3d3d3;
     border-radius: 5px;
-    margin-right: -10px;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    padding: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* set border for columns */
-[data-testid="stHorizontalBlock"] {
-    background-color: white;
+[data-testid="stMetric"] {
     border: 2px solid #d3d3d3;
-    padding: 20px;
+    margin-right: -5px;
+    margin-bottom: -5px;
     border-radius: 5px;
-    margin-right: -10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
-/* set text in columns to center */
+
+/* set text and metri in columns to center */
 .stMetric > div, [data-testid="stMetricLabel"] {
     color: black;
     display: flex;
@@ -87,3 +90,15 @@ footer {
     text-align: center;
 }
 
+.js-plotly-plot .plotly .modebar-btn {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.js-plotly-plot .plotly .modebar {
+    top: -1px;
+    right: 0;
+    left: auto;
+    width: 48px;
+}

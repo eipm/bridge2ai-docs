@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import json
 
 def coming_soon_message(tab_name):
-        # Your Streamlit application code
+    # Your Streamlit application code
     st.title('Bridge2AI Voice Dashboard')
     st.write(f"{tab_name} - Coming soon!")
 
     # Add an image to the page
-    image_path = "images/Wave.png"  # Replace with your image file name
+    image_path = "images/Wave.png"
     st.image(image_path, caption='', use_column_width=True)
 
 def about_page(tab_name):
@@ -51,169 +52,206 @@ def get_data(json_data, tag, name_mapping=None):
         return new_names, values
     return names, values
 
-def get_chart_title_poperty():
-    return {
+def create_pie_chart(names, values, title, height=250, colors = px.colors.qualitative.Set1):  
+    fig = px.pie(
+        names=names, values=values,
+        category_orders={'names': list(names)}, 
+        color_discrete_sequence=colors,
+        hole=0.5) # donut chart
+    
+    title_setting = {
+            'text': title,
             'font': {
-                'size': 24,
-                'family': 'Arial',
+                'size': 12,
                 'color': 'black'
             },
-            'pad': {
-                't': 10,
-                'b': 10,
-                'l': 20,
-                'r': 10
-            }
-        }
-
-def get_chart_legend_property():
-    return {
-            'font': {
-                'size': 14,
-                'color': 'black'
-            },
-            'title': {
-                'font': {
-                    'size': 16,
-                    'color': 'black'
-                }
-            },
-            'traceorder': 'normal',
-            'x': 1,
-            'y': 1,
+            'x': 0,
+            'y': 0.98,
             'xanchor': 'left',
             'yanchor': 'top',
-            'valign': 'top',
-            'orientation': 'v',
-            'bordercolor': 'black',
-            'borderwidth': 1,
-            'itemwidth': 30,
-            'tracegroupgap': 5
-        }
-
-
-def plot_pie_chart(names, values, title):    
-    fig = px.pie(names=names, values=values, title=title, category_orders={'names': list(names)}, color_discrete_sequence=px.colors.qualitative.Set2) 
+        }  
+    
+    if "<br>" in title:
+        title_setting['y'] = 0.95
+        
     fig.update_layout(
-        title=get_chart_title_poperty(),
         autosize=True,
-        showlegend=True,
-        legend=get_chart_legend_property(),
-        height=680,
-        font=dict(
-            size=16,
-            color='black',
-        ),
+        showlegend=False,
         paper_bgcolor='white',
         plot_bgcolor='white', 
-        margin=dict(l=100, r=100, t=100, b=100)
+        #margin=dict(l=5, r=5, t=5, b=5),
+        margin=dict(l=10, r=10, t=10, b=10),
+        height=height,
+        title=title_setting,
     )
 
     fig.update_traces(
         marker=dict(line=dict(color='black', width=0.5)),
-        textposition="outside",
-        texttemplate="%{percent:.2%} (%{value})",
-        hovertemplate="%{label}<br>%{percent:.2%} (%{value})",
-        hoverlabel=dict(
-            font_size=14,
-            font_family="Arial"
-        )
-    )    
-    st.plotly_chart(fig)
+        textposition="inside",
+        textfont=dict(size=12, color='black'),
+        texttemplate="%{percent:.2%}<br>(%{value})",
+        #texttemplate="%{percent:.2%}",
+        hovertemplate="%{label}<br>%{percent:.2%} (%{value})<extra></extra>",
+        domain=dict(x=[0, 1], y=[0, 1])
+    )
+    
+    return fig
     
 def get_asis_chart_property(text):
     return {
         'title': {
             'text': text,
-            'font': {'size': 18, 'color': 'black'}
+            'font': {
+                'size': 10,
+                'color': 'black'
+            }
         },
-        'tickfont': {'size': 14, 'color': 'black'},
+        'tickfont': {
+            'size': 10,
+            'color': 'black'
+        },
         'showgrid': True,
         'gridcolor': 'lightgray',
     }
 
-def plot_bar_chart(names, values, title, orientation='v'):
-    fig = px.bar(x=values, y=names, orientation=f"{orientation}", title=title, color_discrete_sequence=px.colors.qualitative.Set2)
+def create_bar_chart(names, values, title, orientation='v', height=250, colors = px.colors.qualitative.Set1):
+    fig = px.bar(
+        x=values, 
+        y=names, 
+        orientation=f"{orientation}",
+        color_discrete_sequence=colors)
+   
     fig.update_layout(
-        title=get_chart_title_poperty(),
         xaxis=get_asis_chart_property('Number of Participants'),
         yaxis=get_asis_chart_property('Age Groups'),
         autosize=True,
-        showlegend=True,
-        legend=get_chart_legend_property(),
-        height=680,  
-        font=dict(
-            size=16, 
-            color='black',
-        ),
+        showlegend=False,
         paper_bgcolor='white',
         plot_bgcolor='white',
-        margin=dict(l=100, r=100, t=100, b=100)
+        height=height,
+        margin=dict(l=0, r=5, t=25, b=5),
+        title={
+            'text': title,
+            'font': {
+                'size': 12,
+                'color': 'black'
+            },
+            'x': 0,
+            'y': 0.98,
+            'xanchor': 'left',
+            'yanchor': 'top',
+        }
     )
     fig.update_traces(
         marker=dict(line=dict(color='black', width=0.5)), 
         texttemplate="%{x}",
         hovertemplate="%{y}: %{x}",
-        hoverlabel=dict(
-            font_size=14,
-            font_family="Arial"
-        )   
     )
-    st.plotly_chart(fig)
-
-def display_table(names, values, title, display_percentage_column=False):
-    df = pd.DataFrame({"name": names, "value": values})
-    custom_column_config= {
-        "name": st.column_config.TextColumn(
-            "Name",
-            width="large"),
-        "value": st.column_config.TextColumn(
-            "Count",
-            width="medium")
-    }
     
-    if display_percentage_column:
-        total = df['value'].sum()
-        df['percentage'] = (df['value'] / total) * 100
-        df['percentage'] = df['percentage'].map(lambda x: f"{x:.2f}%")
-        
-        custom_column_config["percentage"] = st.column_config.Column(
-            "Percentage",
-            width="medium"
+    return fig
+
+def create_table_chart(names, values, title, headers=('Name', 'Count'), height=250):
+    fig = go.Figure(data=[go.Table(
+        columnwidth=[3, 1],
+        header=dict(
+             values=[f"<b>{header}</b>" for header in headers],
+            align='left',
+            font=dict(size=12, color='black'),
+            fill=dict(color='#f2f2f2'),
+            line=dict(color='black', width=1)
+        ),
+        cells=dict(
+            values=[names, values],
+            align='left',
+            font=dict(size=12, color='black'),
+            fill=dict(color='white'),
+            line=dict(color='black', width=1),
+            height=30
         )
-            
-    st.write(f"### {title}")
-    st.dataframe(
-        df,
-        column_config = custom_column_config,
-        hide_index=True
+    )])
+    
+    fig.update_layout(
+        margin=dict(l=5, r=5, t=25, b=5),
+        height=height,
+        width=400,
+        paper_bgcolor='white',
+        plot_bgcolor='white',
+        annotations=[
+            dict(
+                text=title,
+                x=0,
+                y=1.120,
+                xref='paper',
+                yref='paper',
+                showarrow=False,
+                font=dict(size=12, color='black', weight='bold'),
+                xanchor='left',
+                yanchor='top'
+            )
+        ]
+       
     )
+    
+    return fig
 
-def create_tabs(tabs_func):
-    tab_names = list(tabs_func.keys())
-    tabs = st.tabs(tab_names)
-    for tab, name in zip(tabs, tab_names):
-        with tab:
-            tabs_func[name](name)
+def getPlotlyConfig():
+    return {
+        'displayModeBar': True,
+        'displaylogo': False,
+        'modeBarButtonsToRemove': [
+            'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 
+            'autoScale2d', 'resetScale2d'
+        ]
+    }
 
-def plot_view(data, plots):
-    for plot in plots:
-        key, title, chart_type = plot[:3]
-        name_mapping = plot[3] if len(plot) == 4 else None
-        names, values = get_data(data, key, name_mapping)
-        if chart_type == 'pie':
-            plot_pie_chart(names, values, title)
-        elif chart_type == 'horizontal_bar':
-            plot_bar_chart(names, values, title, 'h')
-        elif chart_type == 'vertical_bar':
-            plot_bar_chart(names, values, title)
+def create_plots(data, plots):
+    num_plots = len(plots)
+    cols_per_row = 6  # Number of columns per row
+    rows = (num_plots + cols_per_row - 1) // cols_per_row  # Calculate number of rows needed
+    chart_height = 250  # Height of the charts
+    # Custom headers for table charts
+    headers = {'questionnaire_collected': ('Questionnaire', 'Count'),
+             'acoustic_task_collected': ('Acoustic Task', 'Count')}
+    # Set colors for the charts
+    colors = px.colors.qualitative.Set2
 
-def table_view(data, plots):
-    for plot in plots:
-        key, title, chart_type = plot[:3]
-        name_mapping = plot[3] if len(plot) == 4 else None
-        names, values = get_data(data, key, name_mapping)
-        display_table(names, values, title, chart_type == 'pie')
+    
+    
+    
+    
+    for row in range(rows):
+        cols = st.columns(cols_per_row, gap="small", vertical_alignment="top")
+        for col_index in range(cols_per_row):
+            plot_index = row * cols_per_row + col_index
+            if plot_index < num_plots:
+                plot = plots[plot_index]
+                key, title, chart_type = plot[:3]
+                # Optional name mapping for charts
+                name_mapping = plot[3] if len(plot) == 4 else None
+        
+                if key and title and chart_type:
+                    labels, values = get_data(data, key, name_mapping)
+                else:
+                    labels, values = None, None
+
+                if num_plots <= rows*cols_per_row+col_index:
+                    if chart_type is None:
+                        cols[col_index].empty()
+                    else:
+                        if chart_type == 'pie':
+                            fig = create_pie_chart(labels, values, title, chart_height, colors)
+                        elif chart_type == 'horizontal_bar':
+                            wrapped_labels = [name.replace('90 and above', '90 and<br>above') for name in labels]
+                            fig = create_bar_chart(wrapped_labels, values, title, 'h', chart_height, colors)
+                        elif chart_type == 'vertical_bar':
+                            fig = create_bar_chart(labels, values, title, chart_height, colors)
+                        elif chart_type == 'table':
+                            table_headers = headers.get(key) if key in headers else ('Name', 'Count')
+                            fig = create_table_chart(labels, values, title, table_headers, chart_height)
+
+                        cols[col_index].plotly_chart(fig, use_container_width=True, config=getPlotlyConfig())
+                else:
+                    cols[col_index].empty()          
         
 def study_dashboard_page(tab_name):
     data = load_data()
@@ -227,35 +265,59 @@ def study_dashboard_page(tab_name):
     if isinstance(total_hours_of_recordings, float):
         total_hours_of_recordings = round(total_hours_of_recordings, 2)
     
-    # Create a 3-column layout for the metrics
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Number of Participants", number_of_participants)
-    col2.metric("Number of Recordings", number_of_recordings)
-    col3.metric("Total Hours of Recordings", total_hours_of_recordings)
-
-    # Define plots to be displayed
+    cards = [(None, None),
+                ("Number of Participants", number_of_participants),
+                ("Number of Recordings", number_of_recordings),
+                ("Total Hours of Recordings", total_hours_of_recordings),
+                (None, None)]
+    
+    # Create a 5-column layout for the metrics
+    columns = st.columns([1, 1, 1, 1, 1])
+    for i, col in enumerate(columns):
+            name, value = cards[i]
+            if name is not None and value is not None:
+                col.metric(name, value)
+            else:
+                col.empty()
+        
+    # Define plots to be displayed in the dashboard
     plots = [
-        ('control', 'Control vs. Non-Control Participants', 'pie', {'Yes': 'Control', 'No': 'Non-Control'}),
-        ('gender_identity', 'Gender Identity of Participants', 'pie'),
-        ('sexual_orientation', 'Sexual Orientation of Participants', 'pie'),
-        ('race', 'Race of Participants', 'pie'),
-        ('ethnicity', 'Ethnicity of Participants', 'pie'),
-        ('age_groups','Age Breakdown of Participants', 'horizontal_bar'),
-        ('primary_language', 'Primary Language of Participants', 'pie'),
+        #(None, None, None), # Empty plot
+        ('control', 'Control vs. Non-Control', 'pie', {'Yes': 'Control', 'No': 'Non-Control'}),
+        ('gender_identity', 'Gender Identity', 'pie'),
+        ('sexual_orientation', 'Sexual Orientation', 'pie'),
+        ('race', 'Race', 'pie'),
+        ('ethnicity', 'Ethnicity', 'pie'),
+        ('primary_language', 'Primary Language', 'pie'),
         ('disorder_types', 'Disorder Types', 'pie'),
-        ('voice_disorders_category', 'Voice Disorder Breakdown', 'pie'),
-        ('neurological_and_neurodegenerative_disorders_category', 'Neurological and Neurodegenerative Disorder Breakdown', 'pie'),
-        ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder Breakdown', 'pie'),
-        ('respiratory_disorders_category', 'Respiratory Disorder Breakdown', 'pie'),
-        ('questionnaire_collected', 'Questionnaire Collection Breakdown', 'pie'),
-        ('acoustic_task_collected', 'Acoustic Task Collection Breakdown', 'pie')
+        ('voice_disorders_category', 'Voice Disorder', 'pie'),
+        ('neurological_and_neurodegenerative_disorders_category', 'Neurological and Neurodegenerative<br>Disorder', 'pie'),
+        #('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'table'),
+        ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'pie'),
+        ('respiratory_disorders_category', 'Respiratory Disorder', 'pie'),
+        ('questionnaire_collected', 'Questionnaire Collection', 'table'),
+        ('acoustic_task_collected', 'Acoustic Task Collection', 'table'),
+        ('age_groups','Age', 'horizontal_bar')
     ]
 
-    on = st.toggle("📊 Chart View", True)
-    if on:
-        plot_view(data, plots)
-    else:
-        table_view(data, plots)
+    create_plots(data, plots)
+
+def get_asis_chart_property(text, font_size=10):
+    return {
+        'title': {
+            'text': text,
+            'font': {
+                'size': font_size,
+                'color': 'black'
+            }
+        },
+        'tickfont': {
+            'size': font_size,
+            'color': 'black'
+        },
+        'showgrid': True,
+        'gridcolor': 'lightgray',
+    }
 
 def config_page(version):         
     st.set_page_config(
@@ -278,6 +340,13 @@ def config_page(version):
     </footer>
     """
     st.markdown(footer, unsafe_allow_html=True)
+
+def create_tabs(tabs_func):
+    tab_names = list(tabs_func.keys())
+    tabs = st.tabs(tab_names)
+    for tab, name in zip(tabs, tab_names):
+        with tab:
+            tabs_func[name](name)
 
 def main():  
     # Define the version variable
