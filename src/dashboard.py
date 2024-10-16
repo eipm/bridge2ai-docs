@@ -80,7 +80,7 @@ def create_pie_chart(names, values, title, height=250, colors = px.colors.qualit
         paper_bgcolor='white',
         plot_bgcolor='white', 
         #margin=dict(l=5, r=5, t=5, b=5),
-        margin=dict(l=10, r=10, t=10, b=10),
+        margin=dict(l=20, r=20, t=20, b=20),
         height=height,
         title=title_setting,
     )
@@ -204,21 +204,12 @@ def getPlotlyConfig():
         ]
     }
 
-def create_plots(data, plots):
+def create_plots(data, plots, cols_per_row=6):
     num_plots = len(plots)
-    cols_per_row = 6  # Number of columns per row
     rows = (num_plots + cols_per_row - 1) // cols_per_row  # Calculate number of rows needed
     chart_height = 250  # Height of the charts
-    # Custom headers for table charts
-    headers = {'questionnaire_collected': ('Questionnaire', 'Count'),
-             'acoustic_task_collected': ('Acoustic Task', 'Count')}
     # Set colors for the charts
     colors = px.colors.qualitative.Set2
-
-    
-    
-    
-    
     for row in range(rows):
         cols = st.columns(cols_per_row, gap="small", vertical_alignment="top")
         for col_index in range(cols_per_row):
@@ -246,30 +237,29 @@ def create_plots(data, plots):
                         elif chart_type == 'vertical_bar':
                             fig = create_bar_chart(labels, values, title, chart_height, colors)
                         elif chart_type == 'table':
-                            table_headers = headers.get(key) if key in headers else ('Name', 'Count')
-                            fig = create_table_chart(labels, values, title, table_headers, chart_height)
+                            fig = create_table_chart(labels, values, title, chart_height)
 
                         cols[col_index].plotly_chart(fig, use_container_width=True, config=getPlotlyConfig())
                 else:
-                    cols[col_index].empty()          
+                    cols[col_index].empty()
         
-def study_dashboard_page(tab_name):
-    data = load_data()
-    if not data:
-        st.write("No data available")
-        return
-    
+def overview_section(data):
     number_of_participants = data.get('number_of_participants')
     number_of_recordings = data.get('number_of_recordings')
     total_hours_of_recordings = data.get('total_hours_of_recordings')
+    total_questionnaire_collected  = pd.json_normalize(data.get('questionnaire_collected')).values.sum()
+    total_acoustic_task_collected = pd.json_normalize(data.get('acoustic_task_collected')).values.sum()
+
     if isinstance(total_hours_of_recordings, float):
         total_hours_of_recordings = round(total_hours_of_recordings, 2)
     
-    cards = [(None, None),
-                ("Number of Participants", number_of_participants),
-                ("Number of Recordings", number_of_recordings),
-                ("Total Hours of Recordings", total_hours_of_recordings),
-                (None, None)]
+    cards = [
+        ("Number of Participants", number_of_participants),
+        ("Number of Recordings", number_of_recordings),
+        ("Total Hours of Recordings", total_hours_of_recordings),
+        ("Total of Questionnaires", total_questionnaire_collected),
+        ("Total of Acoustic Tasks", total_acoustic_task_collected)    
+    ]
     
     # Create a 5-column layout for the metrics
     columns = st.columns([1, 1, 1, 1, 1])
@@ -279,29 +269,92 @@ def study_dashboard_page(tab_name):
                 col.metric(name, value)
             else:
                 col.empty()
+                
+def data_collection_section(data, collected_data):
+    print(data)
+    print(collected_data)
+    columns = st.columns([2,3])
+    
+    # Define column configurations for the tables
+    column_configs = {
+        'questionnaire_collected': {
+            "name": st.column_config.TextColumn(
+                "Questionnaire",
+                width="large"
+            ),
+            "value": st.column_config.TextColumn(
+                "Count",
+                width="small"
+            )
+        },
+        'acoustic_task_collected': {
+            "name": st.column_config.TextColumn(
+                "Acoustic Task",
+                width="large"
+            ),
+            "value": st.column_config.TextColumn(
+                "Count",
+                width="small"
+            )
+        }
+    }
+    
+    index = 0   
+    for key, title in collected_data:
+        names, values = get_data(data, key)
+        df = pd.DataFrame({"name": names, "value": values})
+        with columns[index]:
+            st.dataframe(df,column_config = column_configs[key], hide_index=True)
+        index += 1
         
-    # Define plots to be displayed in the dashboard
-    plots = [
-        #(None, None, None), # Empty plot
+def study_dashboard_page(tab_name):
+    data = load_data()
+    if not data:
+        st.write("No data available")
+        return
+    
+    # Demographic plots
+    demographic_plots = [
         ('control', 'Control vs. Non-Control', 'pie', {'Yes': 'Control', 'No': 'Non-Control'}),
         ('gender_identity', 'Gender Identity', 'pie'),
         ('sexual_orientation', 'Sexual Orientation', 'pie'),
         ('race', 'Race', 'pie'),
         ('ethnicity', 'Ethnicity', 'pie'),
         ('primary_language', 'Primary Language', 'pie'),
+        ('age_groups','Age', 'horizontal_bar'),
+    ]
+
+    # Disorder plots
+    disorder_plots = [
         ('disorder_types', 'Disorder Types', 'pie'),
         ('voice_disorders_category', 'Voice Disorder', 'pie'),
         ('neurological_and_neurodegenerative_disorders_category', 'Neurological and Neurodegenerative<br>Disorder', 'pie'),
-        #('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'table'),
         ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'pie'),
         ('respiratory_disorders_category', 'Respiratory Disorder', 'pie'),
-        ('questionnaire_collected', 'Questionnaire Collection', 'table'),
-        ('acoustic_task_collected', 'Acoustic Task Collection', 'table'),
-        ('age_groups','Age', 'horizontal_bar')
     ]
 
-    create_plots(data, plots)
+    # Data collection tables    
+    collected_data = [
+        ('questionnaire_collected', 'Questionnaire Collection'),
+        ('acoustic_task_collected', 'Acoustic Task Collection')
+    ]
 
+    # Overview Section
+    st.subheader("Overview")
+    overview_section(data)
+    
+    # Demographic Section
+    st.subheader("Demographic Breakdown")
+    create_plots(data, demographic_plots, 5)
+    
+    # Disorders Section
+    st.subheader("Disorder Breakdown")
+    create_plots(data, disorder_plots, 5)
+
+    # Data Collection Section
+    st.subheader("Data Collection")
+    data_collection_section(data, collected_data)
+            
 def get_asis_chart_property(text, font_size=10):
     return {
         'title': {
