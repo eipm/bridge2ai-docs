@@ -256,9 +256,9 @@ def overview_section(data):
     cards = [
         ("Number of Participants", number_of_participants),
         ("Number of Recordings", number_of_recordings),
-        ("Total Hours of Recordings", total_hours_of_recordings),
         ("Total of Questionnaires", total_questionnaire_collected),
-        ("Total of Acoustic Tasks", total_acoustic_task_collected)    
+        ("Total of Acoustic Tasks", total_acoustic_task_collected),    
+        ("Total Hours of Recordings", total_hours_of_recordings)
     ]
     
     # Create a 5-column layout for the metrics
