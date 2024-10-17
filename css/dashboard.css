@@ -102,3 +102,7 @@ footer {
     left: auto;
     width: 48px;
 }
+
+.legendtext {
+    transform: translateX(-10px);
+}
