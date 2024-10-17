@@ -72,10 +72,7 @@ def create_pie_chart(names, values, title, height=400, colors = px.colors.qualit
         texttemplate="%{percent:.2%}<br>(%{value})",
         hovertemplate="%{label}<br>%{percent:.2%} (%{value})",
         domain=dict(x=[0, 1], y=[0, 1]),
-        hoverlabel=dict(
-            font_size=14,
-            font_color='black'
-        )
+        hoverlabel=dict(font_size=14)
     )
     
     return fig   
