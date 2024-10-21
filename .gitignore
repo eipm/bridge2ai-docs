@@ -162,6 +162,8 @@ cython_debug/
 #.idea/
 
 src/.deployment
+src/backup
+css/backup
 
 transformation
 data

@@ -18,22 +18,21 @@ def get_data(json_data, tag, name_mapping=None):
         return new_names, values
     return names, values
 
-def create_pie_chart(names, values, title, height=400, colors = px.colors.qualitative.Set1, legend_props={'y': -0.3, 'entry_width': 0.5, 'font_size': 11}):  
+def create_pie_chart(names, values, title, props={'height': 400, 'color_discrete_sequence': px.colors.qualitative.D3, 'y': -0.3, 'entry_width': 0.5, 'font_size': 11}):  
     fig = px.pie(
         names=names, values=values,
         category_orders={'names': names}, 
-        color_discrete_sequence=colors,
+        color_discrete_sequence=props['color_discrete_sequence'],
         hole=0.5) # donut chart
     
     title_setting = {
             'text': title,
             'font': {
-                'size': 14,
+                'size': 16,
                 'color': 'black',
-                'family': 'Times New Roman'
+                'family': 'Source Sans Pro, sans-serif'
             },
-            'x': 0,
-            # 'y': 0.98,
+            'x': 0.005,
             'y': 0.99,
             'xanchor': 'left',
             'yanchor': 'top',
@@ -44,22 +43,22 @@ def create_pie_chart(names, values, title, height=400, colors = px.colors.qualit
         showlegend=True,
         paper_bgcolor='white',
         plot_bgcolor='white', 
-        margin=dict(l=0, r=0, t=25, b=0),
-        height=height,
+        margin=dict(l=0, r=0, t=30, b=0),
+        height=props['height'],
         title=title_setting,
         legend=dict(
             x=0, 
-            y=legend_props['y'],
+            y=props['y'],
             xanchor='left',
             yanchor='bottom',
             orientation='h',
             traceorder='normal', 
-            font=dict(size=legend_props['font_size'], color="black",family='Times New Roman', lineposition='none'),
+            font=dict(size=props['font_size'], color="black",family='Source Sans Pro, sans-serif', lineposition='none'),
             itemwidth=30,
             itemsizing='trace',
             valign='top',
             entrywidthmode='fraction',
-            entrywidth=legend_props['entry_width'],
+            entrywidth=props['entry_width'],
             indentation= -5,
             tracegroupgap=0
         )
@@ -67,73 +66,71 @@ def create_pie_chart(names, values, title, height=400, colors = px.colors.qualit
 
     fig.update_traces(
         marker=dict(line=dict(color='black', width=0.5)),
-        textposition="inside",
-        textfont=dict(size=14, color='black'),
-        texttemplate="%{percent:.2%}<br>(%{value})",
-        hovertemplate="%{label}<br>%{percent:.2%} (%{value})",
-        domain=dict(x=[0, 1], y=[0, 1]),
-        hoverlabel=dict(font_size=14)
+        textposition='inside',
+        textfont=dict(family='Source Sans Pro, sans-serif'),
+        texttemplate="%{value}<br>(%{percent:.2%})",
+        hovertemplate="%{label}<br>%{percent:.2%}(%{value})",
+        domain=dict(x=[0, 1], y=[0, 1])
     )
     
     return fig   
 
-def get_asis_chart_property(text, font_size=10):
+def get_asis_chart_property(text, font_size=11):
     return {
         'title': {
             'text': text,
             'font': {
                 'size': font_size,
                 'color': 'black',
-                'family': 'Times New Roman'
+                'family': 'Source Sans Pro, sans-serif'
             }
         },
         'tickfont': {
             'size': font_size,
             'color': 'black',
-            'family': 'Times New Roman'
+            'family': 'Source Sans Pro, sans-serif'
         },
         'showgrid': True,
         'gridcolor': 'lightgray',
     }
 
-def create_bar_chart(names, values, title, orientation='v', height=400, colors = px.colors.qualitative.Set1):
+def create_bar_chart(names, values, title, props={'height': 400, 'color_discrete_sequence': px.colors.qualitative.D3, 'orientation':'v', 'x': '', 'y': '', 'font_size': 11}):
+    orientation = props['orientation']
     fig = px.bar(
-        x=values, 
-        y=names, 
+        x=values if orientation == 'h' else names, 
+        y=names if orientation == 'h' else values,
         orientation=f"{orientation}",
-        color_discrete_sequence=colors)
+        color_discrete_sequence=props['color_discrete_sequence'])
    
     fig.update_layout(
-        xaxis=get_asis_chart_property('Number of Participants'),
-        yaxis=get_asis_chart_property('Age Groups'),
+        xaxis=get_asis_chart_property(props['x'], props['font_size']),
+        yaxis=get_asis_chart_property(props['y'], props['font_size']),
         autosize=True,
-        showlegend=True,
+        showlegend=False,
         paper_bgcolor='white',
         plot_bgcolor='white',
-        height=height,
-        margin=dict(l=0, r=5, t=25, b=5),
+        height=props['height'],
+        margin=dict(l=5, r=5, t=30, b=5),
         title={
             'text': title,
             'font': {
-                'size': 14,
+                'size': 16,
                 'color': 'black',
-                'family': 'Times New Roman'
+                'family': 'Source Sans Pro, sans-serif'
             },
-            'x': 0,
-            'y': 0.98,
+            'x': 0.001,
+            'y': 0.99,
             'xanchor': 'left',
             'yanchor': 'top',
         }
     )
     fig.update_traces(
         marker=dict(line=dict(color='black', width=0.5)),
-        textfont=dict(size=14, color='black'), 
+        textposition='auto',
+        textfont=dict(family='Source Sans Pro, sans-serif'), 
+        textangle=0, 
         texttemplate="%{x}",
         hovertemplate="%{y}: %{x}",
-        hoverlabel=dict(
-            font_size=14,
-            font_color='black'
-        )
     )
     
     return fig
@@ -151,16 +148,14 @@ def getPlotlyConfig():
 def create_plots(data, plots, cols_per_row=4):
     num_plots = len(plots)
     rows = (num_plots + cols_per_row - 1) // cols_per_row  # Calculate number of rows needed
-    chart_height = 450  # Height of the charts
-    # Set colors for the charts
-    colors = px.colors.qualitative.Set2
+
     for row in range(rows):
         cols = st.columns(cols_per_row, gap="small", vertical_alignment="top")
         for col_index in range(cols_per_row):
             plot_index = row * cols_per_row + col_index
             if plot_index < num_plots:
                 plot = plots[plot_index]
-                key, title, chart_type, legend_props = plot[:4]
+                key, title, chart_type, plot_props = plot[:4]
                 # Optional name mapping for charts
                 name_mapping = plot[4] if len(plot) == 5 else None
         
@@ -172,16 +167,16 @@ def create_plots(data, plots, cols_per_row=4):
                         cols[col_index].empty()
                     else:
                         if chart_type == 'pie':
-                            fig = create_pie_chart(labels, values, title, chart_height, colors, legend_props)
+                            fig = create_pie_chart(labels, values, title, plot_props)
                         elif chart_type == 'horizontal_bar':
-                            fig = create_bar_chart(labels, values, title, 'h', chart_height, colors)
+                            fig = create_bar_chart(labels, values, title, plot_props)
 
                         elif chart_type == 'vertical_bar':
-                            fig = create_bar_chart(labels, values, title, chart_height, colors)
+                            fig = create_bar_chart(labels, values, title, plot_props)
                         cols[col_index].plotly_chart(fig, use_container_width=True, config=getPlotlyConfig())
                 else:
                     cols[col_index].empty()
-        
+
 def overview_section(data):
     number_of_participants = data.get('number_of_participants')
     number_of_recordings = data.get('number_of_recordings')
@@ -248,39 +243,47 @@ def study_dashboard_page(tab_name):
         return
     
     # Demographic plots
-    # params: key, title, chart_type, legend_props, name_mapping
+    # params: key, title, chart_type, props, name_mapping
     # key: key in the JSON object
     # title: title of the chart
     # chart_type: type of the chart (pie, horizontal_bar, vertical_bar, table)
-    # legend_props: properties for the legend
+    # props: plot properties
+    # name_mapping: mapping of names to be displayed in the chart if needed
+    colors = px.colors.qualitative.D3
     demographic_plots = [
-        ('control', 'Control vs. Non-Control', 'pie', {'y': -0.26, 'entry_width': 1, 'font_size': 11}, {'Yes': 'Control', 'No': 'Non-Control'}),
-        ('gender_identity', 'Gender Identity', 'pie', {'y': -0.26, 'entry_width': 0.5, 'font_size': 11}, {'Non-binary or genderqueer gender identity': 'Non-binary/genderqueer gender identity'}),
-        ('sexual_orientation', 'Sexual Orientation', 'pie', {'y': -0.26, 'entry_width': 0.33, 'font_size': 11}),
-        ('race', 'Race', 'pie', {'y': -0.26, 'entry_width': 0.5, 'font_size': 11}, {'American Indian or Alaska Native': 'American Indian/Alaska Native', 'Native Hawaiian or other Pacific Islander': 'Native Hawaiian/other Pacific Islander', 'Canadian Indigenous or Aboriginal': 'Canadian Indigenous/Aboriginal'}),
-        ('ethnicity', 'Ethnicity', 'pie', {'y': -0.26, 'entry_width': 1, 'font_size': 11}),
-        ('primary_language', 'Primary Language', 'pie', {'y': -0.26, 'entry_width': 1, 'font_size': 11}),
-        ('age_groups','Age', 'horizontal_bar', None, {'90 and above': '90 and<br>above'})
+        ('control', 'Control vs. Non-Control', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.22, 'font_size': 11}, {'Yes': 'Control', 'No': 'Non-Control'}),
+        ('gender_identity', 'Gender Identity', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.5, 'font_size': 11}, {'Non-binary or genderqueer gender identity': 'Non-binary/genderqueer gender identity'}),
+        ('sexual_orientation', 'Sexual Orientation', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.33, 'font_size': 11}),
+        ('race', 'Race', 'horizontal_bar',  {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Race Categories', 'font_size': 11}, {'American Indian or Alaska Native': 'American Indian/Alaska Native', 'Native Hawaiian or other Pacific Islander': 'Native Hawaiian/other Pacific Islander', 'Canadian Indigenous or Aboriginal': 'Canadian Indigenous/Aboriginal'}),
+        ('ethnicity', 'Ethnicity', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.33, 'font_size': 11}),
+        ('primary_language', 'Primary Language', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': .15, 'font_size': 11}),
+        ('age_groups','Age', 'horizontal_bar', {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Number of Participants', 'y': 'Age Groups', 'font_size': 11}, {'90 and above': '90 and<br>above'})
     ]                     
 
     # Disorder plots
-    # params: key, title, chart_type, legend_props, name_mapping
+    # params: key, title, chart_type, props, name_mapping
     # key: key in the JSON object
     # title: title of the chart
     # chart_type: type of the chart (pie, horizontal_bar, vertical_bar, table)
-    # legend_props: properties for the legend
+    # props: plot properties
+    # name_mapping: mapping of names to be displayed in the chart if needed
     disorder_plots = [
-        ('disorder_types', 'Disorder Types', 'pie', {'y': -0.3, 'entry_width': 0.45, 'font_size': 11}, {'Neurological and Neurodegenerative Disorders': 'Neurological and Neurodegenerative<br>Disorders'}),
-        ('voice_disorders_category', 'Voice Disorder', 'pie', {'y': -0.3, 'entry_width': 0.5, 'font_size': 11}, {'Lesions of the vocal cord (nodule, polyp, cyst)': 'Lesions of the vocal cord','Spasmodic Dysphonia / Laryngeal Tremor': 'Spasmodic Dysphonia/Laryngeal Tremor'}),
-        ('neurological_and_neurodegenerative_disorders_category', 'Neurological and Neurodegenerative Disorder', 'pie', {'y': -0.3, 'entry_width': 1, 'font_size': 11}),
-        ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'pie', {'y': -0.63, 'entry_width': 0.5, 'font_size': 10}, {'Attention-Deficit / Hyperactivity Disorder (ADHD)': 'Attention-Deficit/Hyperactivity Disorder', 'Insomnia / Sleep Disorder': 'Insomnia/Sleep Disorder'}),
-        ('respiratory_disorders_category', 'Respiratory Disorder', 'pie', {'y': -0.3, 'entry_width': 0.5, 'font_size': 11}, {'Airway Stenosis (for example: bilateral vocal fold paralysis; laryngeal stenosis)': 'Airway Stenosis'}),
+        ('disorder_types', 'Disorder Types', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 0.45, 'font_size': 11}, {'Neurological and Neurodegenerative Disorders': 'Neurological and Neurodegenerative<br>Disorders'}),
+        ('voice_disorders_category', 'Voice Disorder', 'horizontal_bar', {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Voice Disorder Categories', 'font_size': 11}, {'Lesions of the vocal cord (nodule, polyp, cyst)': 'Lesions of the vocal cord','Spasmodic Dysphonia / Laryngeal Tremor': 'Spasmodic Dysphonia/Laryngeal Tremor'}),
+        ('neurological_and_neurodegenerative_disorders_category', 'Neurological and Neurodegenerative Disorder', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 1, 'font_size': 11}),
+        ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'horizontal_bar', {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Mood and Psychiatric Disorder Categories', 'font_size': 11}, {'Attention-Deficit / Hyperactivity Disorder (ADHD)': 'Attention-Deficit/Hyperactivity Disorder', 'Insomnia / Sleep Disorder': 'Insomnia/Sleep Disorder'}),
+        ('respiratory_disorders_category', 'Respiratory Disorder', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 0.5, 'font_size': 11}, {'Airway Stenosis (for example: bilateral vocal fold paralysis; laryngeal stenosis)': 'Airway Stenosis'}),
     ]
 
     # Data collection tables    
     collected_data = [
         ('questionnaire_collected', 'Questionnaire Collection'),
         ('acoustic_task_collected', 'Acoustic Task Collection')
+    ]
+    
+    collected_data_plots = [
+        ('questionnaire_collected', 'Questionnaire Collection', 'horizontal_bar', {'height': 600, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Questionnaire Categories', 'font_size': 11}),
+        ('acoustic_task_collected', 'Acoustic Task Collection', 'horizontal_bar', {'height': 600, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Acoustic Task Categories', 'font_size': 11}),
     ]
 
     # Overview Section
@@ -301,4 +304,4 @@ def study_dashboard_page(tab_name):
 
     # Data Collection Section
     st.subheader("Data Collection")
-    data_collection_section(data, collected_data)
+    create_plots(data, collected_data_plots, 2)

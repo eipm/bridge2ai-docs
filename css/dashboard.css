@@ -106,3 +106,8 @@ footer {
 .legendtext {
     transform: translateX(-10px);
 }
+
+/* set weight font for plotly title */
+.gtitle tspan {
+    font-weight: 500 !important;
+}
