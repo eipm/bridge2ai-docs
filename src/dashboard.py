@@ -1,7 +1,12 @@
+import requests
+
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import plotly.express as px
+
+B2AIPREVIEW_GITHUB_RAW_URL = "https://raw.githubusercontent.com/sensein/b2aipreview/refs/heads/gh-pages/index.html"
 
 custom_style = """
 <style>
@@ -71,7 +76,13 @@ def dataset_metadata_page(tab_name):
     coming_soon_message(tab_name)
     
 def dataset_structure_preview_page(tab_name):
-    coming_soon_message(tab_name)
+    st.title(f"{tab_name} - Dataset Structure Preview")
+    response = requests.get(B2AIPREVIEW_GITHUB_RAW_URL)
+    if response.status_code == 200:
+        b2aipreview = response.text
+        components.html(b2aipreview, height=600, scrolling=True)
+    else:
+        st.error(f"Failed to load dataset structure preview. Status code: {response.status_code}")
 
 def dataset_quality_dashboard_page(tab_name):
     coming_soon_message(tab_name)
