@@ -18,6 +18,19 @@ authors:
     given-names: Jeff
     affiliation: Weill Cornell Medicine (WCM)
     orcid: 'https://orcid.org/0009-0006-0366-5050'
+  - family-names: Bevers
+    given-names: Isaac
+    affiliation: Massachusetts Institute of Technology (MIT)
+    orcid: 'https://orcid.org/0009-0002-0074-0087'
+  - family-names: Gallois
+    given-names: Hortense
+    affiliation: Simon Fraser University
+  - family-names: Bernier
+    given-names: Alexander
+    affiliation: McGill University
+  - family-names: Bensoussan
+    given-names: Yaël
+    affiliation: University of South Florida  
   - family-names: Bensoussan
     given-names: Yaël
     affiliation: University of South Florida
