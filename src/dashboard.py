@@ -1,83 +1,34 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import plotly.express as px
+from tabs.about import about_page
+from tabs.healthsheet import healthsheet_page
+from tabs.study_dashboard import study_dashboard_page
+from tabs.study_metadata import study_metadata_page
+from tabs.dataset_metadata import dataset_metadata_page
+from tabs.dataset_structure_preview import dataset_structure_preview_page
+from tabs.dataset_quality_dashboard import dataset_quality_dashboard_page
+from tabs.dataset_uses import dataset_uses_page
 
-custom_style = """
-<style>
+def config_page(version):         
+    st.set_page_config(
+        page_title="Bridge2AI Voice Dashboard",
+        page_icon="images/B2AI Logo.ico",
+        layout="wide")
 
-[data-testid="stDecoration"] {
-	display: none;
-}
+    # Add the CSS file
+    with open("css/dashboard.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-/* Hide the Streamlit hamburger menu */
-#MainMenu {visibility: hidden;}
+    st.logo("images/B2AI Logo.png", )
 
-/* Set the font size for the tab headers */ 
-.stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
-    font-size: 18px;
-}
-
-/* Reduce white space on top */
-.block-container {
-    padding-top: 2rem;
-    # padding-left: 5px;
-    # padding-right: 5px;
-    # padding-bottom: 0;
-    # margin-left: 0;
-    # margin-right: 0;
-}
-
-/* Sticky footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    display: flex;
-    height: 30px;
-    justify-content: center;
-    padding: 4px;
-    z-index: 1000;
-    font-size: smaller;
-}
-
-</style>
-"""
- 
-def coming_soon_message(tab_name):
-        # Your Streamlit application code
-    st.title('Bridge2AI Voice Dashboard')
-    st.write(f"{tab_name} - Coming soon!")
-
-    # Add an image to the page
-    image_path = "images/Wave.png"  # Replace with your image file name
-    st.image(image_path, caption='', use_column_width=True)
-
-def about_page(tab_name):
-    coming_soon_message(tab_name)
-
-def healthsheet_page(tab_name):
-    coming_soon_message(tab_name)
-
-def study_dashboard_page(tab_name):
-    coming_soon_message(tab_name)
-    
-def study_metadata_page(tab_name):
-    coming_soon_message(tab_name)
-
-def dataset_metadata_page(tab_name):
-    coming_soon_message(tab_name)
-    
-def dataset_structure_preview_page(tab_name):
-    coming_soon_message(tab_name)
-
-def dataset_quality_dashboard_page(tab_name):
-    coming_soon_message(tab_name)
-    
-def dataset_uses_page(tab_name):
-    coming_soon_message(tab_name)
+    # Add the footer
+    footer = f"""
+    <footer>
+       © Weill Cornell Medicine | Version {version} &nbsp;|&nbsp;
+       <a href="https://weill.cornell.edu/notice-privacy-practices" target="_blank">Privacy Policy</a> &nbsp;|&nbsp; 
+       <a href="https://weill.cornell.edu/weill-cornell-medicine-web-terms-use" target="_blank">Terms of Use</a>
+    </footer>
+    """
+    st.markdown(footer, unsafe_allow_html=True)
 
 def create_tabs(tabs_func):
     tab_names = list(tabs_func.keys())
@@ -86,29 +37,21 @@ def create_tabs(tabs_func):
         with tab:
             tabs_func[name](name)
 
-def config_page(version):         
-    st.set_page_config(
-        page_title="Bridge2AI Voice Dashboard",
-        page_icon="images/B2AI Logo.ico",
-        layout="wide")
-
-    st.markdown(custom_style, unsafe_allow_html=True)
-
-    # Add the footer
-    footer = f"""
-    <footer>
-       © Weill Cornell Medicine | Version {version} &nbsp;|&nbsp;
-       <a href="https://weill.cornell.edu/notice-privacy-practices" target="_blank" style="color: black">Privacy Policy</a> &nbsp;|&nbsp; 
-       <a href="https://weill.cornell.edu/weill-cornell-medicine-web-terms-use" target="_blank" style="color: black">Terms of Use</a>
-    </footer>
-    """
-    st.markdown(footer, unsafe_allow_html=True)
-
-
 def main():  
-    # Define the version variable
-    version = "0.4.0"
+    # Current version of the app
+    version = "1.0.0"
     # Map tab names to functions
+    # In this dictionary, the key is the tab name and the value is the function that will be called when the tab is selected
+    # The function is defined in the respective file
+    # about_page() is defined in tabs/about.py
+    # healthsheet_page() is defined in tabs/healthsheet.py
+    # study_dashboard_page() is defined in tabs/study_dashboard.py
+    # study_metadata_page() is defined in tabs/study_metadata.py
+    # dataset_metadata_page() is defined in tabs/dataset_metadata.py
+    # dataset_structure_preview_page() is defined in tabs/dataset_structure_preview.py
+    # dataset_quality_dashboard_page() is defined in tabs/dataset_quality_dashboard.py
+    # dataset_uses_page() is defined in tabs/dataset_uses.py
+    
     tab_functions = {
         "About": about_page,
         "Healthsheet": healthsheet_page,
@@ -126,5 +69,4 @@ def main():
     create_tabs(tab_functions)
 
 if __name__ == "__main__":
-
     main()

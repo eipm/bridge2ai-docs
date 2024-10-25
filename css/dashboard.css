@@ -1,0 +1,113 @@
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+[data-testid="stAppDeployButton"]{
+    display: none;
+}
+
+[data-testid="stBaseButton-headerNoPadding"] {
+    display: none;
+}
+
+img[data-testid="stLogo"] {
+    margin-top: -16px;
+    margin-left: -20px;
+    height: 3.5rem;
+}
+
+/* Set the font size for the tab headers */ 
+button[data-baseweb="tab"] > div[data-testid="stMarkdownContainer"] > p {
+    font-size: 18px;
+    white-space: wrap;
+    word-break: normal;
+    align-items: flex-start;
+}
+
+.stTabs [data-baseweb="tab-highlight"] {
+    border-bottom: 4px solid rgb(255, 75, 75);
+    color: black;
+}
+
+.stTabs [data-baseweb="tab-list"] > button[data-baseweb="tab"] {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Reduce white space on top */
+.block-container {
+    padding-top: 2rem;
+}
+
+/* Sticky footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #d3d3d3, #f0f0f0);
+    color: black;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    padding: 4px;
+    z-index: 1000;
+    font-size: smaller;
+}
+
+@media screen and (max-width: 1278px) {
+    .stTabs [data-baseweb="tab-list"] {
+        padding-bottom: 25px;
+    }
+}
+
+/* set border for plots */
+.js-plotly-plot {
+    background-color: white;
+    border: 2px solid #d3d3d3;
+    border-radius: 5px;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-testid="stMetric"] {
+    border: 2px solid #d3d3d3;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* set text and metri in columns to center */
+.stMetric > div, [data-testid="stMetricLabel"] {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.js-plotly-plot .plotly .modebar-btn {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.js-plotly-plot .plotly .modebar {
+    top: -1px;
+    right: 0;
+    left: auto;
+    width: 48px;
+}
+
+.legendtext {
+    transform: translateX(-10px);
+}
+
+/* set weight font for plotly title */
+.gtitle tspan {
+    font-weight: 500 !important;
+}
