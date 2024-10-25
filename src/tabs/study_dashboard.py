@@ -94,12 +94,12 @@ def get_asis_chart_property(text, font_size=11):
         'gridcolor': 'lightgray',
     }
 
-def create_bar_chart(names, values, title, props={'height': 400, 'color_discrete_sequence': px.colors.qualitative.D3, 'orientation':'v', 'x': '', 'y': '', 'font_size': 11}):
-    orientation = props['orientation']
+def create_bar_chart(names, values, title, props={'height': 400, 'individual_color': False, 'color_discrete_sequence': px.colors.qualitative.D3, 'orientation':'v', 'x': '', 'y': '', 'font_size': 11}):
     fig = px.bar(
-        x=values if orientation == 'h' else names, 
-        y=names if orientation == 'h' else values,
-        orientation=f"{orientation}",
+        x=values if props['orientation'] == 'h' else names, 
+        y=names if props['orientation'] == 'h' else values,
+        orientation=f"{props['orientation']}",
+        color=names if props['individual_color'] else None,
         color_discrete_sequence=props['color_discrete_sequence'])
    
     fig.update_layout(
@@ -130,7 +130,7 @@ def create_bar_chart(names, values, title, props={'height': 400, 'color_discrete
         textfont=dict(family='Source Sans Pro, sans-serif'), 
         textangle=0, 
         texttemplate="%{x}",
-        hovertemplate="%{y}: %{x}",
+        hovertemplate='%{y}<br>%{x}<extra></extra>',
     )
     
     return fig
@@ -241,6 +241,20 @@ def study_dashboard_page(tab_name):
     if not data:
         st.write("No data available")
         return
+   
+    # Pre-defined colors for plots
+    colors = [
+        '#D21AE8', 
+        '#63A9FF',
+        '#FF7820',
+        '#FF4121',
+        '#18ED84',
+        '#FCF500',
+        '#7E04E9',
+        '#F109AE',
+        '#0FB6B5',
+        '#1D8AD7'
+    ]
     
     # Demographic plots
     # params: key, title, chart_type, props, name_mapping
@@ -249,15 +263,14 @@ def study_dashboard_page(tab_name):
     # chart_type: type of the chart (pie, horizontal_bar, vertical_bar, table)
     # props: plot properties
     # name_mapping: mapping of names to be displayed in the chart if needed
-    colors = px.colors.qualitative.D3
     demographic_plots = [
-        ('control', 'Control vs. Non-Control', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.22, 'font_size': 11}, {'Yes': 'Control', 'No': 'Non-Control'}),
-        ('gender_identity', 'Gender Identity', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.5, 'font_size': 11}, {'Non-binary or genderqueer gender identity': 'Non-binary/genderqueer gender identity'}),
+        ('control', 'Control Group vs Diagnostic Group', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.33, 'font_size': 11}, {'Yes': 'Control Group', 'No': 'Diagnostic Group'}),
+        ('gender_identity', 'Gender Identity', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.5, 'font_size': 11}, {'Female gender identity': 'Female', 'Male gender identity': 'Male', 'Non-binary or genderqueer gender identity': 'Non-binary/genderqueer'}),
         ('sexual_orientation', 'Sexual Orientation', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.33, 'font_size': 11}),
-        ('race', 'Race', 'horizontal_bar',  {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Race Categories', 'font_size': 11}, {'American Indian or Alaska Native': 'American Indian/Alaska Native', 'Native Hawaiian or other Pacific Islander': 'Native Hawaiian/other Pacific Islander', 'Canadian Indigenous or Aboriginal': 'Canadian Indigenous/Aboriginal'}),
+        ('race', 'Race', 'horizontal_bar',  {'height': 450, 'individual_color': True, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Race Categories', 'font_size': 11}, {'American Indian or Alaska Native': 'American Indian/Alaska Native', 'Native Hawaiian or other Pacific Islander': 'Native Hawaiian/other Pacific Islander', 'Canadian Indigenous or Aboriginal': 'Canadian Indigenous/Aboriginal'}),
         ('ethnicity', 'Ethnicity', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': 0.33, 'font_size': 11}),
         ('primary_language', 'Primary Language', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.26, 'entry_width': .15, 'font_size': 11}),
-        ('age_groups','Age', 'horizontal_bar', {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Number of Participants', 'y': 'Age Groups', 'font_size': 11}, {'90 and above': '90 and<br>above'})
+        ('age_groups','Age', 'horizontal_bar', {'height': 450, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Number of Participants', 'y': 'Age Groups', 'font_size': 11}, {'90 and above': '90 and<br>above'})
     ]                     
 
     # Disorder plots
@@ -268,40 +281,36 @@ def study_dashboard_page(tab_name):
     # props: plot properties
     # name_mapping: mapping of names to be displayed in the chart if needed
     disorder_plots = [
-        ('disorder_types', 'Disorder Types', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 0.45, 'font_size': 11}, {'Neurological and Neurodegenerative Disorders': 'Neurological and Neurodegenerative<br>Disorders'}),
-        ('voice_disorders_category', 'Voice Disorder', 'horizontal_bar', {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Voice Disorder Categories', 'font_size': 11}, {'Lesions of the vocal cord (nodule, polyp, cyst)': 'Lesions of the vocal cord','Spasmodic Dysphonia / Laryngeal Tremor': 'Spasmodic Dysphonia/Laryngeal Tremor'}),
+        ('disorder_types', 'Diagnostic Group', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 0.45, 'font_size': 11}, {'Neurological and Neurodegenerative Disorders': 'Neurological and Neurodegenerative<br>Disorders'}),
+        ('voice_disorders_category', 'Voice Disorder', 'horizontal_bar', {'height': 450, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Voice Disorder Categories', 'font_size': 11}, {'Lesions of the vocal cord (nodule, polyp, cyst)': 'Lesions of the vocal cord','Spasmodic Dysphonia / Laryngeal Tremor': 'Spasmodic Dysphonia/Laryngeal Tremor'}),
         ('neurological_and_neurodegenerative_disorders_category', 'Neurological and Neurodegenerative Disorder', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 1, 'font_size': 11}),
-        ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'horizontal_bar', {'height': 450, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Mood and Psychiatric Disorder Categories', 'font_size': 11}, {'Attention-Deficit / Hyperactivity Disorder (ADHD)': 'Attention-Deficit/Hyperactivity Disorder', 'Insomnia / Sleep Disorder': 'Insomnia/Sleep Disorder'}),
+        ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'horizontal_bar', {'height': 450, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Mood and Psychiatric Disorder Categories', 'font_size': 11}, {'Attention-Deficit / Hyperactivity Disorder (ADHD)': 'Attention-Deficit/Hyperactivity Disorder', 'Insomnia / Sleep Disorder': 'Insomnia/Sleep Disorder'}),
         ('respiratory_disorders_category', 'Respiratory Disorder', 'pie', {'height': 450, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 0.5, 'font_size': 11}, {'Airway Stenosis (for example: bilateral vocal fold paralysis; laryngeal stenosis)': 'Airway Stenosis'}),
     ]
 
-    # Data collection tables    
-    collected_data = [
-        ('questionnaire_collected', 'Questionnaire Collection'),
-        ('acoustic_task_collected', 'Acoustic Task Collection')
-    ]
-    
+    # Data collection plots    
     collected_data_plots = [
-        ('questionnaire_collected', 'Questionnaire Collection', 'horizontal_bar', {'height': 600, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Questionnaire Categories', 'font_size': 11}),
-        ('acoustic_task_collected', 'Acoustic Task Collection', 'horizontal_bar', {'height': 600, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Acoustic Task Categories', 'font_size': 11}),
+        ('questionnaire_collected', 'Questionnaire Collection', 'horizontal_bar', {'height': 600, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Questionnaire Categories', 'font_size': 11}),
+        ('acoustic_task_collected', 'Acoustic Task Collection', 'horizontal_bar', {'height': 600, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Acoustic Task Categories', 'font_size': 11}),
     ]
 
     # Overview Section
     st.subheader("Overview")
     overview_section(data)
-    
+
+    # Disorders Section
+    st.subheader("Diagnostic Breakdown")
+    # Create the disorder plots
+    # params: data, plots, cols_per_row
+    create_plots(data, disorder_plots, 3)
+
     # Demographic Section
     st.subheader("Demographic Breakdown")
     # Create the demographic plots
     # params: data, plots, cols_per_row
     create_plots(data, demographic_plots, 3)
-    
-    # Disorders Section
-    st.subheader("Disorder Breakdown")
-    # Create the disorder plots
-    # params: data, plots, cols_per_row
-    create_plots(data, disorder_plots, 3)
 
     # Data Collection Section
+    #params: data, plots, cols_per_row
     st.subheader("Data Collection")
     create_plots(data, collected_data_plots, 2)
