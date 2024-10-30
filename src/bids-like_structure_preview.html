@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge2AI Dataset Structure Preview</title>
+    <style>
+        /* Style for the file structure list */
+        .file-structure {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        /* Style for individual list items */
+        .file-structure li {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style for folder names */
+        .folder {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Style for file names */
+        .file {
+            font-style: italic;
+        }
+
+        /* Styles for description and file content displays, initially hidden */
+        .description, .file-content {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: none;
+        }
+
+        /* Button style for explanations */
+        .explanation-button {
+            margin-left: 10px;
+            padding: 2px 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /* Pre-formatted text for file contents */
+        .file-content pre {
+            white-space: pre-wrap; /* Keeps newlines and indents */
+            word-wrap: break-word; /* Prevents overflow of long words */
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto; /* Allows horizontal scroll for long lines */
+        }
+    </style>
+</head>
+<body>
+    <h1>Bridge2AI Dataset Structure Preview</h1>
+    <ul id="file-structure" class="file-structure"></ul>
+
+    <!-- Containers for explanations and file content display -->
+    <div id="description" class="description"></div>
+    <div id="file-content" class="file-content"></div>
+
+    <script>
+        // Constant for the commit hash used in API requests
+        const commitHash = '8a8854c0892f5aed4fd62ecf8c2ab492e2ef7fba';
+        const repo = 'ibevers/bridge2ai-docs';
+        const path = 'src/b2ai-data-bids-like-template';
+
+        // Function to fetch repository contents from GitHub
+        async function fetchGitHubRepoContents(repo, path = '', ref = commitHash) {
+            const url = `https://api.github.com/repos/${repo}/contents/${path}?ref=${ref}`;
+            console.log(`Fetching: ${url}`); // Log URL for debugging
+            const response = await fetch(url);
+            if (!response.ok) {
+                console.error('Failed to fetch repository contents:', response.statusText);
+                document.getElementById('file-structure').textContent = `Error: ${response.statusText}`;
+                return [];
+            }
+            try {
+                const files = await response.json();
+                console.log('Fetched files:', files); // Log fetched files
+                return files;
+            } catch (error) {
+                console.error('Failed to parse JSON:', error);
+                document.getElementById('file-structure').textContent = `Failed to parse JSON: ${error}`;
+                return [];
+            }
+        }
+
+        // Function to fetch content of individual files
+        async function fetchFileContent(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch file content: ${response.statusText}`);
+                }
+                const content = await response.text();
+                return content;
+            } catch (error) {
+                console.error('Error fetching file content:', error);
+                return `Error fetching file content: ${error}`;
+            }
+        }
+
+        const explanations = {
+            "CHANGES.md": "CHANGES.md: This file documents the changes, updates, and revisions made to the project over time.",
+            "README.md": "README.md: This file provides an overview of the project, including its purpose, structure, and usage instructions.",
+            "dataset_description.json": "dataset_description.json: This JSON file describes the dataset, including information such as the dataset's purpose, structure, and relevant metadata.",
+            "participants.json": "participants.json: This JSON file contains metadata about the participants involved in the study, including demographic information and other relevant details.",
+            "participants.tsv": "participants.tsv: This TSV file lists the participants involved in the study, along with their corresponding IDs and other relevant information.",
+            "phenotype": "phenotype: The phenotype directory stores participant-specific data that is not directly related to specific audio tasks but is relevant for understanding participants' characteristics.",
+            "<measurement_tool_name>.json": "<measurement_tool_name>.json: This JSON file provides metadata or additional information about the phenotype data collected using a specific measurement tool.",
+            "<measurement_tool_name>.tsv": "<measurement_tool_name>.tsv: This TSV file contains phenotype data collected using a specific measurement tool.",
+            "sub-<participant_id>": "sub-<participant_id>: This directory contains data specific to an individual participant, organized by session.",
+            "ses-<another_session_id>": "ses-<another_session_id>: This directory contains session-specific data for another participant, including behavioral and voice data.",
+            "ses-<session_id>": "ses-<session_id>: This directory contains session-specific data for another participant, including behavioral and voice data.",
+            "beh": "beh: This directory contains behavioral data collected during the session.",
+            "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_metadata.json": "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_metadata.json: This JSON file contains metadata about the behavioral task, including information such as task conditions and settings.",
+            "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_response.json": "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_response.json: This JSON file contains the participant's responses for a specific task and run.",
+            "voice": "voice: This directory contains voice data collected during the session.",
+            "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_audio.wav": "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_audio.wav: This is the raw audio recording file for a specific task and run.",
+            "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_features.pt": "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_features.pt: This file contains extracted features from the audio recording, stored in a format suitable for further analysis.",
+            "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_metadata.json": "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_metadata.json: This JSON file contains metadata about the audio recording, including information such as recording settings and conditions.",
+            "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_transcript.txt": "sub-<participant_id>_ses-<session_id>_task-<task_name>_run-<index>_transcript.txt: This text file contains the transcript of the audio recording for a specific task and run.",
+            "sessions.tsv": "sessions.tsv: This TSV file lists all sessions for the participant, including session IDs and other relevant details."
+        };
+
+       // Function to toggle explanations and file content
+       async function toggleExplanation(file) {
+            const description = document.getElementById('description');
+            const fileContentBox = document.getElementById('file-content');
+
+            // Display explanation text
+            const customExplanation = explanations[file.name] || `${file.name}: Explanation for ${file.type}`;
+            description.textContent = customExplanation;
+            description.style.display = 'block';
+
+            // Display file content if it's a file
+            if (file.type === 'file') {
+                const content = await fetchFileContent(file.download_url);
+                fileContentBox.innerHTML = `<pre>${content}</pre>`; // Preserve formatting
+                fileContentBox.style.display = 'block';
+            } else {
+                fileContentBox.style.display = 'none';
+            }
+        }
+
+        // Fetch and render file structure on DOM load
+        document.addEventListener('DOMContentLoaded', async () => {
+            const repo = 'ibevers/bridge2ai-docs'; // GitHub repository
+            const path = 'src/b2ai-data-bids-like-template'; // Directory path in repository
+            const files = await fetchGitHubRepoContents(repo, path, commitHash);
+            if (files.length === 0) {
+                document.getElementById('file-structure').textContent = 'No files found or failed to load directory contents.';
+            } else {
+                const fileStructureContainer = document.getElementById('file-structure');
+                renderFiles(files, fileStructureContainer);
+            }
+        });
+
+        // Renders files and directories into HTML structure
+        function renderFiles(files, container) {
+            container.innerHTML = ''; // Clear previous content
+            files.forEach(file => {
+                const li = document.createElement('li');
+                li.className = file.type === 'dir' ? 'folder' : 'file';
+
+                const textSpan = document.createElement('span');
+                textSpan.textContent = file.name;
+                textSpan.className = li.className;
+
+                const explanationButton = document.createElement('button');
+                explanationButton.textContent = 'Explanation';
+                explanationButton.className = 'explanation-button';
+                explanationButton.addEventListener('click', () => toggleExplanation(file));
+
+                li.appendChild(textSpan);
+                li.appendChild(explanationButton);
+
+                if (file.type === 'dir') {
+                    textSpan.addEventListener('click', async () => {
+                        const subFiles = await fetchGitHubRepoContents(repo, file.path, commitHash);
+                        const ul = document.createElement('ul');
+                        ul.className = 'file-structure';
+                        renderFiles(subFiles, ul);
+                        if (li.nextElementSibling && li.nextElementSibling.tagName === 'UL') {
+                            li.parentNode.removeChild(li.nextElementSibling); // Remove if already open
+                        } else {
+                            li.insertAdjacentElement('afterend', ul); // Insert sub-directory
+                        }
+                    });
+                }
+
+                container.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const files = await fetchGitHubRepoContents(repo, path, commitHash);
+            if (files.length === 0) {
+                document.getElementById('file-structure').textContent = 'No files found or failed to load directory contents.';
+            } else {
+                const fileStructureContainer = document.getElementById('file-structure');
+                renderFiles(files, fileStructureContainer);
+            }
+        });
+    </script>
+</body>
+</html>
