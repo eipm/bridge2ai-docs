@@ -78,6 +78,14 @@
         .pdf-viewer canvas {
             margin: 10px 0; /* Add some space between pages */
         }
+
+        .file-structure-container {
+            max-height: 400px; /* Adjust the height as needed */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border: 1px solid #ddd; /* Optional: add a border */
+            padding: 10px;
+            margin-bottom: 20px; /* Space below the scrollable box */
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script>
@@ -85,7 +93,9 @@
     </script>
 </head>
 <body>
-    <ul id="file-structure" class="file-structure"></ul>
+    <div class="file-structure-container">
+        <ul id="file-structure" class="file-structure"></ul>
+    </div>
 
     <!-- Containers for explanations and file content display -->
     <div id="description" class="description"></div>
