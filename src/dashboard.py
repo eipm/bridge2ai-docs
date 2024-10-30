@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-B2AIPREVIEW_GITHUB_RAW_URL = "https://raw.githubusercontent.com/sensein/b2aipreview/refs/heads/gh-pages/index.html"
 
 custom_style = """
 <style>
@@ -51,7 +50,8 @@ footer {
 
 </style>
 """
- 
+
+
 def coming_soon_message(tab_name):
         # Your Streamlit application code
     st.title('Bridge2AI Voice Dashboard')
