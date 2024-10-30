@@ -56,6 +56,10 @@
             overflow-x: auto; /* Allows horizontal scroll for long lines */
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+    </script>
 </head>
 <body>
     <h1>Bridge2AI Dataset Structure Preview</h1>
@@ -131,24 +135,46 @@
         };
 
        // Function to toggle explanations and file content
-       async function toggleExplanation(file) {
+        async function toggleExplanation(file) {
             const description = document.getElementById('description');
             const fileContentBox = document.getElementById('file-content');
 
-            // Display explanation text
+            // Display explanation text based on file name
             const customExplanation = explanations[file.name] || `${file.name}: Explanation for ${file.type}`;
             description.textContent = customExplanation;
             description.style.display = 'block';
 
+            // Clear previous content
+            fileContentBox.innerHTML = '';
+            
             // Display file content if it's a file
             if (file.type === 'file') {
-                const content = await fetchFileContent(file.download_url);
-                fileContentBox.innerHTML = `<pre>${content}</pre>`; // Preserve formatting
+                if (file.name.endsWith('.pdf')) {
+                    // Render PDF using PDF.js
+                    const canvas = document.createElement('canvas');
+                    fileContentBox.appendChild(canvas);
+                    fileContentBox.style.display = 'block';
+
+                    const pdfData = await fetch(file.download_url).then(res => res.arrayBuffer());
+                    const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+                    const page = await pdf.getPage(1); // Render only the first page, or loop to render more pages
+
+                    const context = canvas.getContext('2d');
+                    const viewport = page.getViewport({ scale: 1.5 });
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    page.render({ canvasContext: context, viewport: viewport });
+                } else {
+                    // Fetch and display text-based file content
+                    const content = await fetchFileContent(file.download_url);
+                    fileContentBox.innerHTML = `<pre>${content}</pre>`; // Preserve formatting
+                }
                 fileContentBox.style.display = 'block';
             } else {
                 fileContentBox.style.display = 'none';
             }
         }
+
 
         // Fetch and render file structure on DOM load
         document.addEventListener('DOMContentLoaded', async () => {
