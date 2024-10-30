@@ -5,7 +5,7 @@ import streamlit as st
 
 from tabs.about import about_page
 from tabs.healthsheet import healthsheet_page
-from tabs.study_dashboard import study_dashboard_page
+# from tabs.study_dashboard import study_dashboard_page
 from tabs.study_metadata import study_metadata_page
 from tabs.dataset_metadata import dataset_metadata_page
 from tabs.dataset_structure_preview import dataset_structure_preview_page
@@ -59,7 +59,7 @@ def main():
     tab_functions = {
         "About": about_page,
         "Healthsheet": healthsheet_page,
-        "Study Dashboard": study_dashboard_page,
+        # "Study Dashboard": study_dashboard_page,
         "Study Metadata": study_metadata_page,
         "Dataset Metadata": dataset_metadata_page,
         "Dataset Structure Preview": dataset_structure_preview_page,
