@@ -59,7 +59,7 @@ def main():
     tab_functions = {
         "About": about_page,
         "Healthsheet": healthsheet_page,
-        # "Study Dashboard": study_dashboard_page,
+        "Study Dashboard": study_dashboard_page,
         "Study Metadata": study_metadata_page,
         "Dataset Metadata": dataset_metadata_page,
         "Dataset Structure Preview": dataset_structure_preview_page,
