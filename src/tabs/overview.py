@@ -2,7 +2,6 @@ import streamlit as st
 from tabs.utils import coming_soon_message
 
 def overview_page(tab_name):
-    # coming_soon_message(tab_name)
     st.markdown(
         """
         Training opportunities for using dataset: [https://www.b2aivoicescholars.org/](https://www.b2aivoicescholars.org/)
