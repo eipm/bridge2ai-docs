@@ -3,6 +3,7 @@ import os
 
 import streamlit as st
 
+from tabs.overview import overview_page
 from tabs.about import about_page
 from tabs.healthsheet import healthsheet_page
 from tabs.study_dashboard import study_dashboard_page
@@ -43,7 +44,7 @@ def create_tabs(tabs_func):
 
 def main():  
     # Current version of the app
-    version = "1.1.0"
+    version = "1.2.0"
     # Map tab names to functions
     # In this dictionary, the key is the tab name and the value is the function that will be called when the tab is selected
     # The function is defined in the respective file
@@ -57,6 +58,7 @@ def main():
     # dataset_uses_page() is defined in tabs/dataset_uses.py
     
     tab_functions = {
+        "Overview": overview_page,
         "About": about_page,
         "Healthsheet": healthsheet_page,
         "Study Dashboard": study_dashboard_page,
