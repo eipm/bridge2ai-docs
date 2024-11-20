@@ -12,8 +12,6 @@ from tabs.healthsheet import healthsheet_page
 from tabs.data_pre_processing import data_pre_processing_page
 from tabs.ai_readiness import ai_readiness_page
 
-from tabs.dataset_structure_preview import dataset_structure_preview_page
-
 def config_page(version):         
     st.set_page_config(
         page_title="Bridge2AI Voice Dashboard",
@@ -58,8 +56,6 @@ def main():
     # data_pre_processing_page() is defined in tabs/data_pre_processing.py
     # ai_readiness_page() is defined in tabs/ai_readiness.py
     
-    # dataset_structure_preview_page() is defined in tabs/dataset_structure_preview.py
-    
     tab_functions = {
         "Overview": overview_page,
         "Collection Methods": collection_methods_page,
@@ -69,7 +65,6 @@ def main():
         "Healthsheet": healthsheet_page,
         "Data Pre-Processing": data_pre_processing_page,
         "AI-Readiness": ai_readiness_page,
-        "Dataset Structure Preview": dataset_structure_preview_page
     }
     
     # Set page configuration
