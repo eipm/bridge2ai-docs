@@ -1,7 +1,6 @@
 import streamlit as st
 # from tabs.utils import coming_soon_message
 from tabs.utils import create_html_table
-from tabs.utils import create_html_table_span_col_row
 
 import pandas as pd
 import numpy as np
