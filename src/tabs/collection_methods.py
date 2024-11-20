@@ -49,4 +49,4 @@ def collection_methods_page(tab_name):
 
     csv_file_path = "tables/Validated_Questionnaires.csv"
     caption = 'Table 3 - Validated Questionnaires integrated into App'
-    create_html_table(csv_file_path, caption)
+    create_html_table(csv_file_path, caption, ['X'])

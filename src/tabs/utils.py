@@ -9,7 +9,7 @@ def coming_soon_message(tab_name):
     image_path = "images/Wave.png"
     st.image(image_path, caption='', use_container_width=True)
 
-def create_html_table(csv_file_path, caption=None):
+def create_html_table(csv_file_path, caption=None, cell_values=[]):
        # Read CSV file
     df = pd.read_csv(csv_file_path, dtype=str)  # Ensure all columns are read as strings
 
@@ -18,7 +18,10 @@ def create_html_table(csv_file_path, caption=None):
     
     # Convert DataFrame to HTML table
     html_table = df.to_html(index=False, classes='table table-striped')
-    
+    if cell_values and len(cell_values) > 0:
+        for cell_value in cell_values:
+            html_table = html_table.replace(f'<td>{cell_value}</td>', f'<td class="center-align">{cell_value}</td>')
+
     if caption is not None:
         html_table_with_caption = f"""
         <table class="table table-striped">
@@ -47,6 +50,9 @@ def create_html_table(csv_file_path, caption=None):
             border: 1px solid !important;
             padding: 4px !important;
             text-align: left;
+        }
+        .table .center-align {
+            text-align: center; /* Center alignment for specific columns */
         }
         </style>
         """,
