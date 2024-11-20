@@ -19,7 +19,7 @@ def create_html_table(csv_file_path, caption=None):
     # Convert DataFrame to HTML table
     html_table = df.to_html(index=False, classes='table table-striped')
     
-    if caption:
+    if caption is not None:
         html_table_with_caption = f"""
         <table class="table table-striped">
             <caption style="caption-side: top; text-align: left; font-weight: bold; font-size: 1.2em;">
