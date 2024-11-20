@@ -3,11 +3,11 @@ Non Voice/Non Speech,Respiration Part A,Breathing sounds,A
 Non Voice/Non Speech,Cough part A,Voluntary Cough,A
 Non Voice/Non Speech,Breath Sounds,Breathing sounds,Resp
 Non Voice/Non Speech,Voluntary Cough,Voluntary Cough,Resp
-Voice / Non Speech,Prolonged Vowel,vowel /e/,A
-Voice / Non Speech,Maximum Phonation Time,vowel /e/,A
-Voice / Non Speech,Glides,Lowest to Highest /e/,A
-Voice / Non Speech,Loudness,/Hey/,A
-Voice / Non Speech,Diadochokinesis,/pa/ta/ka/ /buttercup/,A
+Voice/Non Speech,Prolonged Vowel,vowel /e/,A
+Voice/Non Speech,Maximum Phonation Time,vowel /e/,A
+Voice/Non Speech,Glides,Lowest to Highest /e/,A
+Voice/Non Speech,Loudness,/Hey/,A
+Voice/Non Speech,Diadochokinesis,/pa/ta/ka/ /buttercup/,A
 Speech,Rainbow Passage,validated passage,A
 Speech,Caterpillar Passage,validated passage,Voice
 Speech,Cape-V Sentences,validated sentences,Voice
