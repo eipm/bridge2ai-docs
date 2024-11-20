@@ -29,6 +29,10 @@ def ai_readiness_page(tab_name):
             padding: 4px;
             text-align: left;
         }
+        
+        table .center-align {
+            text-align: center;
+        }
   
         </style>
         <table>
@@ -43,128 +47,128 @@ def ai_readiness_page(tab_name):
             <tr>
                 <td rowspan="4">FAIRness (0)</td>
                 <td>Findable (0.a)</td>
-                <td>1</td>
-                <td rowspan="4">100</td>
+                <td class="center-align">1</td>
+                <td rowspan="4" class="center-align">100</td>
             </tr>
             <tr>
                 <td>Accessible (0.b)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Interoperable (0.c)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Reusable (0.d)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td rowspan="4">Provenance (1)</td>
                 <td>Transparent (1.a)</td>
-                <td>1</td>
-                <td rowspan="4">100</td>
+                <td class="center-align">1</td>
+                <td rowspan="4" class="center-align">100</td>
             </tr>
             <tr>
                 <td>Traceable (1.b)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Interpretable (1.c)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Key actors identified (1.d)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td rowspan="5">Characterization (2)</td>
                 <td>Semantics (2.a)</td>
-                <td>1</td>
-                <td rowspan="5">80</td>
+                <td class="center-align">1</td>
+                <td rowspan="5" class="center-align">80</td>
             </tr>
             <tr>
                 <td>Statistics (2.b)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Standards (2.c)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Potential Sources of Bias (2.d)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Data Quality (2.e)</td>
-                <td>0</td>
+                <td class="center-align">0</td>
             </tr>
             <tr>
                 <td rowspan="3">Pre-model explainability (3)</td>
                 <td>Data documentation templates (3.a)</td>
-                <td>1</td>
-                <td rowspan="3">100</td>
+                <td class="center-align">1</td>
+                <td rowspan="3" class="center-align">100</td>
             </tr>
             <tr>
                 <td>Fit for purpose (3.c)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Verifiable (3.d)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td rowspan="4">Ethics (4)</td>
                 <td>Ethically acquired (4.a)</td>
-                <td>1</td>
-                <td rowspan="4">100</td>
+                <td class="center-align">1</td>
+                <td rowspan="4" class="center-align">100</td>
             </tr>
             <tr>
                 <td>Ethically managed (4.b)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Ethically disseminated (4.c)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Secure (4.d)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td rowspan="4">Sustainability (5)</td>
                 <td>Persistent (5.a)</td>
-                <td>1</td>
-                <td rowspan="4">50</td>
+                <td class="center-align">1</td>
+                <td rowspan="4" class="center-align">50</td>
             </tr>
             <tr>
                 <td>Domain-appropriate (5.b)</td>
-                <td>0</td>
+                <td class="center-align">0</td>
             </tr>
             <tr>
                 <td>Well-governed (5.c)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Associated (5.d)</td>
-                <td>0</td>
+                <td class="center-align">0</td>
             </tr>
             <tr>
                 <td rowspan="4">Computability (6)</td>
                 <td>Standardized (6.a)</td>
-                <td>1</td>
-                <td rowspan="4">75</td>
+                <td class="center-align">1</td>
+                <td rowspan="4" class="center-align">75</td>
             </tr>
             <tr>
                 <td>Computational Accessibility (6.b)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Portable (6.c)</td>
-                <td>1</td>
+                <td class="center-align">1</td>
             </tr>
             <tr>
                 <td>Contextualized (6.d)</td>
-                <td>0</td>
+                <td class="center-align">0</td>
             </tr>
         </table>
         """,
