@@ -38,18 +38,17 @@ def healthsheet_page(tab_name):
         st.write('''Voice as a Biomarker of Health is being co-led by Dr Yaël Bensoussan, MD, MSc from USF Health Morsani College of Medicine and Olivier Elemento, PhD from Weill Cornell Medicine, who are co-principal investigators for the project, which is funded by the NIH Common Fund within the Bridge2AI Program. The project also includes lead investigators from 10 other universities in North America; Alexandros Sigaras, MSc and Anaïs Rameau, MD, MPhil (Weill Cornell Medicine), Maria Powell, CCC-SLP, PhD (Vanderbilt University Medical Center), Ruth Bahr, CCC-SLP, PhD (USF Health Morsani College of Medicine), Jennifer Sui, MD (Hospital for Sick Children), Philip Payne, PhD (Washington University in St. Louis), David Dorr, MD (Oregon Health & Science University), Jean-Christophe Bélisle-Pipon, PhD (Simon Fraser University), Vardit Ravitsky , PhD (The Hastings Center), Satrajit Ghosh, PhD (Massachusetts Institute of Technology), Frank Rudzizc, PhD (University of Toronto), Jordan Lerner-Ellis, PhD (Sinai Health) and Don Bolser, PhD (University of Florida).There are over 50 other investigators, clinicians, scholars and trainees who have contributed to the development of this dataset. Please see full list of collaborators here: [The Bridge2AI-Voice Consortium (2024)](https://b2ai-voice.org/wp-content/uploads/2024/11/FOR-WEBSITE-Year-2-Bridge2AI-Voice-Consortium-Authors.docx)''')
 
     with st.expander("**Who funded the creation of the dataset? If there is an associated grant, please provide the name of the grantor and the grant name and number. If the funding institution differs from the research organization creating and managing the dataset, please state how.**", expanded=False):
-        st.write('''The NIH Common Fund 
-                [3TF- OT2ActfOD032720Projectf01S1](https://reporter.nih.gov/search/ES3d7yibyESXrX-rp6g1Ng/project-details/10858564)''')
+        st.write('''The NIH Common Fund<br>[3TF- OT2ActfOD032720Projectf01S1](https://reporter.nih.gov/search/ES3d7yibyESXrX-rp6g1Ng/project-details/10858564)''', unsafe_allow_html=True)
         
     with st.expander("**What is the distribution of backgrounds and experience/expertise of the dataset curators/generators?**", expanded=False):
         st.write('''The curators and generators of the Bridge2AI Voice dataset come from a diverse range of backgrounds and areas of expertise, reflecting the interdisciplinary nature of the project. The team includes:
-            1. Clinicians and Healthcare Professionals: Practicing doctors and healthcare workers involved in the direct collection of clinical data and providing practical insights into the medical relevance of the dataset.  
-            2. Biomedical Researchers: Experts in clinical medicine, neurology, and psychiatry, contributing deep knowledge of the medical conditions being studied. 
-            3. Machine Learning and AI Specialists: Researchers and engineers with expertise in machine learning, artificial intelligence, and data science, focusing on developing models and algorithms for analyzing voice data. 
-            4. Data Scientists and Statisticians: Professionals skilled in data curation, preprocessing, and statistical analysis, ensuring the dataset is robust and suitable for machine learning applications. 
-            5. Social Scientists and Ethicists: Experts in ethics, sociology, and human subjects research, ensuring the dataset is ethically sourced and meets standards for privacy and consent. 
-            6. Engineers and Technologists: Individuals with experience in software development, systems engineering, and data infrastructure, contributing to the technical aspects of data collection, storage, and dissemination. 
-                 ''')
+1. <ins>Clinicians and Healthcare Professionals:</ins> Practicing doctors and healthcare workers involved in the direct collection of clinical data and providing practical insights into the medical relevance of the dataset.  
+2. <ins>Biomedical Researchers:</ins> Experts in clinical medicine, neurology, and psychiatry, contributing deep knowledge of the medical conditions being studied. 
+3. <ins>Machine Learning and AI Specialists:</ins> Researchers and engineers with expertise in machine learning, artificial intelligence, and data science, focusing on developing models and algorithms for analyzing voice data. 
+4. <ins>Data Scientists and Statisticians:</ins> Professionals skilled in data curation, preprocessing, and statistical analysis, ensuring the dataset is robust and suitable for machine learning applications. 
+5. <ins>Social Scientists and Ethicists:</ins> Experts in ethics, sociology, and human subjects research, ensuring the dataset is ethically sourced and meets standards for privacy and consent. 
+6. <ins>Engineers and Technologists:</ins> Individuals with experience in software development, systems engineering, and data infrastructure, contributing to the technical aspects of data collection, storage, and dissemination. 
+''', unsafe_allow_html=True)
 
     st.subheader("**Data Composition**")
 
@@ -85,18 +84,10 @@ def healthsheet_page(tab_name):
 
     with st.expander("**Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, other datasets)? If it links to or relies on external resources:**", expanded=False):
         st.write('''
-            **a. Are there guarantees that they will exist, and remain constant, over time?**
-                 
-            NA
-                  
-            **b. Are there official archival versions of the complete dataset (i.e., including the external resources as they existed at the time the dataset was created)?**
-                 
-            NA
-                 
-            **c. Are there any restrictions (e.g., licenses, fees) associated with any of the external resources that might apply to a future user? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate.**
-            
-            It is self-contained.
-            ''')
+            **a. Are there guarantees that they will exist, and remain constant, over time?**<br>NA<br>
+            **b. Are there official archival versions of the complete dataset (i.e., including the external resources as they existed at the time the dataset was created)?**<br>NA<br>
+            **c. Are there any restrictions (e.g., licenses, fees) associated with any of the external resources that might apply to a future user? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate.**<br>It is self-contained.
+            ''', unsafe_allow_html=True)
         
     with st.expander("**Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals' non-public communications that is confidential)? If so, please provide a description.**", expanded=False):
         st.write('''No''')
@@ -108,15 +99,9 @@ def healthsheet_page(tab_name):
         st.write('''This dataset has been deidentified through removal of all audio data and certain sensitive fields identified by a team of ethicists.''')
 
     with st.expander("**Does the dataset contain data that might be considered sensitive in any way (e.g., data that reveals racial or ethnic origins, sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; criminal history)? If so, please provide a description.**", expanded=False):
-        st.write('''
-        Yes:
-                  
-        **racial or ethnic origins**: The dataset includes race information. 
-        
-        **sexual orientations**: The dataset includes sexual orientation information.
-        
-        **financial or health data**: The dataset includes socioeconomic and health information.
-        ''')
+        st.write('''Yes:<br><ins>racial or ethnic origins</ins>: The dataset includes race information.<br>
+        <ins>sexual orientations</ins>: The dataset includes sexual orientation information.<br>
+        <ins>financial or health data</ins>: The dataset includes socioeconomic and health information.''', unsafe_allow_html=True)
 
     st.subheader("**Devices and Contextual Attributes in Data Collection**")
 
@@ -126,39 +111,18 @@ def healthsheet_page(tab_name):
     st.subheader("**Challenge in tests and confounding factors**")
 
     with st.expander("**Which factors in the data might limit the generalization of potentially derived models? Is this information available as auxiliary labels for challenge tests? For instance:**", expanded=False):
-        st.write('''
-            **a. Number and diversity of devices included in the dataset.**
-
-            Distinct iPad devices were used at each site. 
-
-            **b. Data recording specificities, e.g., the view for a chest x-ray image.**
-
-            The data were recorded with a head mounted headset with a microphone that could be at slightly different distances. The clinical diagnosis, depending on the disorder, was performed by one clinician or based on an EHR record or prescription. 
-
-            **c. Number and diversity of recording sites included in the dataset.**
-
-            There are 5 recording sites included in the dataset.
-
-            **d. Distribution shifts over time.**
-
-            Changes in diagnostic criteria or practices could be a source of distribution shift.  
-            ''')
+        st.write('''**a. Number and diversity of devices included in the dataset.**<br>Distinct iPad devices were used at each site.<br>
+            **b. Data recording specificities, e.g., the view for a chest x-ray image.**<br>The data were recorded with a head mounted headset with a microphone that could be at slightly different distances. The clinical diagnosis, depending on the disorder, was performed by one clinician or based on an EHR record or prescription.<br>
+            **c. Number and diversity of recording sites included in the dataset.**<br>There are 5 recording sites included in the dataset.<br>
+            **d. Distribution shifts over time.**<br>Changes in diagnostic criteria or practices could be a source of distribution shift.''', unsafe_allow_html=True)
         
     with st.expander("**What confounding factors might be present in the data?**", expanded=False):
         st.write('''Noise artifacts, variations in diagnostic practices, inaccurate questionnaire responses, under reporting.''')
 
     with st.expander("**What confounding factors might be present in the data?**", expanded=False):
-        st.write('''
-                Noise artifacts, variations in diagnostic practices, inaccurate questionnaire responses, under reporting.
-                 
-                **a. Interactions between demographic or historically marginalized groups and data recordings, e.g., were women patients recorded in one site, and men in another?**
-                
-                Groups that have less trust in the medical system, AI, or are less proximal to the collection sites would have been less likely to be recruited. 
- 
-                **b. Interactions between the labels and data recordings, e.g. were healthy patients recorded on one device and diseased patients on another?**
-                 
-                Participants were screened for different disorders based on site, so they also had their data collected with different devices. 
-                 ''')
+        st.write('''Noise artifacts, variations in diagnostic practices, inaccurate questionnaire responses, under reporting.<br> 
+                **a. Interactions between demographic or historically marginalized groups and data recordings, e.g., were women patients recorded in one site, and men in another?**<br>Groups that have less trust in the medical system, AI, or are less proximal to the collection sites would have been less likely to be recruited.<br>
+                **b. Interactions between the labels and data recordings, e.g. were healthy patients recorded on one device and diseased patients on another?**<br>Participants were screened for different disorders based on site, so they also had their data collected with different devices.''', unsafe_allow_html=True)
 
     st.subheader("**Collection and use of demographic information**")
 
@@ -181,26 +145,23 @@ def healthsheet_page(tab_name):
 
     st.subheader("**Labeling and subjectivity of labeling**")
 
-    st.write('''**Is there an explicit label or target associated with each data instance? Please respond for both the preliminary dataset and the current version.**''')
-
-    with st.expander('''**a. If yes:
-                     - What are the labels provided?
-                     - Who performed the labeling? For example, was the labeling done by a clinician, ML researcher, university or hospital?**''', expanded=False):
-        st.write('''Diagnostic labels are the result of a clinical assessment of the participant. At each site, a local clinician provided the diagnosis based on a clinical interview and appropriate work-up. For the psychiatric disorders cohort, this assessment was determined by using the participants EHR record or using an active prescription, which was done outside of data collection by an appropriately licensed clinician.''')
-
-    with st.expander('''**b. What labeling strategy was used?**''', expanded=False):
-        st.write('''Gold standard label available in the data (diagnosed by a clinician).''')
-
-    with st.expander('''**c. Human-labeled data: 
-                        - How many labelers were considered?**''', expanded=False):
-        st.write('''Single labeler per data 
-            •	What is the demographic of the labelers? (countries of residence, of origin, number of years of experience, age, gender, race, ethnicity, etc.) 
-            Typically, the clinician at site of data collection, or external to (for prior diagnostic assessment) 
-            •	What guidelines did they follow? 
-            Per Bridge2AI Protocols and ICD-10 codes.
-            •	How many labelers provide a label per instance? 
-            1 
-            ''')
+    with st.expander('''**Is there an explicit label or target associated with each data instance? Please respond for both the preliminary dataset and the current version.**''', expanded=False):
+        st.write('''<b>a. If yes:</b><br>
+<ul>
+    <li><b>What are the labels provided?</b></li>
+    <li><b>Who performed the labeling? For example, was the labeling done by a clinician, ML researcher, university or hospital?</b></li>
+</ul>
+Diagnostic labels are the result of a clinical assessment of the participant. At each site, a local clinician provided the diagnosis based on a clinical interview and appropriate work-up. For the psychiatric disorders cohort, this assessment was determined by using the participants EHR record or using an active prescription, which was done outside of data collection by an appropriately licensed clinician.
+<br>
+<b>b. What labeling strategy was used?</b><br>
+Gold standard label available in the data (diagnosed by a clinician).<br>
+<b>c. Human-labeled data:</b><br>
+<ul>
+    <li><b>How many labelers were considered?</b><br>Single labeler per data</li>
+    <li><b>What is the demographic of the labelers? (countries of residence, of origin, number of years of experience, age, gender, race, ethnicity, etc.)</b><br>Typically, the clinician at site of data collection, or external to (for prior diagnostic assessment)</li>
+    <li><b>What guidelines did they follow?</b><br>Per Bridge2AI Protocols and ICD-10 codes.</li>
+    <li><b>How many labelers provide a label per instance?</b><br>1</li>
+</ul>''', unsafe_allow_html=True)
         
     with st.expander('''**What are the human-level performances in the applications that the dataset is supposed to address?**''', expanded=False):
         st.write('''It varies greatly''')
@@ -223,7 +184,8 @@ def healthsheet_page(tab_name):
         st.write('''The data has been collected on an iPad app.''')
 
     with st.expander('''**Who was involved in the data collection process (e.g., patients, clinicians, doctors, ML researchers, hospital staff, vendors, etc.) and how were they compensated (e.g., how much were contributors paid)?**''', expanded=False):
-        st.write('''Research teams, which may include medical, graduate, or undergraduate students, coordinated with clinicians/doctors to identify appropriate participants. These clinicians and doctors were listed under IRB as co-investigators, and were added to the consortium, so that that their names are to be included on consortium-level publications that emerge from the research. Hospital staff were not involved in scheduling but assisted in the logistics of coordinating data collection. Participants were compensated for their time through electronic gift cards. Participants currently receive $40 for a data collection session that takes less than 90 minutes, and $80 for a session that takes over 90 minutes, for no more than a total of 3 sessions and maximum compensation of $120.''')
+        st.write('''Research teams, which may include medical, graduate, or undergraduate students, coordinated with clinicians/doctors to identify appropriate participants. These clinicians and doctors were listed under IRB as co-investigators, and were added to the consortium, so that that their names are to be included on consortium-level publications that emerge from the research. Hospital staff were not involved in scheduling but assisted in the logistics of coordinating data collection.
+                 <br><br>Participants were compensated for their time through electronic gift cards. Participants currently receive \$40 for a data collection session that takes less than 90 minutes, and \$80 for a session that takes over 90 minutes, for no more than a total of 3 sessions and maximum compensation of \$120.''', unsafe_allow_html=True)
 
     with st.expander('''**Over what timeframe was the data collected?**''', expanded=False):
         st.write('''The data was collected over a period of 12 months.''')
@@ -251,8 +213,8 @@ def healthsheet_page(tab_name):
 
     st.subheader("**Inclusion Criteria-Accessibility in data collection**")
 
-    with st.expander('''**Is there any language-based communication with patients (e.g.: English, French)? If yes, describe the choices of language(s) for communication. (for example, if there is an app used for communication, what are the language options?) English language was used for communication with study participants.**''', expanded=False):
-        st.write('''The only language option for v1.0.0 is English. Spanish versions of the protocol are under development.''')
+    with st.expander('''**Is there any language-based communication with patients (e.g.: English, French)? If yes, describe the choices of language(s) for communication. (for example, if there is an app used for communication, what are the language options?)**''', expanded=False):
+        st.write('''English language was used for communication with study participants.<br>The only language option for v1.0.0 is English. Spanish versions of the protocol are under development.''', unsafe_allow_html=True)
 
     with st.expander('''**What are the accessibility measurements and what aspects were considered when the study was designed and implemented?**''', expanded=False):
         st.write('''The protocol asks about disabilities. Collection accessibility was facilitated through the normal means of the collection sites, including reading questions to participants when needed.''')
@@ -280,9 +242,8 @@ def healthsheet_page(tab_name):
         st.write('''The dataset will be distributed broadly to individuals outside of the entity who created the dataset.''')
 
     with st.expander('''**How will the dataset be distributed (e.g., tarball on website, API, GitHub)? Does the dataset have a digital object identifier (DOI)?**''', expanded=False):
-        st.write('''The dataset will be distributed through a data publishing platform accessible at [https://healthdatanexus.ai/](https://healthdatanexus.ai/)
-                 
-                 This platform provides publicly accessible metadata regarding the dataset with a DOI for persistent resolution. The dataset itself requires registered access.''')
+        st.write('''The dataset will be distributed through a data publishing platform accessible at [https://healthdatanexus.ai/](https://healthdatanexus.ai/)<br><br>
+                 This platform provides publicly accessible metadata regarding the dataset with a DOI for persistent resolution. The dataset itself requires registered access.''', unsafe_allow_html=True)
 
     with st.expander('''**When was/will the dataset be distributed?**''', expanded=False):
         st.write('''The data was published and made available at the end of November, 2024.''')
@@ -291,11 +252,9 @@ def healthsheet_page(tab_name):
         st.write('''
                 Users of the dataset must agree to terms laid out in the registered access agreement. The terms relating to intellectual property are repeated here for informational purposes only:
 
-                    INTELLECTUAL PROPERTY RIGHTS. You understand and acknowledge that the Data may be protected by copyright and other rights, including other intellectual property rights. Duplication, as reasonably required to carry out Your Research Project with the Data, is nonetheless permitted. Sale of all or part of the Data on any media is not permitted. You recognize that nothing in this Agreement shall operate to transfer to You any intellectual property rights in or relating to the Data. You agree not to make intellectual property claims on the Data. You agree not to use intellectual property protection in ways that would prevent or block access to, or use of, any element of these Data, or conclusions drawn directly from the Data. You can elect to perform further research that would add intellectual and resource capital to the Data and decide to obtain intellectual property rights on these downstream discoveries. You agree to implement licensing policies that will not obstruct further research. You agree to respect the Fort Lauderdale Agreement. 
+                <p style="margin-left:30px;">INTELLECTUAL PROPERTY RIGHTS. You understand and acknowledge that the Data may be protected by copyright and other rights, including other intellectual property rights. Duplication, as reasonably required to carry out Your Research Project with the Data, is nonetheless permitted. Sale of all or part of the Data on any media is not permitted. You recognize that nothing in this Agreement shall operate to transfer to You any intellectual property rights in or relating to the Data. You agree not to make intellectual property claims on the Data. You agree not to use intellectual property protection in ways that would prevent or block access to, or use of, any element of these Data, or conclusions drawn directly from the Data. You can elect to perform further research that would add intellectual and resource capital to the Data and decide to obtain intellectual property rights on these downstream discoveries. You agree to implement licensing policies that will not obstruct further research. You agree to respect the Fort Lauderdale Agreement.</p>
 
-                There are no fees associated with these restrictions.
-
-                ''')
+                There are no fees associated with these restrictions.''', unsafe_allow_html=True)
         
     with st.expander('''**Have any third parties imposed IP-based or other restrictions on the data associated with the instances? If so, please describe these restrictions, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms, as well as any fees associated with these restrictions.**''', expanded=False):
         st.write('''No IP-based restrictions have been imposed by third parties.''')
@@ -306,14 +265,13 @@ def healthsheet_page(tab_name):
     st.subheader("**Maintenance**")
 
     with st.expander('''**Who is supporting/hosting/maintaining the dataset?**''', expanded=False):
-        st.write('''The dataset is supported by the NIH via the Bridge2AI project.
+        st.write('''The dataset is supported by the NIH via the Bridge2AI project.<br>
                     The dataset is hosted by the [Health Data Nexus](https://healthdatanexus.ai/), a data publishing platform maintained by the Temerty Center for Artificial Intelligence Research and Education in Medicine (T-CAIREM) based at the University of Toronto. The Health Data Nexus maintains the technical infrastructure hosting dataset and provides continued access to interested researchers.
-                ''')
+                ''', unsafe_allow_html=True)
         
     with st.expander('''**How can the owner/curator/manager of the dataset be contacted (e.g. email address)?**''', expanded=False):
-        st.write('''The platform team may be contacted through: contact@healthdatanexus.ai
-                    The curator of the data may be contacted through: info@b2ai-voice.org
-                ''')
+        st.write('''The platform team may be contacted through: contact@healthdatanexus.ai<br>
+                    The curator of the data may be contacted through: info@b2ai-voice.org''', unsafe_allow_html=True)
         
     with st.expander('''**Is there an erratum? If so, please provide a link or other access point.**''', expanded=False):
         st.write('''There is no erratum. A changelog for each dataset version is published online with the dataset metadata.''')
@@ -328,6 +286,5 @@ def healthsheet_page(tab_name):
         st.write('''By default, older versions of the dataset will continue to be supported, hosted, and made available to researchers. Each version of the dataset has a unique DOI. The dataset publishers reserve the right to remove access to older versions.''')
 
     with st.expander('''**If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so?**''', expanded=False):
-        st.write('''For dataset extensions and augmentations, it is possible for others to publish a derivative dataset on the Health Data Nexus which references the original source. These derivative datasets may be made available under the same conditions as the source data.
-                    For augmentations to the code used to produce the data, the open-source repositories have discussion forums and issue pages which allow for public discussion of data preprocessing. The repository also has a mechanism (“pull requests”) for contributing improvements to the data preprocessing code.
-                ''')
+        st.write('''For dataset extensions and augmentations, it is possible for others to publish a derivative dataset on the Health Data Nexus which references the original source. These derivative datasets may be made available under the same conditions as the source data.<br><br>
+                    For augmentations to the code used to produce the data, the open-source repositories have discussion forums and issue pages which allow for public discussion of data preprocessing. The repository also has a mechanism (“pull requests”) for contributing improvements to the data preprocessing code.''', unsafe_allow_html=True)
