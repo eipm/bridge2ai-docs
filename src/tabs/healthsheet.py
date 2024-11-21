@@ -3,7 +3,7 @@ import streamlit as st
 # Define the content of the Health Sheet page
 def healthsheet_page(tab_name):
 
-    st.subheader("**General Information**")
+    st.header("**General Information**")
 
     st.markdown('''
         **Provide a 2-sentence summary of this dataset.**
@@ -15,7 +15,7 @@ def healthsheet_page(tab_name):
     with st.expander("**Has the dataset been audited before? If yes, by whom and what are the results?**", expanded=False):
         st.write('''The dataset has been audited internally for missingness and consistency by the data release team. A missingness table is included with the dataset. Certain aspects of the data (e.g., transcription) were generated using off the shelf models that have not been audited for correctness.''')
 
-    st.subheader("**Dataset Versioning**")
+    st.header("**Dataset Versioning**")
 
     with st.expander("**Does the dataset get released as static versions or is it dynamically updated?**", expanded=False):
         st.write('''Static''')
@@ -23,7 +23,7 @@ def healthsheet_page(tab_name):
     with st.expander("**Does the current version/subversion of the dataset come with predefined task(s), labels, and recommended data splits (e.g., for training, development/validation, testing)? If yes, please provide a high-level description of the introduced tasks, data splits, and labeling, and explain the rationale behind them. Please provide the related links and references. If not, is there any resource (website, portal, etc.) to keep track of all defined tasks and/or associated label definitions? (please note that more detailed questions w.r.t labeling is provided in further sections)**", expanded=False):
         st.write('''Yes, the current version of the dataset comes with predefined tasks and labeling. The tasks are primarily designed for training machine-learning models for disease detection and classification using voice data. Labels include diagnostic categories such as vocal pathologies, neurological disorders, psychiatric conditions, and respiratory disorders. However, there are no predefined recommended data splits for training, validation, or testing. Researchers are encouraged to create their own data splits based on their specific requirements. More details regarding task definitions and labeling can be found in the dataset.''')
 
-    st.subheader("**Motivation**")
+    st.header("**Motivation**")
 
     with st.expander("**For what purpose was the dataset created? Was there a specific task in mind? Was there a specific gap that needed to be filled? Please provide a description.**", expanded=False):
         st.write('''The Bridge2AI Voice dataset was created to address a gap in the availability of large-scale, diverse, and well-documented voice data for use in clinical machine-learning applications. Previous studies on machine learning-based voice diagnosis produced promising results, but their sample sizes were too small, or they lacked the key metadata needed for training robust, clinically useful models. The dataset aims to bridge this gap by providing an ethically sourced, large, and diverse dataset to develop, benchmark, or validate clinically applicable AI/ML models. The goal is to facilitate the use of voice as a non-invasive, cost-effective biomarker for the screening, diagnosis, and monitoring of a wide range of health conditions.''')
@@ -50,7 +50,7 @@ def healthsheet_page(tab_name):
 6. <ins>Engineers and Technologists:</ins> Individuals with experience in software development, systems engineering, and data infrastructure, contributing to the technical aspects of data collection, storage, and dissemination. 
 ''', unsafe_allow_html=True)
 
-    st.subheader("**Data Composition**")
+    st.header("**Data Composition**")
 
     with st.expander("**What do the instances that comprise the dataset represent (e.g., documents, images, people, countries)? Are there multiple types of instances? Please provide a description.**", expanded=False):
         st.write('''Each instance represents a person.''')
@@ -103,12 +103,12 @@ def healthsheet_page(tab_name):
         <ins>sexual orientations</ins>: The dataset includes sexual orientation information.<br>
         <ins>financial or health data</ins>: The dataset includes socioeconomic and health information.''', unsafe_allow_html=True)
 
-    st.subheader("**Devices and Contextual Attributes in Data Collection**")
+    st.header("**Devices and Contextual Attributes in Data Collection**")
 
     with st.expander("**For data that requires a device or equipment for collection or the context of the experiment, answer the following additional questions or provide relevant information based on the device or context that is used (for example)**", expanded=False):
         st.write('''Data is collected on iPads (9th or 10th generation), iPad Air (5th generation) using an Avid AE-36 microphone and an Apple dongle to connect it to the iPad.''')
 
-    st.subheader("**Challenge in tests and confounding factors**")
+    st.header("**Challenge in tests and confounding factors**")
 
     with st.expander("**Which factors in the data might limit the generalization of potentially derived models? Is this information available as auxiliary labels for challenge tests? For instance:**", expanded=False):
         st.write('''**a. Number and diversity of devices included in the dataset.**<br>Distinct iPad devices were used at each site.<br>
@@ -124,12 +124,12 @@ def healthsheet_page(tab_name):
                 **a. Interactions between demographic or historically marginalized groups and data recordings, e.g., were women patients recorded in one site, and men in another?**<br>Groups that have less trust in the medical system, AI, or are less proximal to the collection sites would have been less likely to be recruited.<br>
                 **b. Interactions between the labels and data recordings, e.g. were healthy patients recorded on one device and diseased patients on another?**<br>Participants were screened for different disorders based on site, so they also had their data collected with different devices.''', unsafe_allow_html=True)
 
-    st.subheader("**Collection and use of demographic information**")
+    st.header("**Collection and use of demographic information**")
 
     with st.expander("**Does the dataset identify any demographic sub-populations (e.g., by age, gender, sex, ethnicity)?**", expanded=False):
         st.write('''Age, Gender, Sex, Ethnicity, Socioeconomic status''')
 
-    st.subheader("**Pre-processing / de-identification**")
+    st.header("**Pre-processing / de-identification**")
 
     with st.expander("**Was there any pre-processing for the de-identification of the patients? Provide the answer for the preliminary and the current version of the dataset.**", expanded=False):
         st.write('''Yes, the data were extracted from the raw audio to limit re-identification and only the extracted features are being released with the dataset.''')
@@ -143,7 +143,7 @@ def healthsheet_page(tab_name):
     with st.expander("**Were instances excluded from the dataset at the time of preprocessing? If so, why? For example, instances related to patients under 18 might be discarded.**", expanded=False):
         st.write('''No''')
 
-    st.subheader("**Labeling and subjectivity of labeling**")
+    st.header("**Labeling and subjectivity of labeling**")
 
     with st.expander('''**Is there an explicit label or target associated with each data instance? Please respond for both the preliminary dataset and the current version.**''', expanded=False):
         st.write('''<b>a. If yes:</b><br>
@@ -172,7 +172,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
     with st.expander('''**Is there any guideline that the future researchers are recommended to follow when creating new labels/defining new tasks?**''', expanded=False):
         st.write('''The process for any new labels should be described alongside any release of a model or publication. This process should include exact variables used for this determination.''')
 
-    st.subheader("**Collection Process**")
+    st.header("**Collection Process**")
 
     with st.expander('''**Were any REB/IRB approval (e.g., by an institutional review board or research ethics board) received? If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation.**''', expanded=False):
         st.write('''Yes''')
@@ -211,7 +211,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
     with st.expander('''**Has an analysis of the potential impact of the dataset and its use on data subjects been conducted?**''', expanded=False):
         st.write('''No''')
 
-    st.subheader("**Inclusion Criteria-Accessibility in data collection**")
+    st.header("**Inclusion Criteria-Accessibility in data collection**")
 
     with st.expander('''**Is there any language-based communication with patients (e.g.: English, French)? If yes, describe the choices of language(s) for communication. (for example, if there is an app used for communication, what are the language options?)**''', expanded=False):
         st.write('''English language was used for communication with study participants.<br>The only language option for v1.0.0 is English. Spanish versions of the protocol are under development.''', unsafe_allow_html=True)
@@ -219,7 +219,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
     with st.expander('''**What are the accessibility measurements and what aspects were considered when the study was designed and implemented?**''', expanded=False):
         st.write('''The protocol asks about disabilities. Collection accessibility was facilitated through the normal means of the collection sites, including reading questions to participants when needed.''')
 
-    st.subheader("**Uses**")
+    st.header("**Uses**")
 
     with st.expander('''**Has the dataset been used for any tasks already? If so, please provide a description.**''', expanded=False):
         st.write('''A restricted version of the dataset containing raw audio has been used in the Bridge2AI Summer School and hackathon.''')
@@ -236,7 +236,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
     with st.expander('''**Are there tasks for which the dataset should not be used? If so, please provide a description.**''', expanded=False):
         st.write('''Yes, there are certain applications that are discouraged from using this dataset. Specifically, the dataset should not be used for non-clinical applications such as hiring decisions, insurance premium adjustments, or any form of surveillance that could lead to discrimination or harm. These discouraged uses are intended to prevent unethical or biased outcomes that could negatively impact individuals based on their health conditions or voice characteristics. The dataset is intended strictly for research that prioritize patient safety, privacy, and ethical use.''')
 
-    st.subheader("**Dataset Distribution**")
+    st.header("**Dataset Distribution**")
 
     with st.expander('''**Will the dataset be distributed to third parties outside of the entity (e.g., company, institution, organization) on behalf of which the dataset was created?**''', expanded=False):
         st.write('''The dataset will be distributed broadly to individuals outside of the entity who created the dataset.''')
@@ -262,7 +262,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
     with st.expander('''**Do any export controls or other regulatory restrictions apply to the dataset or to individual instances? If so, please describe these restrictions, and provide a link or other access point to, or otherwise reproduce, any supporting documentation.**''', expanded=False):
         st.write('''No export controls apply to the dataset.''')
 
-    st.subheader("**Maintenance**")
+    st.header("**Maintenance**")
 
     with st.expander('''**Who is supporting/hosting/maintaining the dataset?**''', expanded=False):
         st.write('''The dataset is supported by the NIH via the Bridge2AI project.<br>
