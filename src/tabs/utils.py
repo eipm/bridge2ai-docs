@@ -31,7 +31,7 @@ def create_html_table(csv_file_path, caption=None, cell_values=[], column_index=
 
     if caption is not None:
         html_table_with_caption = f"""
-        <table id="{caption.replace(' ', '-').lower()}" class="table table-striped">
+        <table class="table table-striped">
             <caption style="caption-side: top; text-align: left; font-weight: bold; font-size: 1.2em;">
                 {caption}
             </caption>
