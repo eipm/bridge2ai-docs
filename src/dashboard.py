@@ -3,14 +3,14 @@ import os
 
 import streamlit as st
 
-from tabs.about import about_page
-from tabs.healthsheet import healthsheet_page
+from tabs.overview import overview_page
+from tabs.collection_methods import collection_methods_page
+from tabs.data_governance import data_governance_page
 from tabs.study_dashboard import study_dashboard_page
 from tabs.study_metadata import study_metadata_page
-from tabs.dataset_metadata import dataset_metadata_page
-from tabs.dataset_structure_preview import dataset_structure_preview_page
-from tabs.dataset_quality_dashboard import dataset_quality_dashboard_page
-from tabs.dataset_uses import dataset_uses_page
+from tabs.healthsheet import healthsheet_page
+from tabs.data_pre_processing import data_pre_processing_page
+from tabs.ai_readiness import ai_readiness_page
 
 def config_page(version):         
     st.set_page_config(
@@ -43,28 +43,28 @@ def create_tabs(tabs_func):
 
 def main():  
     # Current version of the app
-    version = "1.1.0"
+    version = "1.2.0"
     # Map tab names to functions
     # In this dictionary, the key is the tab name and the value is the function that will be called when the tab is selected
     # The function is defined in the respective file
-    # about_page() is defined in tabs/about.py
-    # healthsheet_page() is defined in tabs/healthsheet.py
+    # overview_page() is defined in tabs/overview.py
+    # collections_methods_page() is defined in tabs/collections_methods.py
+    # data_governance_page() is defined in tabs/data_governance.py
     # study_dashboard_page() is defined in tabs/study_dashboard.py
     # study_metadata_page() is defined in tabs/study_metadata.py
-    # dataset_metadata_page() is defined in tabs/dataset_metadata.py
-    # dataset_structure_preview_page() is defined in tabs/dataset_structure_preview.py
-    # dataset_quality_dashboard_page() is defined in tabs/dataset_quality_dashboard.py
-    # dataset_uses_page() is defined in tabs/dataset_uses.py
+    # healthsheet_page() is defined in tabs/healthsheet.py
+    # data_pre_processing_page() is defined in tabs/data_pre_processing.py
+    # ai_readiness_page() is defined in tabs/ai_readiness.py
     
     tab_functions = {
-        "About": about_page,
-        "Healthsheet": healthsheet_page,
+        "Overview": overview_page,
+        "Collection Methods": collection_methods_page,
+        "Data Governance": data_governance_page,
         "Study Dashboard": study_dashboard_page,
         "Study Metadata": study_metadata_page,
-        "Dataset Metadata": dataset_metadata_page,
-        "Dataset Structure Preview": dataset_structure_preview_page,
-        "Dataset Quality Dashboard": dataset_quality_dashboard_page,
-        "Dataset Uses": dataset_uses_page
+        "Healthsheet": healthsheet_page,
+        "Data Pre-Processing": data_pre_processing_page,
+        "AI-Readiness": ai_readiness_page,
     }
     
     # Set page configuration

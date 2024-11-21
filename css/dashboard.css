@@ -55,7 +55,7 @@ footer {
     font-size: smaller;
 }
 
-@media screen and (max-width: 1278px) {
+@media screen and (max-width: 1400px) {
     .stTabs [data-baseweb="tab-list"] {
         padding-bottom: 25px;
     }
