@@ -41,7 +41,7 @@ def collection_methods_page(tab_name):
 
     csv_file_path = "tables/Disease_cohort_inclusion_exclusion_criteria.csv"
     caption = 'Table 1 - Disease cohort inclusion/exclusion criteria and validation methods'
-    create_html_table(csv_file_path, caption)
+    create_html_table(csv_file_path, caption, [], 0)
 
     csv_file_path = "tables/Acoustic_Tasks_Protocol.csv"
     caption = 'Table 2 - Acoustic Tasks in Protocol'
