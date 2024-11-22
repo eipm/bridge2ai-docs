@@ -1,22 +1,23 @@
 import streamlit as st
-from tabs.utils import coming_soon_message
 from tabs.utils import create_html_table
 
 def show_table(key, button_text, show_table, csv_file_path, caption):
-        if st.button(button_text, key):
-            st.session_state[show_table] = not st.session_state[show_table]
+    # Initialize session state for table visibility
+    show_table_prop = f'{show_table}_{key}'
+    
+    if  show_table_prop not in st.session_state:
+        st.session_state[show_table_prop] = False
+   
+    if st.button(button_text, key):
+        st.session_state[show_table_prop] = not st.session_state[show_table_prop]
 
-        # Conditionally display the table
-        if st.session_state[show_table]:
-            create_html_table(csv_file_path, caption, [], 0)
+    # Conditionally display the table
+    if st.session_state[show_table_prop]:
+        create_html_table(csv_file_path, caption, [], 0)
 
 # Define the content of the Study Metadata page
 def study_metadata_page(tab_name):
-
-    # Initialize session state for table visibility
-    if 'show_table_1' not in st.session_state:
-        st.session_state['show_table_1'] = False
-
+    
     st.markdown(
     """
     Official Title:  Bridge2AI-Voice
