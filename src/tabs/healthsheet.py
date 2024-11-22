@@ -189,7 +189,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
 
     with st.expander('''**Who was involved in the data collection process (e.g., patients, clinicians, doctors, ML researchers, hospital staff, vendors, etc.) and how were they compensated (e.g., how much were contributors paid)?**''', expanded=False):
         st.write('''Research teams, which may include medical, graduate, or undergraduate students, coordinated with clinicians/doctors to identify appropriate participants. These clinicians and doctors were listed under IRB as co-investigators, and were added to the consortium, so that that their names are to be included on consortium-level publications that emerge from the research. Hospital staff were not involved in scheduling but assisted in the logistics of coordinating data collection.
-                 <br><br>Participants were compensated for their time through electronic gift cards. Participants currently receive \$40 for a data collection session that takes less than 90 minutes, and \$80 for a session that takes over 90 minutes, for no more than a total of 3 sessions and maximum compensation of \$120.''', unsafe_allow_html=True)
+                 <br><br>Participants were compensated for their time through electronic gift cards. Participants currently receive \\$40 for a data collection session that takes less than 90 minutes, and \\$80 for a session that takes over 90 minutes, for no more than a total of 3 sessions and maximum compensation of \\$120.''', unsafe_allow_html=True)
 
     with st.expander('''**Over what timeframe was the data collected?**''', expanded=False):
         st.write('''The data was collected over a period of 12 months.''')
