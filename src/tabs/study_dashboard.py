@@ -1,20 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import json
-import os
 
-def load_data():
-    # Read the JSON object from the file
-    docs_data_path = os.getenv('DOCS_DATA_PATH')
-    file_path = os.path.join(docs_data_path, 'dashboard_data.json')
-    
-    # Check if the file path is valid and the file exists
-    if not os.path.isfile(file_path):
-        raise FileNotFoundError(f"The file at path {file_path} does not exist.")
-    with open(file_path, 'r') as json_file:
-        data = json.load(json_file)
-    return data
+from tabs.utils import load_data
 
 def get_data(json_data, tag, name_mapping=None):
     data = json_data.get(tag)

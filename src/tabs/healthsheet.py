@@ -1,7 +1,11 @@
 import streamlit as st
+from tabs.utils import load_data
 
 # Define the content of the Health Sheet page
 def healthsheet_page(tab_name):
+    # Load the data and participant count
+    data = load_data()
+    number_of_participants = data.get('number_of_participants')
 
     st.header("**General Information**")
 
@@ -56,10 +60,10 @@ def healthsheet_page(tab_name):
         st.write('''Each instance represents a person.''')
 
     with st.expander("**How many instances are there in total (of each type, if appropriate) (breakdown based on schema, provide data stats)?**", expanded=False):
-        st.write('''There are currently around 306 instances.''')
+        st.write(f'''There are currently around {number_of_participants} instances.''')
 
     with st.expander("**How many patients/subjects does this dataset represent? Answer this for both the preliminary dataset and the current version of the dataset.**", expanded=False):
-        st.write('''306''')
+        st.write(f'''{number_of_participants}''')
 
     with st.expander("**Does the dataset contain all possible instances, or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances, because instances were withheld or unavailable). Answer this question for the preliminary version and the current version of the dataset in question.**", expanded=False):
         st.write('''It is a sample of larger ongoing collection. The data is not representative because it was collected at a limited number of geographic locations. We hope to make it more representative by shifting to remote collection and designing our recruiting approach in a way that controls for more variables.''')
@@ -185,7 +189,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
 
     with st.expander('''**Who was involved in the data collection process (e.g., patients, clinicians, doctors, ML researchers, hospital staff, vendors, etc.) and how were they compensated (e.g., how much were contributors paid)?**''', expanded=False):
         st.write('''Research teams, which may include medical, graduate, or undergraduate students, coordinated with clinicians/doctors to identify appropriate participants. These clinicians and doctors were listed under IRB as co-investigators, and were added to the consortium, so that that their names are to be included on consortium-level publications that emerge from the research. Hospital staff were not involved in scheduling but assisted in the logistics of coordinating data collection.
-                 <br><br>Participants were compensated for their time through electronic gift cards. Participants currently receive \$40 for a data collection session that takes less than 90 minutes, and \$80 for a session that takes over 90 minutes, for no more than a total of 3 sessions and maximum compensation of \$120.''', unsafe_allow_html=True)
+                 <br><br>Participants were compensated for their time through electronic gift cards. Participants currently receive \\$40 for a data collection session that takes less than 90 minutes, and \\$80 for a session that takes over 90 minutes, for no more than a total of 3 sessions and maximum compensation of \\$120.''', unsafe_allow_html=True)
 
     with st.expander('''**Over what timeframe was the data collected?**''', expanded=False):
         st.write('''The data was collected over a period of 12 months.''')
