@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import os
+import json
 
 # All tab pages are defined below
 def coming_soon_message(tab_name):
@@ -70,6 +72,13 @@ def create_html_table(csv_file_path, caption=None, cell_values=[], column_index=
         .table .bold-cell {
             font-weight: bold; /* Bold font for first column cells */
         }
+        
+        @media (prefers-color-scheme: dark) {
+            .table th {
+                color: #000000;
+                background-color: darkgrey;
+                border-color: #ffffff !important;
+            }
         </style>
         """,
         unsafe_allow_html=True
@@ -77,3 +86,15 @@ def create_html_table(csv_file_path, caption=None, cell_values=[], column_index=
 
     # Display HTML table
     st.markdown(html_table_with_caption, unsafe_allow_html=True)
+    
+def load_data():
+    # Read the JSON object from the file
+    docs_data_path = os.getenv('DOCS_DATA_PATH')
+    file_path = os.path.join(docs_data_path, 'dashboard_data.json')
+    
+    # Check if the file path is valid and the file exists
+    if not os.path.isfile(file_path):
+        raise FileNotFoundError(f"The file at path {file_path} does not exist.")
+    with open(file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data

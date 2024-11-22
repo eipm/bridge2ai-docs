@@ -1,6 +1,3 @@
-import requests
-import os
-
 import streamlit as st
 
 from tabs.overview import overview_page
@@ -43,7 +40,7 @@ def create_tabs(tabs_func):
 
 def main():  
     # Current version of the app
-    version = "1.2.1"
+    version = "1.3.0"
     # Map tab names to functions
     # In this dictionary, the key is the tab name and the value is the function that will be called when the tab is selected
     # The function is defined in the respective file
@@ -55,6 +52,10 @@ def main():
     # healthsheet_page() is defined in tabs/healthsheet.py
     # data_pre_processing_page() is defined in tabs/data_pre_processing.py
     # ai_readiness_page() is defined in tabs/ai_readiness.py
+    # if 'current_tab' not in st.session_state:
+    #     st.session_state['current_tab'] = 'Study Metadata'
+    # if 'scroll_to' not in st.session_state:
+    #     st.session_state['scroll_to'] = None
     
     tab_functions = {
         "Overview": overview_page,

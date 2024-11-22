@@ -1,5 +1,4 @@
 import streamlit as st
-from tabs.utils import coming_soon_message
 
 def overview_page(tab_name):
     st.markdown(
