@@ -25,7 +25,7 @@ button[data-baseweb="tab"] > div[data-testid="stMarkdownContainer"] > p {
 }
 
 .stTabs [data-baseweb="tab-highlight"] {
-    border-bottom: 4px solid rgb(255, 75, 75);
+    border-bottom: 4px solid rgb(63, 81, 181);
     color: black;
 }
 
