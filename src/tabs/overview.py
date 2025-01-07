@@ -1,9 +1,4 @@
 import streamlit as st
-import webbrowser
-
-# Function to open a URL
-def open_url():
-    webbrowser.open("https://healthdatanexus.ai/content/b2ai-voice/1.0/")
 
 def overview_page(tab_name):
     st.markdown(
@@ -30,4 +25,4 @@ def overview_page(tab_name):
         """
     )
 
-    st.button("Register for Data Access", type="primary", on_click=open_url, help="Register for Data Access", icon=":material/download:")
+    st.link_button("Register for Data Access", type="primary", url="https://healthdatanexus.ai/content/b2ai-voice/1.0/",  help="Register for Data Access", icon=":material/download:")
