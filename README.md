@@ -2,7 +2,7 @@
 
 Docs for the Bridge2AI Voice Project.
 
-[![Github](https://img.shields.io/badge/github-1.3.1-green?style=flat&logo=github)](https://github.com/eipm/bridge2ai-docs) [![Python 3.12.0](https://img.shields.io/badge/python-3.12.0-blue.svg)](https://www.python.org/downloadxs/release/python-3120/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![DOI](https://zenodo.org/badge/860006845.svg)](https://zenodo.org/doi/10.5281/zenodo.13834653)
+[![Github](https://img.shields.io/badge/github-1.3.2-green?style=flat&logo=github)](https://github.com/eipm/bridge2ai-docs) [![Python 3.12.0](https://img.shields.io/badge/python-3.12.0-blue.svg)](https://www.python.org/downloadxs/release/python-3120/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![DOI](https://zenodo.org/badge/860006845.svg)](https://zenodo.org/doi/10.5281/zenodo.13834653)
 
 
 ## 🤝 License
