@@ -28,48 +28,45 @@ authors:
   - family-names: Bernier
     given-names: Alexander
     affiliation: McGill University
-  - family-names: Bensoussan
-    given-names: Yaël
-    affiliation: University of South Florida  
-  - family-names: Bensoussan
-    given-names: Yaël
-    affiliation: University of South Florida
-  - family-names: Ghosh
-    given-names: Satrajit S
-    affiliation: Massachusetts Institute of Technology (MIT)
-    orcid: 'https://orcid.org/0000-0002-5312-6729'
-  - family-names: Rameau
-    given-names: Anaïs
-    orcid: 'https://orcid.org/0000-0003-1543-2634'
-    affiliation: Weill Cornell Medicine (WCM)
-  - family-names: Powell
-    given-names: Maria E
-    affiliation: Vanderbilt University Medical Center
-    orcid: 'https://orcid.org/0000-0002-6643-8991'
   - family-names: Belisle-Pipon
     given-names: Jean-Christophe
     affiliation: Simon Fraser University
     orcid: 'https://orcid.org/0000-0002-8965-8153'
-  - family-names: Ravitsky
-    given-names: Vardit
-    affiliation: Hastings Center
-    orcid: 'https://orcid.org/0000-0002-7080-8801'
   - family-names: Johnson
     given-names: Alistair
     affiliation: Glowry
     orcid: 'https://orcid.org/0000-0002-8735-3014'
-  - family-names: Elemento
-    given-names: Olivier
-    affiliation: Weill Cornell Medicine (WCM)
-    orcid: 'https://orcid.org/0000-0002-8061-9617'
   - family-names: Dorr
     given-names: David
     affiliation: Oregon Health & Science University School of Medicine  (OHSU)
     orcid: 'https://orcid.org/0000-0003-2318-7261'
+  - family-names: Ghosh
+    given-names: Satrajit S
+    affiliation: Massachusetts Institute of Technology (MIT)
+    orcid: 'https://orcid.org/0000-0002-5312-6729'
   - family-names: Payne
     given-names: Philip R
     affiliation: Washington University in St. Louis
     orcid: 'https://orcid.org/0000-0002-9532-2998'
+  - family-names: Powell
+    given-names: Maria E
+    affiliation: Vanderbilt University Medical Center
+    orcid: 'https://orcid.org/0000-0002-6643-8991'
+  - family-names: Rameau
+    given-names: Anaïs
+    orcid: 'https://orcid.org/0000-0003-1543-2634'
+    affiliation: Weill Cornell Medicine (WCM)
+  - family-names: Ravitsky
+    given-names: Vardit
+    affiliation: Hastings Center
+    orcid: 'https://orcid.org/0000-0002-7080-8801'
+  - family-names: Elemento
+    given-names: Olivier
+    affiliation: Weill Cornell Medicine (WCM)
+    orcid: 'https://orcid.org/0000-0002-8061-9617'
+  - family-names: Bensoussan
+    given-names: Yaël
+    affiliation: University of South Florida
   - name: Bridge2AI-Voice
     website: 'https://b2ai-voice.org/'
 identifiers:
