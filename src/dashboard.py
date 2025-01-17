@@ -40,7 +40,7 @@ def create_tabs(tabs_func):
 
 def main():  
     # Current version of the app
-    version = "1.3.2"
+    version = "1.3.3"
     # Map tab names to functions
     # In this dictionary, the key is the tab name and the value is the function that will be called when the tab is selected
     # The function is defined in the respective file

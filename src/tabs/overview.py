@@ -25,4 +25,6 @@ def overview_page(tab_name):
         """
     )
 
-    st.link_button("Register for Data Access", type="primary", url="https://healthdatanexus.ai/content/b2ai-voice/1.0/",  help="Register for Data Access", icon=":material/download:")
+    st.link_button("Register for Data Access via Health Data Nexus", type="primary", url="https://healthdatanexus.ai/content/b2ai-voice/1.0/",  help="Register for Data Access via Health Data Nexus", icon=":material/download:")
+
+    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://physionet.org/content/b2ai-voice/1.1/",  help="Register for Data Access via PhysioNet", icon=":material/download:")
