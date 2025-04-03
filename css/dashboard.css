@@ -111,3 +111,24 @@ footer {
 .gtitle tspan {
     font-weight: 500 !important;
 }
+
+.review-notice {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 0px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    border-radius: 4px;
+    text-align: center;
+    border-left: 5px solid #ffeeba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-notice h6 {
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}

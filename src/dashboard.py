@@ -19,6 +19,13 @@ def config_page(version):
     with open("css/dashboard.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+    # Add review notice header
+    st.markdown("""
+    <div class="review-notice">
+        <h6 style="text-align: center; width: 100%; margin: 0;">This repository is under review for potential modification in compliance with Administration directives.</h6>
+    </div>
+    """, unsafe_allow_html=True)
+
     st.logo("images/B2AI Logo.png", )
 
     # Add the footer
@@ -40,7 +47,7 @@ def create_tabs(tabs_func):
 
 def main():  
     # Current version of the app
-    version = "1.3.3"
+    version = "1.3.4"
     # Map tab names to functions
     # In this dictionary, the key is the tab name and the value is the function that will be called when the tab is selected
     # The function is defined in the respective file
