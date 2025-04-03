@@ -22,7 +22,7 @@ def config_page(version):
     # Add review notice header
     st.markdown("""
     <div class="review-notice">
-        <h6 style="text-align: center; width: 100%; margin: 0;">This repository is under review for potential modification in compliance with Administration directives.</h6>
+        This repository is under review for potential modification in compliance with Administration directives.
     </div>
     """, unsafe_allow_html=True)
 

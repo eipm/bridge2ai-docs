@@ -124,11 +124,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.review-notice h6 {
-    margin: 0;
     font-weight: 600;
-    text-align: center;
-    width: 100%;
+    height: 50px;
 }
