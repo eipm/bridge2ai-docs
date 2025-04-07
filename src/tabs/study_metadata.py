@@ -68,7 +68,7 @@ def study_metadata_page(tab_name):
     st.markdown(
     """
     Study Population<br>
-    The current v.1.0.0 dataset contains only adult populations. As the study progresses, a pediatric cohort will be introduced. Inclusion/exclusion criteria and additional information regarding the dataset and study metadata will be updated at that time. In addition, the current dataset contains fluent English speakers but will expand to include data collection in Spanish.
+    The current v.2.0.0 dataset contains only adult populations. As the study progresses, a pediatric cohort will be introduced. Inclusion/exclusion criteria and additional information regarding the dataset and study metadata will be updated at that time. In addition, the current dataset contains fluent English speakers but will expand to include data collection in Spanish.
 
     Sampling Method<br>
     Non-Probability Sample<br>
@@ -107,9 +107,9 @@ def study_metadata_page(tab_name):
 
     URL 
     How to cite
-    If you use this dataset for any purpose, please cite the resources specified in the Bridge2AI-Voice documentation for version 1.0.0 of the dataset at (URL)
+    If you use this dataset for any purpose, please cite the resources specified in the Bridge2AI-Voice documentation for version 2.0.0 of the dataset at (URL)
     
-    Bridge2AI-Voice Consortium (2024). Flagship Voice Dataset from the Bridge2AI-Voice Project (1.0.0) [Dataset]. 
+    Bridge2AI-Voice Consortium (2024). Flagship Voice Dataset from the Bridge2AI-Voice Project (2.0.0) [Dataset]. 
 
     Contact
     For any questions, suggestions, or feedback related to this dataset, please email info@b2ai-voice.org
