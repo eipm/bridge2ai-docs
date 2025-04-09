@@ -44,7 +44,7 @@ def overview_page(tab_name):
 
         ## Data Access
         
-        ### Access audio recodings
+        ### Access audio recordings
         Please submit a [Data Access Request](TODO). This will require an institutional signature from a business official, a 
         review by the the Data Access Committee, and after approval, will be countersigned by USF. Once signed, you will be
         able to request access to the data here. 
