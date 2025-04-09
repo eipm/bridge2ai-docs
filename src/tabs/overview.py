@@ -20,7 +20,7 @@ def overview_page(tab_name):
         - Respiratory disorders 
         - Pediatric Voice and Speech Disorders 
  
-        **Please Note:** This v1.0.0 of the public data release does not contain pediatric data. It also does not contain an equal distribution of these categories of diseases. Further releases will contain additional data. 
+        **Please Note:** This v2.0.0 of the public data release does not contain pediatric data. It also does not contain an equal distribution of these categories of diseases. Further releases will contain additional data. 
 
         """
     )
