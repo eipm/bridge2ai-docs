@@ -84,8 +84,7 @@ def data_pre_processing_page(tab_name):
         also removed. 
         
         All raw voice data was removed from the Feature-Only dataset, as this data has the potential to cause 
-        to individual re-identification or to be used for illicit or unauthorized purposes.
-
+        individual re-identification or to be used for illicit or unauthorized purposes.
         All sensitive fields are removed from the dataset at this stage. These correspond to data elements encoded 
         as sensitive (Column name: Identifier?) available at: [https://github.com/eipm/bridge2ai-redcap/blob/main/data/bridge2ai_voice_project_data_dictionary.csv](https://github.com/eipm/bridge2ai-redcap/blob/main/data/bridge2ai_voice_project_data_dictionary.csv).
 
