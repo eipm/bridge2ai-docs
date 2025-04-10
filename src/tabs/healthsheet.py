@@ -218,7 +218,7 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
     st.header("**Inclusion Criteria-Accessibility in data collection**")
 
     with st.expander('''**Is there any language-based communication with patients (e.g.: English, French)? If yes, describe the choices of language(s) for communication. (for example, if there is an app used for communication, what are the language options?)**''', expanded=False):
-        st.write('''English language was used for communication with study participants.<br>The only language option for v1.0.0 is English. Spanish versions of the protocol are under development.''', unsafe_allow_html=True)
+        st.write('''English language was used for communication with study participants.<br>The only language option for v2.0.0 is English. Spanish versions of the protocol are under development.''', unsafe_allow_html=True)
 
     with st.expander('''**What are the accessibility measurements and what aspects were considered when the study was designed and implemented?**''', expanded=False):
         st.write('''The protocol asks about disabilities. Collection accessibility was facilitated through the normal means of the collection sites, including reading questions to participants when needed.''')
