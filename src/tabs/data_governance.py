@@ -1,20 +1,23 @@
 import streamlit as st
 
 def data_governance_page(tab_name):
-
+    st.header("Accessing the Dataset")
     st.write(
-            """
-           Accessing the Dataset
-           The dataset is available under two access models - Registered Access and Controlled Access - with procedures tailored to the sensitivity of the data provided.
-           Registered Access
-           To access data under Registered Access, you must complete the following steps:
+            """The dataset is available under two access models - Registered Access and Controlled Access - with procedures tailored to the sensitivity of the data provided.
+              <ol>
+              <li>
+                  Registered Access: To access data under Registered Access, you must complete the following steps:
            Register and confirm your identity
            Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use
-           Controlled Access
-           The Controlled Access process requires additional oversight:
+              </li> 
+              <li>
+                   Controlled Access: The Controlled Access process requires additional oversight:
            Complete the Data Access Request Form (DARF)
            Submit your application to the Data Access Compliance Office for review
            Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution
+              </li> 
+            </ol>
+
             """, unsafe_allow_html=True)
 
     st.write(
