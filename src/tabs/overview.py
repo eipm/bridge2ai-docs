@@ -43,7 +43,8 @@ def overview_page(tab_name):
         """
     )
     
-    st.markdown("""
+    st.markdown(
+        """
         ## Data Access
         
         ### Access audio recordings
@@ -54,9 +55,12 @@ def overview_page(tab_name):
 
         A derived dataset containing spectrograms and combined phenotypic data is available on PhysioNet under a permission access mechanism.
         Registration on PhysioNet and signing of a data use agreement will enable access. The latest version of the dataset is available at the following URL:
+        """
+    )
+    st.link_button("Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information", type="primary", url="https://doi.org/10.13026/37yb-1t42",  help="Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information", icon=":material/login:")
     
-        [Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information](https://doi.org/10.13026/37yb-1t42).
-
+    st.markdown(
+        """
         #### Dataset including raw audio
 
         Raw audio is available under a controlled access mechanism. This process includes:
@@ -64,14 +68,17 @@ def overview_page(tab_name):
         * Signing a Data Use Agreement (DUA): [B2AI-Voice | Data Transfer and Use Agreement 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119379?verifier=zkUY544cRCsMK1AOJ8kmBOZ0Bygb1abMIRYGXN2t)
         * Submitting a Data Access Request Form (DARF): [B2AI-Voice | Data Access Request Form 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119378?verifier=G4HCfwReB5YIaaOENJAC3FLf6iym7C1jwCd5IxsG)
 
-        This process will require an institutional signature from a business official, a review by the Data Access Committee, and after approval, will be countersigned by USF. Once all forms are signed, the dataset can be obtained by submitting the counter-signed forms through PhysioNet at the following URL: [Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)](https://physionet.org/content/b2ai-voice-audio/).
+        This process will require an institutional signature from a business official, a review by the Data Access Committee, and after approval, will be countersigned by USF. Once all forms are signed, the dataset can be obtained by submitting the counter-signed forms through PhysioNet at the following URL: 
         """
     )
-
-    st.markdown("""
-    ### Older Versions
-    
-    An earlier version of the feature only dataset is available on HealthDataNexus, which provides cloud-compute alongside the dataset rather than allowing data downloads.
-    """)
+    st.link_button("Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", type="primary", url="https://physionet.org/content/b2ai-voice-audio/",  help="Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", icon=":material/login:")
+                   
+    st.markdown(
+        """
+        ### Older Versions
+        
+        An earlier version of the feature only dataset is available on HealthDataNexus, which provides cloud-compute alongside the dataset rather than allowing data downloads.
+        """
+    )
 
     st.link_button("Request Data Access to v1.0 via Health Data Nexus", type="primary", url="https://healthdatanexus.ai/content/b2ai-voice/1.0/",  help="Register for Data Access via Health Data Nexus", icon=":material/login:")
