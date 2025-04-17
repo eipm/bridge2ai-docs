@@ -27,7 +27,7 @@ def collection_methods_page(tab_name):
         Please see publication for protocol development description: 
         >Bensoussan, Yael, et al. "Developing Multi-Disorder Voice Protocols: A team science approach involving clinical expertise, bioethics, standards, and DEI." Proc. Interspeech 2024. 2024. [https://www.isca-archive.org/interspeech_2024/bensoussan24_interspeech.html](https://www.isca-archive.org/interspeech_2024/bensoussan24_interspeech.html).
 
-        The supporting REDCap Data Dictionary, Metadata and Instrument PDF’s are available at [https://github.com/eipm/bridge2ai-redcap](https://github.com/eipm/bridge2ai-redcap) .
+        The supporting REDCap Data Dictionary, Metadata and Instrument PDFs are available at [https://github.com/eipm/bridge2ai-redcap](https://github.com/eipm/bridge2ai-redcap) .
 
         When using the REDCap Data Dictionary and Metadata please cite:
         
