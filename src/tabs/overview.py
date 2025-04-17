@@ -44,27 +44,24 @@ def overview_page(tab_name):
 
         ## Data Access
         
-        ### Access audio recordings
-        Please submit a [Data Access Request](TODO). This will require an institutional signature from a business official, a 
-        review by the Data Access Committee, and after approval, will be countersigned by USF. Once signed, you will be
-        able to request access to the data here. 
+        ### Access Feature Only data (does not include audio waveforms)        
         """
     )
-
-    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://physionet.org/content/b2ai-voice/2.0/",  help="Register for Data Access via PhysioNet", icon=":material/download:")
+    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://doi.org/10.13026/37yb-1t42",  help="Register for Data Access via PhysioNet", icon=":material/download:")
 
     st.markdown(
         """
-        ### Access Feature Only data (does not include audio waveforms)
+        ### Access dataset with audio recordings
+
+        [B2AI-Voice | Data Transfer and Use Agreement 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119379?wrap=1)
+        [B2AI-Voice | Data Access Request Form 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119378?wrap=1)
+        
+        Please download, fill, and sign the above forms. This will require an institutional signature from a business official.
+        After your institutional signature submit the forms to data-admins@b2ai-voice.org for 
+        review by the Data Access Committee. Once approved, this will be countersigned by USF.
+        
+        Once the DTUA has been signed by both institutions, you will be able to request access to the data here: Coming soon 
         """
     )
-    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://physionet.org/content/b2ai-voice/2.0/",  help="Register for Data Access via PhysioNet", icon=":material/download:")
+
     
-    st.markdown(
-        """
-        Prior releases of Feature Only data:
-        """
-    )
-    st.link_button("Register for Data Access via Health Data Nexus", type="primary", url="https://healthdatanexus.ai/content/b2ai-voice/1.0/",  help="Register for Data Access via Health Data Nexus", icon=":material/download:")
-
-    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://physionet.org/content/b2ai-voice/1.1/",  help="Register for Data Access via PhysioNet", icon=":material/download:")
