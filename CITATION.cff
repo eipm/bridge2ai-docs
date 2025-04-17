@@ -8,20 +8,24 @@ authors:
   - given-names: Alexandros
     family-names: Sigaras
     email: als2076@med.cornell.edu
-    affiliation: Weill Cornell Medicine (WCM)
+    affiliation: Weill Cornell Medicine
     orcid: 'https://orcid.org/0000-0002-7607-559X'
   - family-names: Zisimopoulos
     given-names: Pantelis
-    affiliation: Weill Cornell Medicine (WCM)
+    affiliation: Weill Cornell Medicine
     orcid: 'https://orcid.org/0009-0006-2425-0882'
   - family-names: Tang
     given-names: Jeff
-    affiliation: Weill Cornell Medicine (WCM)
+    affiliation: Weill Cornell Medicine
     orcid: 'https://orcid.org/0009-0006-0366-5050'
   - family-names: Bevers
     given-names: Isaac
-    affiliation: Massachusetts Institute of Technology (MIT)
+    affiliation: Massachusetts Institute of Technology
     orcid: 'https://orcid.org/0009-0002-0074-0087'
+  - family-names: Toghranegar
+    given-names: Jamie
+    affiliation: University of South Florida
+    orcid: 'https://orcid.org/0009-0007-4113-8806'
   - family-names: Gallois
     given-names: Hortense
     affiliation: Simon Fraser University
@@ -38,11 +42,11 @@ authors:
     orcid: 'https://orcid.org/0000-0002-8735-3014'
   - family-names: Dorr
     given-names: David
-    affiliation: Oregon Health & Science University School of Medicine  (OHSU)
+    affiliation: Oregon Health & Science University School of Medicine
     orcid: 'https://orcid.org/0000-0003-2318-7261'
   - family-names: Ghosh
     given-names: Satrajit S
-    affiliation: Massachusetts Institute of Technology (MIT)
+    affiliation: Massachusetts Institute of Technology
     orcid: 'https://orcid.org/0000-0002-5312-6729'
   - family-names: Payne
     given-names: Philip R
@@ -55,14 +59,14 @@ authors:
   - family-names: Rameau
     given-names: Anaïs
     orcid: 'https://orcid.org/0000-0003-1543-2634'
-    affiliation: Weill Cornell Medicine (WCM)
+    affiliation: Weill Cornell Medicine
   - family-names: Ravitsky
     given-names: Vardit
     affiliation: Hastings Center
     orcid: 'https://orcid.org/0000-0002-7080-8801'
   - family-names: Elemento
     given-names: Olivier
-    affiliation: Weill Cornell Medicine (WCM)
+    affiliation: Weill Cornell Medicine
     orcid: 'https://orcid.org/0000-0002-8061-9617'
   - family-names: Bensoussan
     given-names: Yaël

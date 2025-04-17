@@ -1,22 +1,23 @@
 import streamlit as st
 
 def data_governance_page(tab_name):
+    st.header("Accessing the Dataset")
+    st.markdown("""
+The feature-only and raw audio datasets are available under distinct agreements appropriate for the sensitivity of their respective content.
+* Registered Access (features-only data):
+    * Register on PhysioNet and confirm your identity ([Registered Access License](https://b2ai-voice.org/wp-content/uploads/2024/11/B2AI-Voice_Registered_Access_Data_Agreement_v20241119.pdf) for reference)
+    * Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use
+* Controlled Access (raw audio data):
+    * Complete the Data Access Request Form (DARF)
+    * Complete the Data Use Agreement (DUA)
+    * Submit your application to the Data Access Compliance Office for review
 
-    st.write(
-            """
-            Accessing the dataset requires several steps, through registered access governance, including:<br>
-            <ul>
-            <li>Registration with confirmation of identity</li>
-            <li>Signing of the Bridge2AI-Voice Registered Access Agreement (data-use agreement) stipulating conditions of use for the data</li>
-            </ul>
-            """, unsafe_allow_html=True)
-
-    st.write(
-        """[License](https://b2ai-voice.org/wp-content/uploads/2024/11/B2AI-Voice_Registered_Access_Data_Agreement_v20241119.pdf)""", unsafe_allow_html=False)
+Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution
+""")
     
     st.header("Oversight")
 
-    with st.expander('''**Has the clinical study has been reviewed and approved by at least one human subjects’ protection review board?**''', expanded=False):
+    with st.expander('''**Has the clinical study been reviewed and approved by at least one human subjects’ protection review board?**''', expanded=False):
         st.write('''Submitted, approved by USF Single IRB and subsites IRB through the Single IRB Process''')
 
     with st.expander('''**Is this clinical study for a drug product?**''', expanded=False):
