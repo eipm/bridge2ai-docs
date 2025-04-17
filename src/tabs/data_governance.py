@@ -17,7 +17,7 @@ Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an a
     
     st.header("Oversight")
 
-    with st.expander('''**Has the clinical study has been reviewed and approved by at least one human subjects’ protection review board?**''', expanded=False):
+    with st.expander('''**Has the clinical study been reviewed and approved by at least one human subjects’ protection review board?**''', expanded=False):
         st.write('''Submitted, approved by USF Single IRB and subsites IRB through the Single IRB Process''')
 
     with st.expander('''**Is this clinical study for a drug product?**''', expanded=False):

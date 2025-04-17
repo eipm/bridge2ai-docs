@@ -7,6 +7,7 @@ def data_pre_processing_page(tab_name):
 
         ```
         b2ai-voice-audio
+
         ├── CHANGES.md
         ├── README.md
         ├── dataset_description.json
@@ -26,14 +27,12 @@ def data_pre_processing_page(tab_name):
                     ├── sub-<participant_id>_ses-<session_id>_task-<task_name>.json
         ```
 
-
-        **Speech tasks**
+        **Speech tasks included**
         - Animal fluency
         - Cape V sentences
         - Caterpillar Passage
         - Cinderella Story
         - Diadochokinesis
-        - Free Speech
         - Picture description
         - Productive Vocabulary
         - Prolonged vowel
@@ -51,7 +50,7 @@ def data_pre_processing_page(tab_name):
         Time varying features
         -	Torchaudio-based pitch contour, spectrograms, mel spectrogram, and MFCCs
 
-        The waveform features are stored using two formats:
+        The waveform-derived features are stored using two formats:
         1.	A fixed feature format that includes static features extracted from the entire waveform
         2.	A temporal format that varies for each audio file depending on the length of recording.
 
@@ -64,7 +63,7 @@ def data_pre_processing_page(tab_name):
 
         All sensitive fields are removed from the dataset at this stage. These correspond to data elements encoded as sensitive (Column name: "Identifier?") listed in the [RedCap data dictionary (CSV)](https://github.com/eipm/bridge2ai-redcap/blob/main/data/bridge2ai_voice_project_data_dictionary.csv).
 
-        In addition, all free text responses are evaluated for PII and removed when not appropriate.
+        In addition, all spectrograms, mfcc, and transcriptions from open responses are removed from the feature only dataset.
 
         **Audit protocol**
         -	Generate missingness tables
