@@ -90,11 +90,14 @@ def create_html_table(csv_file_path, caption=None, cell_values=[], column_index=
 def load_data():
     # Read the JSON object from the file
     docs_data_path = os.getenv('DOCS_DATA_PATH')
-    file_path = os.path.join(docs_data_path, 'dashboard_data.json')
+    file_path = 'dashboard_data.json'
+    if docs_data_path is not None:
+        file_path = os.path.join(docs_data_path, file_path)
     
     # Check if the file path is valid and the file exists
     if not os.path.isfile(file_path):
-        raise FileNotFoundError(f"The file at path {file_path} does not exist.")
+        st.warning(f"The file at path {file_path} does not exist. Data is unavailable.")
+        return {}
     with open(file_path, 'r') as json_file:
         data = json.load(json_file)
     return data

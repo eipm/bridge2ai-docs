@@ -2,26 +2,18 @@ import streamlit as st
 
 def data_governance_page(tab_name):
     st.header("Accessing the Dataset")
-    st.write(
-            """The dataset is available under two access models - Registered Access and Controlled Access - with procedures tailored to the sensitivity of the data provided.
-              <ol>
-              <li>
-                  Registered Access: To access data under Registered Access, you must complete the following steps:
-           Register and confirm your identity
-           Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use
-              </li> 
-              <li>
-                   Controlled Access: The Controlled Access process requires additional oversight:
-           Complete the Data Access Request Form (DARF)
-           Submit your application to the Data Access Compliance Office for review
-           Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution
-              </li> 
-            </ol>
+    st.markdown("""
+The feature-only and raw audio datasets are available under distinct agreements appropriate for the sensitivity of their respective content.
+* Registered Access (features-only data):
+    * Register on PhysioNet and confirm your identity ([Registered Access License](https://b2ai-voice.org/wp-content/uploads/2024/11/B2AI-Voice_Registered_Access_Data_Agreement_v20241119.pdf) for reference)
+    * Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use
+* Controlled Access (raw audio data):
+    * Complete the Data Access Request Form (DARF)
+    * Complete the Data Use Agreement (DUA)
+    * Submit your application to the Data Access Compliance Office for review
 
-            """, unsafe_allow_html=True)
-
-    st.write(
-        """[License](https://b2ai-voice.org/wp-content/uploads/2024/11/B2AI-Voice_Registered_Access_Data_Agreement_v20241119.pdf)""", unsafe_allow_html=False)
+Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution
+""")
     
     st.header("Oversight")
 

@@ -26,7 +26,7 @@ def config_page(version):
     </div>
     """, unsafe_allow_html=True)
 
-    st.logo("images/B2AI Logo.png", )
+    # st.logo("images/B2AI Logo.png", )
 
     # Add the footer
     footer = f"""

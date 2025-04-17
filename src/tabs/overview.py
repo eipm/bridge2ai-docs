@@ -1,10 +1,9 @@
 import streamlit as st
 
 def overview_page(tab_name):
+    st.info("Training opportunities for using the dataset: [https://www.b2aivoicescholars.org/](https://www.b2aivoicescholars.org/)")
     st.markdown(
         """
-        Training opportunities for using dataset: [https://www.b2aivoicescholars.org/](https://www.b2aivoicescholars.org/)
-
         Bridge2AI-Voice is a Precision Public Health grand challenge project funded by the NIH Common Fund Bridge2AI 
         Program. Bridge2AI-Voice seeks to create a flagship, standardized, and ethically sourced dataset of 10,000 
         voices linked to health information to fuel research and discovery in voice biomarkers. 
@@ -40,31 +39,39 @@ def overview_page(tab_name):
         - Pediatric Voice and Speech Disorders 
  
         **Please Note:** The public data releases do not contain pediatric data. It also does not contain an equal distribution 
-        of these categories of diseases. Further releases will contain additional data. 
-
+        of these categories of diseases. Further releases will contain additional data.
+        """
+    )
+    
+    st.markdown("""
         ## Data Access
         
         ### Access audio recordings
-        Please submit a [Data Access Request](TODO). This will require an institutional signature from a business official, a 
-        review by the Data Access Committee, and after approval, will be countersigned by USF. Once signed, you will be
-        able to request access to the data here. 
-        """
-    )
 
-    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://physionet.org/content/b2ai-voice/2.0/",  help="Register for Data Access via PhysioNet", icon=":material/download:")
+        Instructions for accessing the data are provided on the [data access page](https://wustl-catalog.instructure.com/courses/643/pages/how-to-access-the-data) of the Bridge2AI learning module.
 
-    st.markdown(
-        """
-        ### Access Feature Only data (does not include audio waveforms)
-        """
-    )
-    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://physionet.org/content/b2ai-voice/2.0/",  help="Register for Data Access via PhysioNet", icon=":material/download:")
+        #### Derived dataset
+
+        A derived dataset containing spectrograms and combined phenotypic data is available on PhysioNet under a permission access mechanism.
+        Registration on PhysioNet and signing of a data use agreement will enable access. The latest version of the dataset is available at the following URL:
     
-    st.markdown(
-        """
-        Prior releases of Feature Only data:
+        [Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information](https://doi.org/10.13026/37yb-1t42).
+
+        #### Dataset including raw audio
+
+        Raw audio is available under a controlled access mechanism. This process includes:
+
+        * Signing a Data Use Agreement (DUA): [B2AI-Voice | Data Transfer and Use Agreement 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119379?verifier=zkUY544cRCsMK1AOJ8kmBOZ0Bygb1abMIRYGXN2t)
+        * Submitting a Data Access Request Form (DARF): [B2AI-Voice | Data Access Request Form 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119378?verifier=G4HCfwReB5YIaaOENJAC3FLf6iym7C1jwCd5IxsG)
+
+        This process will require an institutional signature from a business official, a review by the Data Access Committee, and after approval, will be countersigned by USF. Once all forms are signed, the dataset can be obtained by submitting the counter-signed forms through PhysioNet at the following URL: [Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)](https://physionet.org/content/b2ai-voice-audio/).
         """
     )
-    st.link_button("Register for Data Access via Health Data Nexus", type="primary", url="https://healthdatanexus.ai/content/b2ai-voice/1.0/",  help="Register for Data Access via Health Data Nexus", icon=":material/download:")
 
-    st.link_button("Register for Data Access via PhysioNet", type="primary", url="https://physionet.org/content/b2ai-voice/1.1/",  help="Register for Data Access via PhysioNet", icon=":material/download:")
+    st.markdown("""
+    ### Older Versions
+    
+    An earlier version of the feature only dataset is available on HealthDataNexus, which provides cloud-compute alongside the dataset rather than allowing data downloads.
+    """)
+
+    st.link_button("Request Data Access to v1.0 via Health Data Nexus", type="primary", url="https://healthdatanexus.ai/content/b2ai-voice/1.0/",  help="Register for Data Access via Health Data Nexus", icon=":material/login:")
