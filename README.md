@@ -1,3 +1,5 @@
+<img src="images/B2AI%20Logo.png" alt="Bridge2AI Voice Logo" width="300"/>
+
 # bridge2ai-docs
 
 Docs for the Bridge2AI Voice Project.
