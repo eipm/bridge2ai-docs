@@ -4,6 +4,9 @@
 
 name: Build and deploy Python app to Azure Web App - bridge2ai-docs-production
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
