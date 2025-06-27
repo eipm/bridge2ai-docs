@@ -17,7 +17,7 @@ def data_governance_page(tab_name):
     
     st.subheader("Memorandum: Ethical Justification for Controlled Access to Raw Voice Data Samples")
 
-    st.markdown("""Click the button below to download a copy of the memorandum explaining the reasoning behind the governance structur.""")
+    st.markdown("""Click the button below to download a copy of the memorandum explaining the reasoning behind the governance structure.""")
 
     try:
         with open("docs/v1.0-Memorandum on Raw Voice Data Samples.pdf", "rb") as pdf_file:
