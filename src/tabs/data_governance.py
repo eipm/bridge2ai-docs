@@ -3,17 +3,37 @@ import streamlit as st
 def data_governance_page(tab_name):
     st.header("Accessing the Dataset")
     st.markdown("""
-The feature-only and raw audio datasets are available under distinct agreements appropriate for the sensitivity of their respective content.
-* Registered Access (features-only data):
-    * Register on PhysioNet and confirm your identity ([Registered Access License](https://b2ai-voice.org/wp-content/uploads/2024/11/B2AI-Voice_Registered_Access_Data_Agreement_v20241119.pdf) for reference)
-    * Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use
-* Controlled Access (raw audio data):
-    * Complete the Data Access Request Form (DARF)
-    * Complete the Data Use Agreement (DUA)
-    * Submit your application to the Data Access Compliance Office for review
+    The feature-only and raw audio datasets are available under distinct agreements appropriate for the sensitivity of their respective content.
+    * Registered Access (features-only data):
+        * Register on PhysioNet and confirm your identity ([Registered Access License](https://physionet.org/about/duas/bridge2ai-voice-registered-access-agreement/)).
+        * Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use
+    * Controlled Access (raw audio data):
+        * Complete the Data Access Request Form (DARF)
+        * Complete the Data Use Agreement (DUA)
+        * Submit your application to the Data Access Compliance Office for review
 
-Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution
-""")
+    Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution
+    """)
+    
+    st.subheader("Memorandum: Ethical Justification for Controlled Access to Raw Voice Data Samples")
+
+    st.markdown("""Click the button below to download a copy of the memorandum explaining the reasoning behind the governance structur.""")
+
+    try:
+        with open("docs/v1.0-Memorandum on Raw Voice Data Samples.pdf", "rb") as pdf_file:
+            pdf_data = pdf_file.read()
+        
+        st.download_button(
+            label="Download - Memorandum PDF",
+            type="primary",
+            help="Download the Memorandum on Raw Voice Data Samples",
+            icon=":material/download:",
+            data=pdf_data,
+            file_name="v1.0-Memorandum on Raw Voice Data Samples.pdf",
+            mime="application/pdf"
+        )
+    except FileNotFoundError:
+        st.error("PDF file not found. Please check the file path.")
     
     st.header("Oversight")
 
