@@ -7,8 +7,8 @@ currently being supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| v2.0.1   | :white_check_mark: |
-| < v2.0.1   | :x:                |
+| v2.0.2   | :white_check_mark: |
+| < v2.0.2   | :x:                |
 
 ## Reporting a Vulnerability
 
