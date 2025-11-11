@@ -1,0 +1,145 @@
+{
+    "number_of_participants": 442,
+    "number_of_recordings": 16738,
+    "control": {
+        "Yes": 64,
+        "No": 378
+    },
+    "gender_identity": {
+        "Female gender identity": 260,
+        "Male gender identity": 177,
+        "Prefer not to answer": 3
+    },
+    "sexual_orientation": {
+        "Heterosexual": 377,
+        "Bisexual": 22,
+        "Prefer not to answer": 21,
+        "Homosexual": 15,
+        "Other": 5
+    },
+    "race": {
+        "American Indian or Alaska Native": 1,
+        "Asian": 28,
+        "Black or African American": 33,
+        "Native Hawaiian or other Pacific Islander": 2,
+        "White": 341,
+        "Canadian Indigenous or Aboriginal": 0,
+        "Other": 10,
+        "Prefer not to answer": 14,
+        "Multiple Races": 11
+    },
+    "ethnicity": {
+        "Not Hispanic or Latino": 391,
+        "Hispanic or Latino": 25,
+        "Prefer not to answer": 24
+    },
+    "age_groups": {
+        "0-9": 0,
+        "10-19": 4,
+        "20-29": 39,
+        "30-39": 28,
+        "40-49": 42,
+        "50-59": 73,
+        "60-69": 101,
+        "70-79": 117,
+        "80-89": 36,
+        "90 and above": 2
+    },
+    "primary_language": {
+        "English": 436,
+        "Spanish": 1,
+        "Other": 5
+    },
+    "disorder_types": {
+        "Voice Disorders": 96,
+        "Neurological and Neurodegenerative Disorders": 70,
+        "Mood and Psychiatric Disorders": 22,
+        "Respiratory Disorders": 77,
+        "Multiple Disorders": 177
+    },
+    "voice_disorders_category": {
+        "Glottic Insufficiency / Presbyphonia": 2,
+        "Laryngeal Cancer": 8,
+        "Laryngitis": 11,
+        "Lesions of the vocal cord (nodule, polyp, cyst)": 37,
+        "Muscle Tension Dysphonia (MTD)": 36,
+        "Recurrent Laryngeal Papilloma (RRP)": 4,
+        "Spasmodic Dysphonia / Laryngeal Tremor": 49,
+        "Unilateral Vocal Fold Paralysis": 39
+    },
+    "neurological_and_neurodegenerative_disorders_category": {
+        "Alzheimer's, Dementia, or Mild Cognitive Impairment": 42,
+        "Amyotrophic Lateral Sclerosis (ALS)": 0,
+        "Huntington's Disease": 0,
+        "Parkinson's disease": 61
+    },
+    "mood_and_psychiatric_disorders_category": {
+        "Alcohol or Substance Use Disorder": 4,
+        "Anxiety Disorder": 49,
+        "Attention-Deficit / Hyperactivity Disorder (ADHD)": 12,
+        "Autism Spectrum Disorder (ASD)": 0,
+        "Bipolar Disorder": 11,
+        "Borderline Personality Disorder (BPD)": 3,
+        "Depression or Major Depressive Disorder": 52,
+        "Eating Disorder (ED)": 1,
+        "Insomnia / Sleep Disorder": 12,
+        "Obsessive-Compulsive Disorder (OCD)": 3,
+        "Panic Disorder": 2,
+        "Post-Traumatic Stress Disorder (PTSD)": 10,
+        "Schizophrenia": 0,
+        "Social Anxiety Disorder": 6,
+        "Other Psychiatric Disorder": 6
+    },
+    "respiratory_disorders_category": {
+        "Asthma": 44,
+        "Airway Stenosis (for example: bilateral vocal fold paralysis; laryngeal stenosis)": 69,
+        "Chronic Cough": 40,
+        "COPD": 16,
+        "Obstructive Sleep Apnea (OSA)": 44
+    },
+    "total_hours_of_recordings": 86.13216666666669,
+    "questionnaire_collected": {
+        "Q Mood Participant History": 35,
+        "Q Generic Voice Perception": 477,
+        "Q Generic Voice Handicap Index Vhi10": 474,
+        "Q Generic Patient Health Questionnaire9": 475,
+        "Q Generic Demographics": 485,
+        "Q Generic Confounders": 480,
+        "Q - Voice - Voice Problem Severity": 217,
+        "Q - Resp - Leicester Cough Questionnaire Lcq": 176,
+        "Q - Resp - Dyspnea Index Di": 177,
+        "Q - Neuro Winograd Schemas": 149,
+        "Q - Neuro - Wordcolor Stroop": 151,
+        "Q - Neuro - Random Item Generation": 150,
+        "Q - Neuro - Productive Vocabulary": 140,
+        "Q - Mood - Ptsd Adult": 93,
+        "Q - Mood - Panas": 95,
+        "Q - Mood - Dsm5 Adult": 84,
+        "Q - Mood - Custom Affect Scale": 95,
+        "Q - Mood - Adhd Adult": 93,
+        "Q - Generic - Gad7 Anxiety": 473
+    },
+    "acoustic_task_collected": {
+        "Word-color Stroop - neurology": 151,
+        "Voluntary Cough - respiratory": 179,
+        "Story recall - generic": 478,
+        "Respiration and cough - generic": 478,
+        "Random Item Generation - neurology": 150,
+        "Rainbow Passage - generic": 481,
+        "Prolonged vowel - generic": 482,
+        "Productive Vocabulary - neurology": 151,
+        "Picture description - generic": 476,
+        "Open response questions - mood": 96,
+        "Maximum phonation time - generic": 481,
+        "Loudness - generic": 481,
+        "Glides - generic": 482,
+        "Free speech - generic": 480,
+        "Free Speech - voice": 217,
+        "Diadochokinesis - generic": 481,
+        "Cinderella Story - neurology": 151,
+        "Caterpillar Passage - voice": 219,
+        "Cape V sentences - voice": 219,
+        "Breath Sounds - respiratory": 179,
+        "Animal fluency - mood": 95
+    }
+}
