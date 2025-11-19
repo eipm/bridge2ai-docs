@@ -63,12 +63,8 @@ def overview_page(tab_name):
         """
         #### Dataset including raw audio
 
-        Raw audio is available under a controlled access mechanism. This process includes:
+        Raw audio is available under a controlled access mechanism.
 
-        * Signing a Data Use Agreement (DUA): [B2AI-Voice | Data Transfer and Use Agreement 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119379?verifier=zkUY544cRCsMK1AOJ8kmBOZ0Bygb1abMIRYGXN2t)
-        * Submitting a Data Access Request Form (DARF): [B2AI-Voice | Data Access Request Form 2025.pdf](https://wustl-catalog.instructure.com/courses/643/files/119378?verifier=G4HCfwReB5YIaaOENJAC3FLf6iym7C1jwCd5IxsG)
-
-        This process will require an institutional signature from a business official, a review by the Data Access Committee, and after approval, will be countersigned by USF. Once all forms are signed, the dataset can be obtained by submitting the counter-signed forms through PhysioNet at the following URL: 
         """
     )
     st.link_button("Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", type="primary", url="https://physionet.org/content/b2ai-voice-audio/",  help="Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", icon=":material/login:")
