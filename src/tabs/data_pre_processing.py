@@ -28,16 +28,31 @@ def data_pre_processing_page(tab_name):
         ```
 
         **Speech tasks included**
+        - ABC's
         - Animal fluency
         - Cape V sentences
         - Caterpillar Passage
+        - Caterpillar Passage (Pediatrics)
         - Cinderella Story
+        - Counting
         - Diadochokinesis
+        - Favorite Foods
+        - Favorite Show/Movies
+        - Identifying Pictures
+        - Months
+        - Naming Animals
+        - Naming Foods
+        - Outside of School
         - Picture description
+        - Picture Description (Pediatrics)
         - Productive Vocabulary
         - Prolonged vowel
         - Rainbow Passage
         - Random Item Generation
+        - Ready For School
+        - Repeat Words
+        - Repeat Sentences
+        - Role Naming
         - Story recall
         - Word-color Stroop
 
