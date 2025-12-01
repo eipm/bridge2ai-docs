@@ -3,7 +3,11 @@ import streamlit as st
 def data_pre_processing_page(tab_name):
     st.markdown(
         """
-        The raw audio files and the questionnaire data exported from REDCap were converted to follow the [Brain Imaging Data Structure v1.9.0](https://bids-specification.readthedocs.io/en/v1.9.0/). The folder structure for the dataset is as follows:
+        The raw audio files and the questionnaire data retrieved from reproschema-ui or exported from REDCap were converted to follow the [Brain Imaging Data Structure v1.9.0](https://bids-specification.readthedocs.io/en/v1.9.0/).
+
+        **Pediatric data:** Data captured for pediatrics using reproschema-ui is extracted and converted to REDCap before being finally converted to the Brain Imaging Data Structure.
+
+        The folder structure for the dataset is as follows:
 
         ```
         b2ai-voice-audio
@@ -74,7 +78,7 @@ def data_pre_processing_page(tab_name):
         **Methods of De-identification for v2.0.0**
         All direct identifiers were removed, as these would reveal the identity of the research participant. These include name, civic address, and social security numbers. Indirect identifiers were removed where these created a significant risk of causing participant re-identification, for example through their combination with other public data available on social media, in government registries, or elsewhere. These include select geographic or demographic identifiers, as well as some information about household composition or cultural identity. Non-identifying elements of data that revealed highly sensitive information, such as information about household income, mental health status, traumatic life experiences, and the like were also removed.
 
-        Raw audio transcripts were reviewed and any audio recordings which contained potentially identifying information were removed from the release.
+        Raw audio transcripts were reviewed and any audio recordings which contained potentially identifying information and external voices were removed from the release.
 
         All sensitive fields are removed from the dataset at this stage. These correspond to data elements encoded as sensitive (Column name: "Identifier?") listed in the [RedCap data dictionary (CSV)](https://github.com/eipm/bridge2ai-redcap/blob/main/data/bridge2ai_voice_project_data_dictionary.csv).
 
@@ -84,6 +88,7 @@ def data_pre_processing_page(tab_name):
         -	Generate missingness tables
         -	Check distributions and outliers
         -	For categorical responses, check against schema
+        -   For audio tasks, run quality control metrics
         -	For waveforms:
             -	Check amount of silence
             -	Duration

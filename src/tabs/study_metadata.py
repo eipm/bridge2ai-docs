@@ -46,7 +46,7 @@ def study_metadata_page(tab_name):
     No
 
     Minimum Age<br>
-    18 years (this will change when pediatric cohort is introduced, and metadata will be updated to reflect new eligibility criteria) 
+    2 - 17 for pediatric participants and 18+ for adult cohorts.
 
     Maximum Age<br>
     120 years 
