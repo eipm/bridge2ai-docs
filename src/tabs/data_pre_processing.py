@@ -3,9 +3,9 @@ import streamlit as st
 def data_pre_processing_page(tab_name):
     st.markdown(
         """
-        The raw audio files and the questionnaire data retrieved from reproschema-ui or exported from REDCap were converted to follow the [Brain Imaging Data Structure v1.9.0](https://bids-specification.readthedocs.io/en/v1.9.0/).
+        The raw audio files and the questionnaire data retrieved from ReproSchema-UI or exported from REDCap were converted to comply with the [Brain Imaging Data Structure v1.9.0](https://bids-specification.readthedocs.io/en/v1.9.0/).
 
-        **Pediatric data:** Data captured for pediatrics using reproschema-ui is extracted and converted to REDCap before being finally converted to the Brain Imaging Data Structure.
+        **Pediatric data:** Pediatric data collected through ReproSchema-UI is extracted and transformed into REDCap format, and subsequently converted to the Brain Imaging Data Structure (BIDS).
 
         The folder structure for the dataset is as follows:
 
@@ -15,8 +15,6 @@ def data_pre_processing_page(tab_name):
         ├── CHANGES.md
         ├── README.md
         ├── dataset_description.json
-        ├── participants.json
-        ├── participants.tsv
         ├── phenotype
         │   ├── <measurement_tool_name>.json
         │   └── <measurement_tool_name>.tsv
@@ -72,8 +70,6 @@ def data_pre_processing_page(tab_name):
         The waveform-derived features are stored using two formats:
         1.	A fixed feature format that includes static features extracted from the entire waveform
         2.	A temporal format that varies for each audio file depending on the length of recording.
-
-        The questionnaire features are combined into a single table (phenotype.tsv). This can be used for cohort selection.
 
         **Methods of De-identification for v2.0.0**
         All direct identifiers were removed, as these would reveal the identity of the research participant. These include name, civic address, and social security numbers. Indirect identifiers were removed where these created a significant risk of causing participant re-identification, for example through their combination with other public data available on social media, in government registries, or elsewhere. These include select geographic or demographic identifiers, as well as some information about household composition or cultural identity. Non-identifying elements of data that revealed highly sensitive information, such as information about household income, mental health status, traumatic life experiences, and the like were also removed.
