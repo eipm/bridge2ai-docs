@@ -6,17 +6,21 @@ def collection_methods_page(tab_name):
     st.markdown(
 
         """
-        Data is collected across five disease categories. Initial data release contains data collected from four of five categories (pediatric data to be incorporated in subsequent dataset releases.
+        Data is collected across five disease categories. Initial data release contains data collected from four of five categories.
 
         Participants are recruited across different academic institutions from “high volume expert clinics” based on diagnosis and inclusion/exclusion criteria outlined below **(Table 1)**.
+
+        **Pediatric Participants:** Pediatric Participants are recruited strictly from the Hospital for Sick Children (Sickkids) and are based on different age groups.
 
         **High Volume Expert Clinics:** Outpatient clinics within hospital systems or academic institutions that have developed an expertise in a specific disease area and see more than 50 patients per month from the same disease category. Ex: Asthma/COPD pulmonary specialty clinic.
 
         Data is collected in the clinic with the assistance of a trained researched assistant. Future data collection will also occur remotely, however remote data collection did not occur with initial dataset being released. Voice samples are collected prospectively using a custom software application (Bridge2AI-Voice app) with the Bridge2AI-Voice protocols.
+        
+        For Pediatrics, all data is collected using [reproschema-ui](https://repronim.org/reproschema-ui/) with the Bridge2AI-Voice pediatic protocol.
 
         **Clinical validation:** Clinical validation is performed by qualified physician or practitioner based on established gold standards for diagnosis **(Table 1)**.
 
-        **Acoustic Tasks:** Voice, breathing, cough, and speech data are recorded with the app. A total of 22 acoustic Tasks are recorded through the app **(Table 2)**.
+        **Acoustic Tasks:** Voice, breathing, cough, and speech data are recorded with the app for adults, and with reproschema-ui or for pediatrics. A total of 22 acoustic Tasks are recorded through the app **(Table 2)**.
 
         **Demographic surveys and confounders:** Detailed demographic data and surveys about confounding factors such as smoking and drinking history is collected through the smartphone application. 
 

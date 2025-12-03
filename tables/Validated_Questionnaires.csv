@@ -1,13 +1,17 @@
-Validated Questionnaire,Voice Disorders,Respiratory,Mood/Psychiatric,Neurological,Controls
-Voice Handicap Index-10 (VHI-10),X,X,X,X,X
-Patient Health Questionnaire (PHQ-9),X,X,X,X,X
-General Anxiety Disorder (GAD-7),X,X,X,X,X
-Positive and Negative Affect Schedule (PANAS),,,X,,X
-Custom Affect scale,,,X,,X
-Post-Traumatic Stress Disorder Test (PTSD) Adult,,,X,,X
-Attention Deficit and Hyperactivity Disorder Questionnaire (ADHD-Adult),,,X,,X
-The Diagnostic and Statistical Manual of Mental Disorders (DSM-5 Adult),,,X,,X
-Dyspnea Index (DI),,X,,,X
-Leicester Cough Questionnaire (LCQ),,X,,,X
-Winograd Questionnaire,,,,X,X
-Montreal Cognitive Assessment (MOCA)*,,,,X,X
+Validated Questionnaire,Voice Disorders,Respiratory,Mood/Psychiatric,Neurological,Controls,Pediatrics
+Voice Handicap Index-10 (VHI-10),X,X,X,X,X,
+Patient Health Questionnaire (PHQ-9),X,X,X,X,X,
+General Anxiety Disorder (GAD-7),X,X,X,X,X,
+Positive and Negative Affect Schedule (PANAS),,,X,,X,
+Custom Affect scale,,,X,,X,
+Post-Traumatic Stress Disorder Test (PTSD) Adult,,,X,,X,
+Attention Deficit and Hyperactivity Disorder Questionnaire (ADHD-Adult),,,X,,X,
+The Diagnostic and Statistical Manual of Mental Disorders (DSM-5 Adult),,,X,,X,
+Dyspnea Index (DI),,X,,,X,
+Leicester Cough Questionnaire (LCQ),,X,,,X,
+Winograd Questionnaire,,,,X,X,
+Montreal Cognitive Assessment (MOCA)*,,,,X,X,
+Children's Voice Handicap Index-10 (C-VHI-10),,,,,,X
+Pediatric Voice Outcomes Survey (PVOS),,,,,,X
+Pediatric Voice-Related Quality-of-Life (PVRQOL),,,,,,X
+Patient Health Questionnaire modified for Adolescents (PHQ-A),,,,,,X
