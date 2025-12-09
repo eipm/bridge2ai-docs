@@ -7,13 +7,13 @@
         "Prefer not to answer": 1
     },
     "race": {
-        "Asian": 87,
+        "Asian": 83,
         "Black or African American": 16,
-        "White": 119,
+        "White": 116,
         "Canadian Indigenous or Aboriginal": 4,
         "Other": 40,
-        "Prefer not to answer": 10,
-        "Multiple Races": 21
+        "Prefer not to answer": 9,
+        "Multiple Races": 28
     },
     "age_groups": {
         "2-4": 0,
