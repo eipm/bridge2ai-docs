@@ -4,6 +4,7 @@ from tabs.overview import overview_page
 from tabs.collection_methods import collection_methods_page
 from tabs.data_governance import data_governance_page
 from tabs.study_dashboard import study_dashboard_page
+from tabs.study_dashboard_peds import study_dashboard_page_peds
 from tabs.study_metadata import study_metadata_page
 from tabs.healthsheet import healthsheet_page
 from tabs.data_pre_processing import data_pre_processing_page
@@ -55,6 +56,7 @@ def main():
     # collections_methods_page() is defined in tabs/collections_methods.py
     # data_governance_page() is defined in tabs/data_governance.py
     # study_dashboard_page() is defined in tabs/study_dashboard.py
+    # study_dashboard_peds_page() is defined in tabs/peds_study_dashboard.py
     # study_metadata_page() is defined in tabs/study_metadata.py
     # healthsheet_page() is defined in tabs/healthsheet.py
     # data_pre_processing_page() is defined in tabs/data_pre_processing.py
@@ -69,6 +71,7 @@ def main():
         "Collection Methods": collection_methods_page,
         "Data Governance": data_governance_page,
         "Study Dashboard": study_dashboard_page,
+        "Pediatric Study Dashboard": study_dashboard_page_peds,
         "Study Metadata": study_metadata_page,
         "Healthsheet": healthsheet_page,
         "Data Pre-Processing": data_pre_processing_page,

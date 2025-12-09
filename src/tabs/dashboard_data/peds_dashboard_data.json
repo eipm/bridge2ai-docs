@@ -1,0 +1,61 @@
+{
+    "number_of_participants": 300,
+    "number_of_recordings": 28896,
+    "gender_identity": {
+        "Female gender identity": 159,
+        "Male gender identity": 140,
+        "Prefer not to answer": 1
+    },
+    "race": {
+        "Asian": 87,
+        "Black or African American": 16,
+        "White": 119,
+        "Canadian Indigenous or Aboriginal": 4,
+        "Other": 40,
+        "Prefer not to answer": 10,
+        "Multiple Races": 21
+    },
+    "age_groups": {
+        "2-4": 0,
+        "4-5": 2,
+        "6-9": 91,
+        "10-17": 207
+    },
+    "primary_language": {
+        "English": 278,
+        "Spanish": 2,
+        "Arabic": 2,
+        "French": 2,
+        "Mandarin": 5,
+        "Other": 11
+    },
+    "total_hours_of_recordings": 38.608125936003276, 
+    "questionnaire_collected": {
+        "Q - Pediatric - Generic - Demographics": 300,
+        "Q - Pediatric - Generic - VHI-10": 300,
+        "Q - Pediatric - Generic - Voice Outcome Survey": 300,
+        "Q - Pediatric - Generic - Voice Related QoL Survey": 300,
+        "Q - Pediatric - Generic PHQ-A": 300,
+        "Q - Pediatric - Generic Medical Conditions": 300
+    },
+    "acoustic_task_collected": {
+        "ABC's - peds": 0,
+        "Ready For School - peds": 298,
+        "Favorite Show - peds": 298,
+        "Favorite Food - peds": 298,
+        "Outside of School - peds": 298,
+        "Months - peds": 2,
+        "Counting - peds": 2,
+        "Naming Animals - peds": 208,
+        "Naming Food - peds": 208,
+        "Identifying Pictures - peds": 300,
+        "Picture Description - peds": 299,
+        "Long Sounds - peds": 208,
+        "Noisy Sounds - peds": 92,
+        "Caterpillar Passage - peds": 298,
+        "Repeat Words - peds": 300,
+        "Role Naming - peds": 90,
+        "Senteces - peds": 299,
+        "Silly Sounds - peds": 296
+    }
+}

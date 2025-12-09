@@ -97,3 +97,15 @@ def load_data():
     with open(file_path, 'r') as json_file:
         data = json.load(json_file)
     return data
+
+
+def load_peds_data():
+    # Read the JSON object from the file
+    file_path = os.path.join('src', 'tabs', 'dashboard_data', 'peds_dashboard_data.json')
+    # Check if the file path is valid and the file exists
+    if not os.path.isfile(file_path):
+        st.warning(f"The file at path {file_path} does not exist. Data is unavailable.")
+        return {}
+    with open(file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
