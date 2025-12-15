@@ -1,6 +1,6 @@
 {
     "number_of_participants": 300,
-    "number_of_recordings": 28896,
+    "number_of_recordings": 23533,
     "gender_identity": {
         "Female gender identity": 159,
         "Male gender identity": 140,
@@ -29,7 +29,7 @@
         "Mandarin": 5,
         "Other": 11
     },
-    "total_hours_of_recordings": 38.608125936003276, 
+    "total_hours_of_recordings": 28.0972599306, 
     "questionnaire_collected": {
         "Q - Pediatric - Generic - Demographics": 300,
         "Q - Pediatric - Generic - VHI-10": 300,
