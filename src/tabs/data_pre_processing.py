@@ -16,17 +16,107 @@ def data_pre_processing_page(tab_name):
         ├── README.md
         ├── dataset_description.json
         ├── phenotype
-        │   ├── <measurement_tool_name>.json
-        │   └── <measurement_tool_name>.tsv
+            ├── confounders
+            │   ├── confounders.json
+            │   └── confounders.tsv
+            ├── demographics
+            │   ├── demographics.json
+            │   └── demographics.tsv
+            ├── diagnosis
+            │   ├── adhd_adult.json
+            │   ├── adhd_adult.tsv
+            │   ├── airway_stenosis.json
+            │   ├── airway_stenosis.tsv
+            │   ├── amyotrophic_lateral_sclerosis.json
+            │   ├── amyotrophic_lateral_sclerosis.tsv
+            │   ├── anxiety.json
+            │   ├── anxiety.tsv
+            │   ├── benign_lesions.json
+            │   ├── benign_lesions.tsv
+            │   ├── bipolar_disorder.json
+            │   ├── bipolar_disorder.tsv
+            │   ├── cognitive_impairment.json
+            │   ├── cognitive_impairment.tsv
+            │   ├── control.json
+            │   ├── control.tsv
+            │   ├── copd_and_asthma.json
+            │   ├── copd_and_asthma.tsv
+            │   ├── depression.json
+            │   ├── depression.tsv
+            │   ├── glottic_insufficiency.json
+            │   ├── glottic_insufficiency.tsv
+            │   ├── laryngeal_cancer.json
+            │   ├── laryngeal_cancer.tsv
+            │   ├── laryngeal_dystonia.json
+            │   ├── laryngeal_dystonia.tsv
+            │   ├── laryngitis.json
+            │   ├── laryngitis.tsv
+            │   ├── muscle_tension_dysphonia.json
+            │   ├── muscle_tension_dysphonia.tsv
+            │   ├── parkinsons_disease.json
+            │   ├── parkinsons_disease.tsv
+            │   ├── precancerous_lesions.json
+            │   ├── precancerous_lesions.tsv
+            │   ├── psychiatric_history.json
+            │   ├── psychiatric_history.tsv
+            │   ├── ptsd_adult.json
+            │   ├── ptsd_adult.tsv
+            │   ├── unexplained_chronic_cough.json
+            │   ├── unexplained_chronic_cough.tsv
+            │   ├── unilateral_vocal_fold_paralysis.json
+            │   └── unilateral_vocal_fold_paralysis.tsv
+            ├── enrollment
+            │   ├── eligibility.json
+            │   ├── eligibility.tsv
+            │   ├── enrollment_form.json
+            │   ├── enrollment_form.tsv
+            │   ├── participant.json
+            │   └── participant.tsv
+            ├── questionnaire
+            │   ├── custom_affect_scale.json
+            │   ├── custom_affect_scale.tsv
+            │   ├── dsm5_adult.json
+            │   ├── dsm5_adult.tsv
+            │   ├── dyspnea_index.json
+            │   ├── dyspnea_index.tsv
+            │   ├── gad7_anxiety.json
+            │   ├── gad7_anxiety.tsv
+            │   ├── leicester_cough_questionnaire.json
+            │   ├── leicester_cough_questionnaire.tsv
+            │   ├── panas.json
+            │   ├── panas.tsv
+            │   ├── phq9.json
+            │   ├── phq9.tsv
+            │   ├── productive_vocabulary.json
+            │   ├── productive_vocabulary.tsv
+            │   ├── vhi10.json
+            │   ├── vhi10.tsv
+            │   ├── voice_perception.json
+            │   └── voice_perception.tsv
+            └── task
+                ├── acoustic_task.json
+                ├── acoustic_task.tsv
+                ├── harvard_sentences.json
+                ├── harvard_sentences.tsv
+                ├── random_item_generation.json
+                ├── random_item_generation.tsv
+                ├── recording.json
+                ├── recording.tsv
+                ├── session.json
+                ├── session.tsv
+                ├── stroop.json
+                ├── stroop.tsv
+                ├── voice_perception.json
+                ├── voice_perception.tsv
+                ├── voice_problem_severity.json
+                ├── voice_problem_severity.tsv
+                ├── winograd.json
+                └── winograd.tsv
         └── sub-<participant_id>
-            ├── ses-<another_session_id>
-            │   └── audio
-            │       ├── sub-<participant_id>_ses-<session_id>_task-<task_name>.wav
-            │       ├── sub-<participant_id>_ses-<session_id>_task-<task_name>.json
             └── ses-<session_id>
-                └── voice
-                    ├── sub-<participant_id>_ses-<session_id>_task-<task_name>.wav
-                    ├── sub-<participant_id>_ses-<session_id>_task-<task_name>.json
+               └── audio
+                   ├── sub-<participant_id>_ses-<session_id>_task-<task_name>.wav
+                   └── sub-<participant_id>_ses-<session_id>_task-<task_name>.json 
         ```
 
         **Speech tasks included**
@@ -65,22 +155,24 @@ def data_pre_processing_page(tab_name):
         -	Parselmouth/Praat speech features for any speech tasks
         -	Speech intelligibility metrics for speech tasks
         Time varying features
-        -	Torchaudio-based pitch contour, spectrograms, mel spectrogram, and MFCCs
+        -   Torchaudio-based pitch contour, spectrograms, mel spectrogram, and MFCCs
+        -   Speech Articulatory Coding (sparc)-based features including electromagnetic articulography (EMA) estimates, plus loudness, periodicity, and pitch measures
+        -   Phonetic posteriorgrams (PPGs)
 
         The waveform-derived features are stored using two formats:
         1.	A fixed feature format that includes static features extracted from the entire waveform
         2.	A temporal format that varies for each audio file depending on the length of recording.
 
-        The questionnaire features are combined into a single table (phenotype.tsv). This can be used for cohort selection.
+        The questionnaire features are collected and distributed in the phenotype folder format shown above. These can be used for cohort selection.
 
-        **Methods of De-identification for v2.0.0**
+        **Methods of De-identification for v3.0.0**
         All direct identifiers were removed, as these would reveal the identity of the research participant. These include name, civic address, and social security numbers. Indirect identifiers were removed where these created a significant risk of causing participant re-identification, for example through their combination with other public data available on social media, in government registries, or elsewhere. These include select geographic or demographic identifiers, as well as some information about household composition or cultural identity. Non-identifying elements of data that revealed highly sensitive information, such as information about household income, mental health status, traumatic life experiences, and the like were also removed.
 
         Raw audio transcripts were reviewed and any audio recordings which contained potentially identifying information and external voices were removed from the release.
 
         All sensitive fields are removed from the dataset at this stage. These correspond to data elements encoded as sensitive (Column name: "Identifier?") listed in the [RedCap data dictionary (CSV)](https://github.com/eipm/bridge2ai-redcap/blob/main/data/bridge2ai_voice_project_data_dictionary.csv).
 
-        In addition, all spectrograms, mfcc, and transcriptions from open responses are removed from the feature only dataset.
+        In addition, all spectrograms, mfcc, Mel spectrograms, transcriptions, EMAs, and PPGs from open responses are removed from the feature only dataset.
 
         **Audit protocol**
         -	Generate missingness tables
