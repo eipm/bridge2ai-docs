@@ -1,17 +1,17 @@
-Validated Questionnaire,Voice Disorders,Respiratory,Mood/Psychiatric,Neurological,Controls,Pediatrics
-Voice Handicap Index-10 (VHI-10),X,X,X,X,X,
-Patient Health Questionnaire (PHQ-9),X,X,X,X,X,
-General Anxiety Disorder (GAD-7),X,X,X,X,X,
-Positive and Negative Affect Schedule (PANAS),,,X,,X,
-Custom Affect scale,,,X,,X,
-Post-Traumatic Stress Disorder Test (PTSD) Adult,,,X,,X,
-Attention Deficit and Hyperactivity Disorder Questionnaire (ADHD-Adult),,,X,,X,
-The Diagnostic and Statistical Manual of Mental Disorders (DSM-5 Adult),,,X,,X,
-Dyspnea Index (DI),,X,,,X,
-Leicester Cough Questionnaire (LCQ),,X,,,X,
-Winograd Questionnaire,,,,X,X,
-Montreal Cognitive Assessment (MOCA)*,,,,X,X,
-Children's Voice Handicap Index-10 (C-VHI-10),,,,,,X
-Pediatric Voice Outcomes Survey (PVOS),,,,,,X
-Pediatric Voice-Related Quality-of-Life (PVRQOL),,,,,,X
-Patient Health Questionnaire modified for Adolescents (PHQ-A),,,,,,X
+Validated Questionnaire,Voice Disorders,Respiratory,Mood/Psychiatric,Neurological,Controls,Pediatrics,Example
+Voice Handicap Index-10 (VHI-10),X,X,X,X,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Generic/Q%20-%20Generic%20-%20VHI-10.pdf
+Patient Health Questionnaire (PHQ-9),X,X,X,X,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Generic/Q%20-%20Generic%20-%20PHQ-9.pdf
+General Anxiety Disorder (GAD-7),X,X,X,X,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Generic/Q%20-%20Generic%20-%20GAD-7%20Anxiety.pdf
+Positive and Negative Affect Schedule (PANAS),,,X,,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Mood/Q%20-%20Mood%20-%20PANAS.pdf
+Custom Affect scale,,,X,,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Mood/Q%20-%20Mood%20-%20Custom%20Affect%20Scale.pdf
+Post-Traumatic Stress Disorder Test (PTSD) Adult,,,X,,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Mood/Q%20-%20Mood%20-%20PTSD%20Adult.pdf
+Attention Deficit and Hyperactivity Disorder Questionnaire (ADHD-Adult),,,X,,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Mood/Q%20-%20Mood%20-%20ADHD%20Adult.pdf
+The Diagnostic and Statistical Manual of Mental Disorders (DSM-5 Adult),,,X,,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Mood/Q%20-%20Mood%20-%20DSM-5%20Adult.pdf
+Dyspnea Index (DI),,X,,,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Resp/Q%20-%20Resp%20-%20Dyspnea%20Index%20(DI).pdf
+Leicester Cough Questionnaire (LCQ),,X,,,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Resp/Q%20-%20Resp%20-%20Leicester%20Cough%20Questionnaire%20(LCQ).pdf
+Winograd Questionnaire,,,,X,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Neuro/Q%20-%20Neuro%20-%20Winograd%20Schemas.pdf
+Montreal Cognitive Assessment (MOCA)*,,,,X,X,,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Neuro/Q%20-%20Neuro%20-%20MoCA.pdf
+Children's Voice Handicap Index-10 (C-VHI-10),,,,,,X,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Pediatric%20-%20Generic/Q%20-%20Pediatric%20-%20Generic%20-%20VHI-10.pdf
+Pediatric Voice Outcomes Survey (PVOS),,,,,,X,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Pediatric%20-%20Generic/Q%20-%20Pediatric%20-%20Generic%20-%20Voice%20Outcome%20Survey.pdf
+Pediatric Voice-Related Quality-of-Life (PVRQOL),,,,,,X,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Pediatric%20-%20Generic/Q%20-%20Pediatric%20-%20Generic%20-%20Voice%20Related%20QoL%20Survey.pdf
+Patient Health Questionnaire modified for Adolescents (PHQ-A),,,,,,X,https://github.com/eipm/bridge2ai-redcap/blob/main/data/en-us/Questionnaire%20-%20PDFs/Pediatric%20-%20Generic/Q%20-%20Pediatric%20-%20Generic%20PHQ-A.pdf
