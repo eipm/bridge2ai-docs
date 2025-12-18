@@ -20,7 +20,7 @@ def collection_methods_page(tab_name):
 
         **Clinical validation:** Clinical validation is performed by qualified physician or practitioner based on established gold standards for diagnosis **(Table 1)**.
 
-        **Acoustic Tasks:** Voice, breathing, cough, and speech data are recorded with the app for adults, and with reproschema-ui or for pediatrics. A total of 22 acoustic Tasks are recorded through the app **(Table 2)**.
+        **Acoustic Tasks:** Voice, breathing, cough, and speech data are recorded with the app for adults, and with reproschema-ui for pediatrics. A total of 22 acoustic Tasks are recorded through the app **(Table 2)**.
 
         **Demographic surveys and confounders:** Detailed demographic data and surveys about confounding factors such as smoking and drinking history is collected through the smartphone application. 
 
