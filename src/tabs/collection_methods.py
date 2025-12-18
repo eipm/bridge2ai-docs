@@ -16,7 +16,7 @@ def collection_methods_page(tab_name):
 
         Data is collected in the clinic with the assistance of a trained researched assistant. Future data collection will also occur remotely, however remote data collection did not occur with initial dataset being released. Voice samples are collected prospectively using a custom software application (Bridge2AI-Voice app) with the Bridge2AI-Voice protocols.
         
-        For Pediatrics, all data is collected using [reproschema-ui](https://repronim.org/reproschema-ui/) with the Bridge2AI-Voice pediatic protocol.
+        For Pediatrics, all data is collected using [reproschema-ui](https://repronim.org/reproschema-ui/) with the Bridge2AI-Voice pediatric protocol.
 
         **Clinical validation:** Clinical validation is performed by qualified physician or practitioner based on established gold standards for diagnosis **(Table 1)**.
 
