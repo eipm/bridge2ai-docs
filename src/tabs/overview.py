@@ -38,8 +38,7 @@ def overview_page(tab_name):
         - Respiratory disorders 
         - Pediatric Voice and Speech Disorders 
  
-        **Please Note:** The public data releases do not contain pediatric data. It also does not contain an equal distribution 
-        of these categories of diseases. Further releases will contain additional data.
+        **Please Note:** The public data releases do contain an equal distribution of these categories of diseases. Further releases will contain additional data.
         """
     )
     
@@ -57,7 +56,7 @@ def overview_page(tab_name):
         Registration on PhysioNet and signing of a data use agreement will enable access. The latest version of the dataset is available at the following URL:
         """
     )
-    st.link_button("Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information", type="primary", url="https://doi.org/10.13026/37yb-1t42",  help="Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information", icon=":material/login:")
+    st.link_button("Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information", type="primary", url="https://physionet.org/content/b2ai-voice/3.0.0/",  help="Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information", icon=":material/login:")
     
     st.markdown(
         """
@@ -67,7 +66,17 @@ def overview_page(tab_name):
 
         """
     )
-    st.link_button("Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", type="primary", url="https://physionet.org/content/b2ai-voice-audio/",  help="Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", icon=":material/login:")
+    st.link_button("Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", type="primary", url="https://physionet.org/content/b2ai-voice/3.0.0/",  help="Bridge2AI-Voice: An ethically-sourced, diverse voice dataset linked to health information (Audio included)", icon=":material/login:")
+
+    st.markdown(
+        """
+        #### Pediatric Dataset
+
+        The Bridge2AI Voice consortium has also prepared a pediatric dataset. To access the Bridge2AI Voice pediatric dataset please click here
+
+        """
+    )
+    st.link_button("Bridge2AI-Voice Pediatric Dataset", type="primary", url="https://physionet.org/content/b2ai-voice-pediatric/1.0.0/",  help="Bridge2AI-Voice Pediatric Dataset", icon=":material/login:")
                    
     st.markdown(
         """
