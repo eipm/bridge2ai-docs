@@ -14,7 +14,7 @@ def collection_methods_page(tab_name):
 
         **High Volume Expert Clinics:** Outpatient clinics within hospital systems or academic institutions that have developed an expertise in a specific disease area and see more than 50 patients per month from the same disease category. Ex: Asthma/COPD pulmonary specialty clinic.
 
-        Data is collected in the clinic with the assistance of a trained researched assistant. Future data collection will also occur remotely, however remote data collection did not occur with initial dataset being released. Voice samples are collected prospectively using a custom software application (Bridge2AI-Voice app) with the Bridge2AI-Voice protocols.
+        Data is collected in the clinic with the assistance of a trained research assistant. Future data collection will also occur remotely, however remote data collection did not occur with initial dataset being released. Voice samples are collected prospectively using a custom software application (Bridge2AI-Voice app) with the Bridge2AI-Voice protocols.
         
         For Pediatrics, all data is collected using [reproschema-ui](https://repronim.org/reproschema-ui/) with the Bridge2AI-Voice pediatric protocol.
 
