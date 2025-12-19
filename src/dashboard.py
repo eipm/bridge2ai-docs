@@ -56,7 +56,7 @@ def main():
     # collections_methods_page() is defined in tabs/collections_methods.py
     # data_governance_page() is defined in tabs/data_governance.py
     # study_dashboard_page() is defined in tabs/study_dashboard.py
-    # study_dashboard_peds_page() is defined in tabs/peds_study_dashboard.py
+    # study_dashboard_peds_page() is defined in tabs/study_dashboard_peds.py
     # study_metadata_page() is defined in tabs/study_metadata.py
     # healthsheet_page() is defined in tabs/healthsheet.py
     # data_pre_processing_page() is defined in tabs/data_pre_processing.py
