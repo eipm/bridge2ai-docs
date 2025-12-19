@@ -112,8 +112,8 @@ def collection_methods_page(tab_name):
 
     csv_file_path = "tables/Acoustic_Tasks_Protocol.csv"
     caption = 'Table 2 - Acoustic Tasks in Protocol'
-    create_html_table(csv_file_path, caption,link_formattter={"Task": map_tasks_to_videos})
+    create_html_table(csv_file_path, caption,link_formatter={"Task": map_tasks_to_videos})
 
     csv_file_path = "tables/Validated_Questionnaires.csv"
     caption = 'Table 3 - Validated Questionnaires integrated into App'
-    create_html_table(csv_file_path, caption, ['X'],link_formattter={'Example': map_questionnaire_link})
+    create_html_table(csv_file_path, caption, ['X'],link_formatter={'Example': map_questionnaire_link})
