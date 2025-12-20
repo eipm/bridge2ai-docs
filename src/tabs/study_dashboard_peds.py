@@ -279,7 +279,6 @@ def study_dashboard_page_peds(tab_name):
         ('respiratory_disorders_category', 'Respiratory Disorder', 'pie', {'height': 650, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 0.5, 'font_size': 11}),
         ("snoring_and_obstructive_sleep_category", 'Snoring and Obstructive Sleep Disorder', 'pie', {'height': 650, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 1, 'font_size': 11})
     ]
-    # Data collec
 
     # Data collection plots    
     collected_data_plots = [
