@@ -32,10 +32,10 @@ def study_metadata_page(tab_name):
     Design Time Perspective
     - Cross-sectional
     
-    Biospecimens: Respiratory, Voice and speech samples
+    Biospecimens: Respiratory, voice, and speech samples
     
     Biospecimens Description<br>
-    The Bridge2AI-Voice dataset contains samples from conventional acoustic tasks including respiratory sounds, cough sounds, and free speech prompts, capturing voice, speech and language data relating to health. Participants who consent are asked to perform speaking tasks and complete self-reported demographic and medical history questionnaires, as well as disease-specific validated questionnaires. Participants who consent also permit investigators to access medical information through EHR platforms in order to perform gold standard validation of diagnoses and symptoms  
+    The Bridge2AI-Voice dataset contains samples from conventional acoustic tasks, including respiratory sounds, cough sounds, and free speech prompts, capturing voice, speech, and language data related to health. Consenting participants are asked to perform speaking tasks and complete self-reported demographic and medical history questionnaires, as well as disease-specific validated questionnaires. Participants also permit investigators to access medical information through EHR platforms to perform gold-standard validation of diagnoses and symptoms.
     
     <ins>Eligibility</ins>
 
@@ -61,7 +61,7 @@ def study_metadata_page(tab_name):
     st.markdown(
     """
     Exclusion Criteria<br>
-    Does not read or speak English (Please note, the Spanish protocols and Data collection will be included in future releases)<br>""", unsafe_allow_html=True)
+    Does not read or speak English (please note: Spanish protocols and data collection will be included in future releases).<br>""", unsafe_allow_html=True)
 
     show_table(2, 'See Collection Methods - Table 1', 'show_table_1', "tables/Disease_cohort_inclusion_exclusion_criteria.csv", 'Table 1 - Disease cohort inclusion/exclusion criteria and validation methods')
     
@@ -106,7 +106,7 @@ def study_metadata_page(tab_name):
     - Vanderbilt University Medical Center
 
     URL 
-    How to cite
+    How to cite:
     If you use this dataset for any purpose, please cite the resources specified in the Bridge2AI-Voice documentation for version 2.0.0 of the dataset at (URL)
     
     Bridge2AI-Voice Consortium (2024). Flagship Voice Dataset from the Bridge2AI-Voice Project (2.0.0) [Dataset]. 

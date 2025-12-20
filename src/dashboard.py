@@ -53,7 +53,7 @@ def main():
     # In this dictionary, the key is the tab name and the value is the function that will be called when the tab is selected
     # The function is defined in the respective file
     # overview_page() is defined in tabs/overview.py
-    # collections_methods_page() is defined in tabs/collections_methods.py
+    # collection_methods_page() is defined in tabs/collection_methods.py
     # data_governance_page() is defined in tabs/data_governance.py
     # study_dashboard_page() is defined in tabs/study_dashboard.py
     # study_dashboard_peds_page() is defined in tabs/study_dashboard_peds.py
