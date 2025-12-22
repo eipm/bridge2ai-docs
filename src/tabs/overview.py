@@ -11,26 +11,26 @@ def overview_page(tab_name):
         Our group aims to promote integration of voice as a biomarker of health in clinical care. To do so, we will 
         generate a large multi-institutional, ethically sourced, and diverse voice dataset linked to multimodal health 
         biomarkers to fuel voice AI research. Data collection is performed via a novel app (The Bridge2AI-Voice App) 
-        available as smartphone application linked to electronic health records (EHR). The app collected breathing sounds, 
-        voice, speech and linguistic tasks but also a considerable amount of health information through surveys and 
-        validated questionnaires. Other multimodal data collected includes imaging, genomics and respiratory function 
-        tests amongst others. The consortium is also addressing the growing ethical, legal, and social challenges surrounding 
+        available as a smartphone application linked to electronic health records (EHR). The app collects breathing sounds 
+        and voice, speech, and linguistic tasks, along with a considerable amount of health information through surveys and 
+        validated questionnaires. Other multimodal data collected includes imaging, genomics, and respiratory function 
+        tests, among others. The consortium is also addressing the growing ethical, legal, and social challenges surrounding 
         voice AI, including risks of voice re-identification, vulnerabilities like voice AI hacking, concerns around voice 
         data sharing and privacy, and the influence of gender and racial diversity on the development and application of 
         these technologies.
         
-        Our developed best ethical practices through ethical inquiry have guided the development of voice collection 
-        protocol as well as data dissemination practices.     
+        Our best ethical practices, developed through ethical inquiry, have guided the development of the voice collection 
+        protocol as well as data dissemination practices.
         
-        As voice is increasingly being recognized as a biomarker of health by the tech world and voice AI is gaining attention 
-        from multi-nationals such as Google, Amazon, Mozilla and Apple amongst others, many important issues related to patient 
-        privacy protection, ethical and fair representation of population, and clinical accuracy are arising. As a 
+        As voice is increasingly recognized as a biomarker of health by the tech world and voice AI is gaining attention 
+        from multinationals such as Google, Amazon, Mozilla, and Apple, many important issues related to patient 
+        privacy protection, ethical and fair representation of populations, and clinical accuracy are arising. As a 
         multidisciplinary group of academic experts, we aim to influence and guide the world of voice AI by ensuring patient 
-        protection through ethical and fairness principles and create safe innovative infrastructures to disseminate ethically 
-        sourced data for the future generations of voice AI researchers.
+        protection through ethical and fairness principles and by creating safe, innovative infrastructures to disseminate ethically 
+        sourced data for future generations of voice AI researchers.
  
         Based on the existing literature and ongoing research in different fields of voice research, our group has identified 
-        5 disease cohort categories for which voice changes have been associated to specific diseases with well-recognized 
+        5 disease cohort categories for which voice changes have been associated with specific diseases with well-recognized 
         unmet needs and for which our data acquisition efforts are focused: 
         - Voice Disorders
         - Neurological and Neurodegenerative Disorders 
@@ -38,7 +38,7 @@ def overview_page(tab_name):
         - Respiratory disorders 
         - Pediatric Voice and Speech Disorders 
  
-        **Please Note:** The public data releases do contain an equal distribution of these categories of diseases. Further releases will contain additional data.
+        **Please Note:** The public data releases do not contain an equal distribution of these categories of diseases. Further releases will contain additional data.
         """
     )
     
@@ -52,7 +52,7 @@ def overview_page(tab_name):
 
         #### Derived dataset
 
-        A derived dataset containing spectrograms and combined phenotypic data is available on PhysioNet under a permission access mechanism.
+        A derived dataset containing spectrograms and combined phenotypic data is available on PhysioNet under a permissioned access mechanism.
         Registration on PhysioNet and signing of a data use agreement will enable access. The latest version of the dataset is available at the following URL:
         """
     )
@@ -82,7 +82,7 @@ def overview_page(tab_name):
         """
         ### Older Versions
         
-        An earlier version of the feature only dataset is available on HealthDataNexus, which provides cloud-compute alongside the dataset rather than allowing data downloads.
+        An earlier version of the feature-only dataset is available on HealthDataNexus, which provides cloud compute alongside the dataset rather than allowing data downloads.
         """
     )
 

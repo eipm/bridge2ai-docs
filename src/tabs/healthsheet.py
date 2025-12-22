@@ -12,12 +12,12 @@ def healthsheet_page(tab_name):
     st.markdown('''
         **Provide a 2-sentence summary of this dataset.**
 
-        The Bridge2AI Voice dataset aims to enable the development, benchmarking, or validation of clinically applicable machine-learning models for diagnosing a wide range of health conditions using voice data, including vocal pathologies, neurological, psychiatric, respiratory, and pediatric voice disorders. This dataset contains voice recordings and key metadata and is structured to be Findable, Accessible, Interoperable, and Reusable (FAIR).
+        The Bridge2AI Voice dataset aims to enable the development, benchmarking, or validation of clinically applicable machine-learning models for diagnosing a wide range of health conditions using voice data, including vocal pathologies, neurological, psychiatric, respiratory, and pediatric voice disorders. This dataset contains voice recordings and key metadata, and it is structured to be Findable, Accessible, Interoperable, and Reusable (FAIR).
     '''
     )
 
     with st.expander("**Has the dataset been audited before? If yes, by whom and what are the results?**", expanded=False):
-        st.write('''The dataset has been audited internally for missingness and consistency by the data release team. A missingness table is included with the dataset. Certain aspects of the data (e.g., transcription) were generated using off the shelf models that have not been audited for correctness.''')
+        st.write('''The dataset has been audited internally for missingness and consistency by the data release team. A missingness table is included with the dataset. Certain aspects of the data (e.g., transcription) were generated using off-the-shelf models that have not been audited for correctness.''')
 
     st.header("**Dataset Versioning**")
 
@@ -33,13 +33,13 @@ def healthsheet_page(tab_name):
         st.write('''The Bridge2AI Voice dataset was created to address a gap in the availability of large-scale, diverse, and well-documented voice data for use in clinical machine-learning applications. Previous studies on machine learning-based voice diagnosis produced promising results, but their sample sizes were too small, or they lacked the key metadata needed for training robust, clinically useful models. The dataset aims to bridge this gap by providing an ethically sourced, large, and diverse dataset to develop, benchmark, or validate clinically applicable AI/ML models. The goal is to facilitate the use of voice as a non-invasive, cost-effective biomarker for the screening, diagnosis, and monitoring of a wide range of health conditions.''')
 
     with st.expander("**What are the applications that the dataset is meant to address? (e.g., administrative applications, software applications, research)**", expanded=False):
-        st.write('''The Bridge2AI Voice dataset is primarily intended for research applications, specifically in the development of AI and machine-learning models for healthcare. It aims to support clinical research in disease screening, diagnosis, and monitoring through voice biomarkers. The dataset can be used for AI model pretraining, finetuning, benchmarking, or validation.''')
+        st.write('''The Bridge2AI Voice dataset is primarily intended for research applications, specifically in the development of AI and machine-learning models for healthcare. It aims to support clinical research in disease screening, diagnosis, and monitoring through voice biomarkers. The dataset can be used for AI model pretraining, fine-tuning, benchmarking, or validation.''')
 
     with st.expander("**Are there any types of usage or applications that are discouraged from using this dataset? If so, why?**", expanded=False):
         st.write('''Yes, there are restrictions on the use of this dataset, as detailed in the Registered Data Access Agreement. These restrictions reflect the B2AI-Voice Consortium’s commitment to advancing ethical and trustworthy research practices that respect and protect the rights and interests of research participants. Accordingly, the dataset is intended solely for commercial and non-commercial research purposes by Authorized Researchers. Specifically, the dataset is not to be used a) to attempt to re-identify research participants, nor any actions that could reasonably lead to re-identification; and b) for any purpose that could foreseeably cause harm or stigmatization to research participants, their families, communities, or specific populations. Lastly, intellectual property protections, database rights, or related rights may not be used in a manner that restricts or limits access to any part of the dataset or to any conclusions derived from it. This restriction ensures that future use of the dataset remains unrestricted, in alignment with the Open Science principles upheld by the B2AI-Voice Consortium. Specifically, the dataset should not be used for non-research applications, such as hiring decisions, insurance premium adjustments, or any form of surveillance that could lead to discrimination or harm. These limitations are intended to prevent unethical or biased outcomes that could negatively impact individuals based on their health conditions or voice characteristics.''')
 
     with st.expander("**Who created this dataset (e.g., which team, research group), and on behalf of which entity (e.g., company, institution, organization)?**", expanded=False):
-        st.write('''Voice as a Biomarker of Health is being co-led by Dr Yaël Bensoussan, MD, MSc from USF Health Morsani College of Medicine and Olivier Elemento, PhD from Weill Cornell Medicine, who are co-principal investigators for the project, which is funded by the NIH Common Fund within the Bridge2AI Program. The project also includes lead investigators from 10 other universities in North America; Alexandros Sigaras, MSc and Anaïs Rameau, MD, MPhil (Weill Cornell Medicine), Maria Powell, CCC-SLP, PhD (Vanderbilt University Medical Center), Ruth Bahr, CCC-SLP, PhD (USF Health Morsani College of Medicine), Jennifer Sui, MD (Hospital for Sick Children), Philip Payne, PhD (Washington University in St. Louis), David Dorr, MD (Oregon Health & Science University), Jean-Christophe Bélisle-Pipon, PhD (Simon Fraser University), Vardit Ravitsky , PhD (The Hastings Center), Satrajit Ghosh, PhD (Massachusetts Institute of Technology), Frank Rudzizc, PhD (University of Toronto), Jordan Lerner-Ellis, PhD (Sinai Health) and Don Bolser, PhD (University of Florida).There are over 50 other investigators, clinicians, scholars and trainees who have contributed to the development of this dataset. Please see full list of collaborators here: [The Bridge2AI-Voice Consortium (2024)](https://b2ai-voice.org/wp-content/uploads/2024/11/FOR-WEBSITE-Year-2-Bridge2AI-Voice-Consortium-Authors.docx)''')
+        st.write('''Voice as a Biomarker of Health is being co-led by Dr. Yaël Bensoussan, MD, MSc, from USF Health Morsani College of Medicine and Olivier Elemento, PhD, from Weill Cornell Medicine, who are co-principal investigators for the project, which is funded by the NIH Common Fund within the Bridge2AI Program. The project also includes lead investigators from 10 other universities in North America; Alexandros Sigaras, MSc and Anaïs Rameau, MD, MPhil (Weill Cornell Medicine), Maria Powell, CCC-SLP, PhD (Vanderbilt University Medical Center), Ruth Bahr, CCC-SLP, PhD (USF Health Morsani College of Medicine), Jennifer Sui, MD (Hospital for Sick Children), Philip Payne, PhD (Washington University in St. Louis), David Dorr, MD (Oregon Health & Science University), Jean-Christophe Bélisle-Pipon, PhD (Simon Fraser University), Vardit Ravitsky, PhD (The Hastings Center), Satrajit Ghosh, PhD (Massachusetts Institute of Technology), Frank Rudzizc, PhD (University of Toronto), Jordan Lerner-Ellis, PhD (Sinai Health) and Don Bolser, PhD (University of Florida). There are over 50 other investigators, clinicians, scholars, and trainees who have contributed to the development of this dataset. Please see full list of collaborators here: [The Bridge2AI-Voice Consortium (2024)](https://b2ai-voice.org/wp-content/uploads/2024/11/FOR-WEBSITE-Year-2-Bridge2AI-Voice-Consortium-Authors.docx)''')
 
     with st.expander("**Who funded the creation of the dataset? If there is an associated grant, please provide the name of the grantor and the grant name and number. If the funding institution differs from the research organization creating and managing the dataset, please state how.**", expanded=False):
         st.write('''The NIH Common Fund<br>[3TF- OT2ActfOD032720Projectf01S1](https://reporter.nih.gov/search/ES3d7yibyESXrX-rp6g1Ng/project-details/10858564)''', unsafe_allow_html=True)
@@ -66,7 +66,7 @@ def healthsheet_page(tab_name):
         st.write(f'''{number_of_participants}''')
 
     with st.expander("**Does the dataset contain all possible instances, or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances, because instances were withheld or unavailable). Answer this question for the preliminary version and the current version of the dataset in question.**", expanded=False):
-        st.write('''It is a sample of larger ongoing collection. The data is not representative because it was collected at a limited number of geographic locations. We hope to make it more representative by shifting to remote collection and designing our recruiting approach in a way that controls for more variables.''')
+        st.write('''It is a sample of a larger, ongoing collection. The data is not representative because it was collected at a limited number of geographic locations. We hope to make it more representative by shifting to remote collection and designing our recruiting approach in a way that controls for more variables.''')
 
     with st.expander("**What data modality does each patient data consist of? If the data is hierarchical, provide the modality details for all levels (e.g., text, image, physiological signal). Break down all levels and specify the modalities and devices.**", expanded=False):
         st.write('''Audio recordings, questionnaire responses.''')
@@ -75,7 +75,7 @@ def healthsheet_page(tab_name):
         st.write('''Raw audio and questionnaire response data, as well as extracted audio features.''')
 
     with st.expander("**Is any information missing from individual instances? If so, please provide a description, explaining why this information is missing (e.g., because it was unavailable).**", expanded=False):
-        st.write('''Yes, some questions are optional. There may be data collection irregularities that caused some information to be missing from individual instances. Each individual answered a common set of questions and then responded to a primary diagnostic category relevant additional questions.''')
+        st.write('''Yes, some questions are optional. There may be data collection irregularities that caused some information to be missing from individual instances. Each individual answered a common set of questions and then responded to additional questions relevant to their primary diagnostic category.''')
 
     with st.expander("**Are relationships between individual instances made explicit? (e.g., They are all part of the same clinical trial, or a patient has multiple hospital visits, and each visit is one instance)? If so, please describe how these relationships are made explicit.**", expanded=False):
         st.write('''No, they are unrelated.''')
@@ -100,7 +100,7 @@ def healthsheet_page(tab_name):
         st.write('''This dataset includes the transcription of free speech tasks. While the inclusion of information of that type is unlikely, it cannot be completely avoided, as research participants are responsible for their choice of language.''')
 
     with st.expander("**If the dataset has been de-identified, were any measures taken to avoid the re-identification of individuals? Examples of such measures: removing patients with rare pathologies or shifting time stamps.**", expanded=False):
-        st.write('''This dataset has been deidentified through removal of all audio data and certain sensitive fields identified by a team of ethicists.''')
+        st.write('''This dataset has been de-identified through removal of all audio data and certain sensitive fields identified by a team of ethicists.''')
 
     with st.expander("**Does the dataset contain data that might be considered sensitive in any way (e.g., data that reveals racial or ethnic origins, sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; criminal history)? If so, please provide a description.**", expanded=False):
         st.write('''Yes:<br><ins>racial or ethnic origins</ins>: The dataset includes race information.<br>
@@ -112,19 +112,19 @@ def healthsheet_page(tab_name):
     with st.expander("**For data that requires a device or equipment for collection or the context of the experiment, answer the following additional questions or provide relevant information based on the device or context that is used (for example)**", expanded=False):
         st.write('''Data is collected on iPads (9th or 10th generation), iPad Air (5th generation) using an Avid AE-36 microphone and an Apple dongle to connect it to the iPad.''')
 
-    st.header("**Challenge in tests and confounding factors**")
+    st.header("**Challenges in Testing and Confounding Factors**")
 
     with st.expander("**Which factors in the data might limit the generalization of potentially derived models? Is this information available as auxiliary labels for challenge tests? For instance:**", expanded=False):
         st.write('''**a. Number and diversity of devices included in the dataset.**<br>Distinct iPad devices were used at each site.<br>
-            **b. Data recording specificities, e.g., the view for a chest x-ray image.**<br>The data were recorded with a head mounted headset with a microphone that could be at slightly different distances. The clinical diagnosis, depending on the disorder, was performed by one clinician or based on an EHR record or prescription.<br>
-            **c. Number and diversity of recording sites included in the dataset.**<br>There are 5 recording sites included in the dataset.<br>
+            **b. Data recording specificities, e.g., the view for a chest x-ray image.**<br>The data were recorded with a head-mounted headset with a microphone that could be at slightly different distances. The clinical diagnosis, depending on the disorder, was performed by one clinician or based on an EHR record or prescription.<br>
+            **c. Number and diversity of recording sites included in the dataset.**<br>There are five recording sites included in the dataset.<br>
             **d. Distribution shifts over time.**<br>Changes in diagnostic criteria or practices could be a source of distribution shift.''', unsafe_allow_html=True)
         
     with st.expander("**What confounding factors might be present in the data?**", expanded=False):
-        st.write('''Noise artifacts, variations in diagnostic practices, inaccurate questionnaire responses, under reporting.''')
+        st.write('''Noise artifacts, variations in diagnostic practices, inaccurate questionnaire responses, underreporting.''')
 
     with st.expander("**What confounding factors might be present in the data?**", expanded=False):
-        st.write('''Noise artifacts, variations in diagnostic practices, inaccurate questionnaire responses, under reporting.<br> 
+        st.write('''Noise artifacts, variations in diagnostic practices, inaccurate questionnaire responses, underreporting.<br> 
                 **a. Interactions between demographic or historically marginalized groups and data recordings, e.g., were women patients recorded in one site, and men in another?**<br>Groups that have less trust in the medical system, AI, or are less proximal to the collection sites would have been less likely to be recruited.<br>
                 **b. Interactions between the labels and data recordings, e.g. were healthy patients recorded on one device and diseased patients on another?**<br>Participants were screened for different disorders based on site, so they also had their data collected with different devices.''', unsafe_allow_html=True)
 
@@ -167,8 +167,8 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
     <li><b>How many labelers provide a label per instance?</b><br>1</li>
 </ul>''', unsafe_allow_html=True)
         
-    with st.expander('''**What are the human-level performances in the applications that the dataset is supposed to address?**''', expanded=False):
-        st.write('''It varies greatly''')
+    with st.expander('''**What is the human-level performance in the applications that the dataset is supposed to address?**''', expanded=False):
+        st.write('''It varies widely.''')
 
     with st.expander('''**Is the software used to preprocess/clean/label the instances available? If so, please provide a link or other access point.**''', expanded=False):
         st.write('''Yes. [https://github.com/sensein/b2aiprep](https://github.com/sensein/b2aiprep), [https://github.com/sensein/senselab](https://github.com/sensein/senselab)''')
@@ -185,10 +185,10 @@ Gold standard label available in the data (diagnosed by a clinician).<br>
         st.write('''The data was directly observable and reported by subjects. Clinical diagnoses were verified by clinicians reviewing audio and/or imaging data, looking at electronic health records, or medication prescriptions.''')
 
     with st.expander('''**What mechanisms or procedures were used to collect the data (e.g., hardware apparatus or sensor, manual human curation, software program, software API)? How were these mechanisms or procedures validated? Provide the answer for all modalities and collected data. Has this information been changed through the process? If so, explain why.**''', expanded=False):
-        st.write('''The data has been collected on an iPad app.''')
+        st.write('''The data were collected using an iPad app.''')
 
     with st.expander('''**Who was involved in the data collection process (e.g., patients, clinicians, doctors, ML researchers, hospital staff, vendors, etc.) and how were they compensated (e.g., how much were contributors paid)?**''', expanded=False):
-        st.write('''Research teams, which may include medical, graduate, or undergraduate students, coordinated with clinicians/doctors to identify appropriate participants. These clinicians and doctors were listed under IRB as co-investigators, and were added to the consortium, so that that their names are to be included on consortium-level publications that emerge from the research. Hospital staff were not involved in scheduling but assisted in the logistics of coordinating data collection.
+        st.write('''Research teams, which may include medical, graduate, or undergraduate students, coordinated with clinicians/doctors to identify appropriate participants. These clinicians and doctors were listed under IRB as co-investigators, and were added to the consortium so that their names are included on consortium-level publications that emerge from the research. Hospital staff were not involved in scheduling but assisted in the logistics of coordinating data collection.
                  <br><br>Participants were compensated for their time through electronic gift cards. Participants currently receive \\$40 for a data collection session that takes less than 90 minutes, and \\$80 for a session that takes over 90 minutes, for no more than a total of 3 sessions and maximum compensation of \\$120.''', unsafe_allow_html=True)
 
     with st.expander('''**Over what timeframe was the data collected?**''', expanded=False):

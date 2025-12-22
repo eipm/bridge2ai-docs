@@ -6,7 +6,7 @@ import numpy as np
 def ai_readiness_page(tab_name):
     st.markdown(
         """
-        For detailed descriptions of each criteria, please read: [AI-readiness for Biomedical Data: Bridge2AI Recommendations](https://doi.org/10.1101/2024.10.23.619844)
+        For detailed descriptions of each criterion, please see: [AI-readiness for Biomedical Data: Bridge2AI Recommendations](https://doi.org/10.1101/2024.10.23.619844)
         """
     )
     # Add Figure

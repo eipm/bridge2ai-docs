@@ -6,13 +6,13 @@ def data_governance_page(tab_name):
     The feature-only and raw audio datasets are available under distinct agreements appropriate for the sensitivity of their respective content.
     * Registered Access (features-only data):
         * Register on PhysioNet and confirm your identity ([Registered Access License](https://physionet.org/about/duas/bridge2ai-voice-registered-access-agreement/)).
-        * Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use
+        * Sign the Bridge2AI-Voice Registered Access Agreement, which outlines the terms and conditions for data use.
     * Controlled Access (raw audio data):
         * Complete the Data Access Request Form (DARF)
         * Complete the Data Use Agreement (DUA)
         * Submit your application to the Data Access Compliance Office for review
 
-    Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution
+    Upon approval, ensure a Data Use and Transfer Agreement (DTUA) is signed by an authorized official at your institution.
     """)
     
     st.subheader("Memorandum: Ethical Justification for Controlled Access to Raw Voice Data Samples")
@@ -38,7 +38,7 @@ def data_governance_page(tab_name):
     st.header("Oversight")
 
     with st.expander('''**Has the clinical study been reviewed and approved by at least one human subjects’ protection review board?**''', expanded=False):
-        st.write('''Submitted, approved by USF Single IRB and subsites IRB through the Single IRB Process''')
+        st.write('''Submitted and approved by the USF Single IRB and subsite IRBs through the Single IRB process.''')
 
     with st.expander('''**Is this clinical study for a drug product?**''', expanded=False):
         st.write('''No''')
@@ -51,7 +51,7 @@ def data_governance_page(tab_name):
 
     st.header("De-Identification Levels")
 
-    st.write("""Level of de-identification from this dataset Identifiable information (under HIPAA and under the Common Rule) as well as data considered as sensitive have been removed from this dataset.""", unsafe_allow_html=False)
+    st.write("""Level of de-identification for this dataset: Identifiable information (under HIPAA and the Common Rule), as well as data considered sensitive, have been removed from this dataset.""", unsafe_allow_html=False)
 
     with st.expander('''**Does this dataset remove direct identifiers?**''', expanded=False):
         st.write('''Yes''')
@@ -70,7 +70,7 @@ def data_governance_page(tab_name):
 
     st.subheader("De-identification Details")
 
-    st.write("""All direct identifiers were removed, as these would reveal the identity of the research participant. These include name, civic address, and social security numbers. Indirect identifiers were removed where these created a significant risk of causing participant re-identification, for example through their combination with other public data available on social media, in government registries, or elsewhere. These include select geographic or demographic identifiers, as well as some information about household composition or cultural identity. Non-identifying elements of data that revealed highly sensitive information, such as information about household income, mental health status, traumatic life experiences, and the like were also removed. All raw voice data was removed, as this data has the potential to cause to individual re-identification or to be used for illicit or unauthorized purposes.  """, unsafe_allow_html=False)
+    st.write("""All direct identifiers were removed, as these would reveal the identity of the research participant. These include name, civic address, and social security numbers. Indirect identifiers were removed where these created a significant risk of participant re-identification, for example through their combination with other public data available on social media, in government registries, or elsewhere. These include select geographic or demographic identifiers, as well as some information about household composition or cultural identity. Non-identifying elements of data that revealed highly sensitive information, such as information about household income, mental health status, traumatic life experiences, and the like, were also removed. All raw voice data was removed, as this data has the potential to cause individual re-identification or to be used for illicit or unauthorized purposes.""", unsafe_allow_html=False)
 
     st.header("Consent")
 
