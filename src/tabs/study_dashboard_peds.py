@@ -272,7 +272,13 @@ def study_dashboard_page_peds(tab_name):
     # chart_type: type of the chart (pie, horizontal_bar, vertical_bar, table)
     # props: plot properties
     # name_mapping: mapping of names to be displayed in the chart if needed
-
+    disorder_plots = [
+        ('voice_disorders_category', 'Voice Disorder', 'horizontal_bar', {'height': 450, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Voice Disorder Categories', 'font_size': 11}),
+        ('hearing_loss_disorder_category', 'Hearing Loss Disorder', 'horizontal_bar', {'height': 450, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Hearing Loss Disorder Categories', 'font_size': 11}),
+        ('mood_and_psychiatric_disorders_category', 'Mood and Psychiatric Disorder', 'horizontal_bar', {'height': 450, 'individual_color': False, 'color_discrete_sequence': colors, 'orientation':'h', 'x': 'Count', 'y': 'Mood and Psychiatric Disorder Categories', 'font_size': 11}),
+        ('respiratory_disorders_category', 'Respiratory Disorder', 'pie', {'height': 650, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 0.5, 'font_size': 11}),
+        ("snoring_and_obstructive_sleep_category", 'Snoring and Obstructive Sleep Disorder', 'pie', {'height': 650, 'color_discrete_sequence': colors, 'y': -0.3, 'entry_width': 1, 'font_size': 11})
+    ]
 
     # Data collection plots    
     collected_data_plots = [
@@ -286,7 +292,7 @@ def study_dashboard_page_peds(tab_name):
 
     # Disorders Section
     st.subheader("Diagnostic Breakdown")
- 
+    create_plots(data, disorder_plots, 3)
 
     # Demographic Section
     st.subheader("Demographic Breakdown")

@@ -11,7 +11,7 @@ def coming_soon_message(tab_name):
     image_path = "images/Wave.png"
     st.image(image_path, caption='', use_container_width=True)
 
-def create_html_table(csv_file_path, caption=None, cell_values=[], column_index=-1,link_formattter=None):
+def create_html_table(csv_file_path, caption=None, cell_values=[], column_index=-1,link_formatter=None):
     # Read CSV file
     df = pd.read_csv(csv_file_path, dtype=str)  # Ensure all columns are read as strings
 
@@ -21,7 +21,7 @@ def create_html_table(csv_file_path, caption=None, cell_values=[], column_index=
     bold_cells = df.iloc[:, column_index].tolist() if column_index >= 0 else []
 
     # Convert DataFrame to HTML table
-    html_table = df.to_html(index=False, classes='table table-striped',escape=False,formatters=link_formattter)
+    html_table = df.to_html(index=False, classes='table table-striped',escape=False,formatters=link_formatter)
 
     if bold_cells and len(bold_cells) > 0:
         for bold_cell in bold_cells:

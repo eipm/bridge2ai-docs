@@ -16,10 +16,71 @@
         "Multiple Races": 28
     },
     "age_groups": {
-        "2-4": 0,
+        "2-3": 0,
         "4-5": 2,
         "6-9": 91,
         "10-17": 207
+    },
+    "hearing_loss_disorder_category": {
+        "Cholesteatoma": 12,
+        "Hearing loss": 100,
+        "Mild hearing loss": 45,
+        "Deafness": 30,
+        "Ear tubes": 56,
+        "Cochlear implantation bilateral": 23,
+        "Vocal cord webs": 1,
+        "Cochlear implantation unilateral": 18,
+        "Tympanic membrane perforation": 8,
+        "CMV": 4,
+        "Hearing aid": 111
+    },
+    "mood_and_psychiatric_disorders_category": {
+        "Anxiety disorder": 28,
+        "ADHD": 29,
+        "ASD": 13,
+        "Depression": 7,
+        "Eating disorder": 5,
+        "Insomnia or sleep disorder": 3,
+        "OCD": 5,
+        "Panic disorder": 0,
+        "Social anxiety disorder": 10,
+        "Other": 7
+    },
+    "respiratory_disorders_category": {
+        "Asthma": 33,
+        "Recurrent croup": 3,
+        "Bronchiolitis": 2,
+        "RSV": 4,
+        "Chronic cough": 5,
+        "Subglottic stenosis": 0,
+        "Vocal cord webs": 1,
+        "Airway surgery/intubated": 0,
+        "Tracheostomy": 1,
+        "Stridor": 31,
+        "Throat surgery": 21,
+        "Oxygen support": 31
+    },
+    "snoring_and_obstructive_sleep_category": {
+        "Snoring": 0,
+        "Gasping": 75,
+        "Obstructive sleep apnea": 14,
+        "Had sleep study": 12,
+        "Tonsillectomy": 22,
+        "Adenoidectomy": 23,
+        "Lingual tonsillectomy": 0
+    },
+    "voice_disorders_category": {
+        "Vocal nodules or polyps": 4,
+        "Unilateral vocal cord paralysis": 1,
+        "Bilateral vocal cord paralysis": 1,
+        "Acid reflux disease": 13,
+        "Scarring": 4,
+        "Airway stenosis": 1,
+        "Vocal cord webs": 1,
+        "ENT visited": 72,
+        "Hoarse": 13,
+        "Voice strain": 9,
+        "Speech delay": 31
     },
     "primary_language": {
         "English": 278,
@@ -29,7 +90,7 @@
         "Mandarin": 5,
         "Other": 11
     },
-    "total_hours_of_recordings": 28.0972599306, 
+    "total_hours_of_recordings": 28.0972599306,
     "questionnaire_collected": {
         "Q - Pediatric - Generic - Demographics": 300,
         "Q - Pediatric - Generic - VHI-10": 300,
